@@ -1,5 +1,9 @@
 # OrangeHRM Login Testing Project
 
+![Manual Testing](https://img.shields.io/badge/Testing-Manual-blue)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+![Documentation](https://img.shields.io/badge/Documentation-Markdown-orange)
+
 ## Project Overview
 
 This project demonstrates **Manual Testing** of the **Login Module** of the OrangeHRM Demo application.
@@ -130,4 +134,3 @@ Through this project, I learned how to:
 
 **Swapnali Shitole**
 
-Aspiring QA Engineer
