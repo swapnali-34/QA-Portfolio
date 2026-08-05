@@ -1,5 +1,9 @@
 # SauceDemo End-to-End Manual Testing Project
 
+![Manual Testing](https://img.shields.io/badge/Testing-Manual-blue)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+![Documentation](https://img.shields.io/badge/Documentation-Markdown-orange)
+
 ## Project Overview
 
 This project demonstrates a complete **End-to-End Manual Testing** cycle for the **SauceDemo** web application. It was created as part of my QA learning journey to showcase practical manual testing skills using industry-standard documentation and testing practices.
