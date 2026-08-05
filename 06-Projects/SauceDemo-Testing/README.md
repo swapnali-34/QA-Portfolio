@@ -136,7 +136,6 @@ The project includes the following QA documents:
 # Tools Used
 
 - Google Chrome
-- Git
 - GitHub
 - Markdown (.md)
 - Microsoft Excel (for creating test artifacts before uploading to GitHub)
