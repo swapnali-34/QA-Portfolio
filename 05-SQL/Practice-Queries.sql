@@ -1,0 +1,286 @@
+-- ==========================================
+-- Practice-Queries.sql
+-- SQL Practice Queries for QA Engineers
+-- ==========================================
+
+-- Sample Tables:
+-- Employees(EmployeeID, EmployeeName, Age, Gender, Department, Salary, City, JoiningDate)
+-- Users(UserID, UserName, Email)
+
+-- ==========================================
+-- BASIC SELECT QUERIES
+-- ==========================================
+
+-- 1. Display all records
+SELECT *
+FROM Employees;
+
+-- 2. Display only Employee Name
+SELECT
+    EmployeeName
+FROM Employees;
+
+-- 3. Display Employee Name and Salary
+SELECT
+    EmployeeName,
+    Salary
+FROM Employees;
+
+-- ==========================================
+-- FILTERING DATA
+-- ==========================================
+
+-- 4. Display employees from QA department
+SELECT *
+FROM Employees
+WHERE Department = 'QA';
+
+-- 5. Display employees whose salary is greater than 50000
+SELECT *
+FROM Employees
+WHERE Salary > 50000;
+
+-- 6. Display employees whose salary is less than 30000
+SELECT *
+FROM Employees
+WHERE Salary < 30000;
+
+-- 7. Display employees whose age is 25
+SELECT *
+FROM Employees
+WHERE Age = 25;
+
+-- 8. Display employees who are not from HR department
+SELECT *
+FROM Employees
+WHERE Department <> 'HR';
+
+-- ==========================================
+-- DISTINCT
+-- ==========================================
+
+-- 9. Display unique departments
+SELECT DISTINCT Department
+FROM Employees;
+
+-- 10. Display unique cities
+SELECT DISTINCT City
+FROM Employees;
+
+-- ==========================================
+-- SORTING
+-- ==========================================
+
+-- 11. Sort employees by salary (Ascending)
+SELECT *
+FROM Employees
+ORDER BY Salary ASC;
+
+-- 12. Sort employees by salary (Descending)
+SELECT *
+FROM Employees
+ORDER BY Salary DESC;
+
+-- 13. Sort employees alphabetically
+SELECT *
+FROM Employees
+ORDER BY EmployeeName ASC;
+
+-- 14. Display top 5 employees
+SELECT *
+FROM Employees
+LIMIT 5;
+
+-- ==========================================
+-- BETWEEN
+-- ==========================================
+
+-- 15. Display employees between age 25 and 35
+SELECT *
+FROM Employees
+WHERE Age BETWEEN 25 AND 35;
+
+-- 16. Display employees with salary between 40000 and 70000
+SELECT *
+FROM Employees
+WHERE Salary BETWEEN 40000 AND 70000;
+
+-- ==========================================
+-- IN
+-- ==========================================
+
+-- 17. Display employees from QA or HR department
+SELECT *
+FROM Employees
+WHERE Department IN ('QA', 'HR');
+
+-- 18. Display employees from Pune or Mumbai
+SELECT *
+FROM Employees
+WHERE City IN ('Pune', 'Mumbai');
+
+-- ==========================================
+-- LIKE
+-- ==========================================
+
+-- 19. Find employees whose name starts with A
+SELECT *
+FROM Employees
+WHERE EmployeeName LIKE 'A%';
+
+-- 20. Find employees whose name ends with n
+SELECT *
+FROM Employees
+WHERE EmployeeName LIKE '%n';
+
+-- 21. Find employees whose name contains 'an'
+SELECT *
+FROM Employees
+WHERE EmployeeName LIKE '%an%';
+
+-- 22. Find Gmail users
+SELECT *
+FROM Users
+WHERE Email LIKE '%@gmail.com';
+
+-- ==========================================
+-- AGGREGATE FUNCTIONS
+-- ==========================================
+
+-- 23. Count total employees
+SELECT COUNT(*)
+FROM Employees;
+
+-- 24. Count QA employees
+SELECT COUNT(*)
+FROM Employees
+WHERE Department = 'QA';
+
+-- 25. Find maximum salary
+SELECT MAX(Salary)
+FROM Employees;
+
+-- 26. Find minimum salary
+SELECT MIN(Salary)
+FROM Employees;
+
+-- 27. Find average salary
+SELECT AVG(Salary)
+FROM Employees;
+
+-- 28. Find total salary paid
+SELECT SUM(Salary)
+FROM Employees;
+
+-- ==========================================
+-- GROUP BY
+-- ==========================================
+
+-- 29. Count employees department-wise
+SELECT
+    Department,
+    COUNT(*) AS TotalEmployees
+FROM Employees
+GROUP BY Department;
+
+-- 30. Average salary department-wise
+SELECT
+    Department,
+    AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY Department;
+
+-- 31. Maximum salary department-wise
+SELECT
+    Department,
+    MAX(Salary) AS MaximumSalary
+FROM Employees
+GROUP BY Department;
+
+-- 32. Minimum salary department-wise
+SELECT
+    Department,
+    MIN(Salary) AS MinimumSalary
+FROM Employees
+GROUP BY Department;
+
+-- ==========================================
+-- HAVING
+-- ==========================================
+
+-- 33. Departments having more than 2 employees
+SELECT
+    Department,
+    COUNT(*) AS TotalEmployees
+FROM Employees
+GROUP BY Department
+HAVING COUNT(*) > 2;
+
+-- ==========================================
+-- DATE & SUBQUERY
+-- ==========================================
+
+-- 34. Employees joined after 2024
+SELECT *
+FROM Employees
+WHERE JoiningDate > '2024-01-01';
+
+-- 35. Employees whose salary is greater than average salary
+SELECT *
+FROM Employees
+WHERE Salary > (
+    SELECT AVG(Salary)
+    FROM Employees
+);
+
+-- ==========================================
+-- STRING FUNCTIONS
+-- ==========================================
+
+-- 36. Display employee names in uppercase
+SELECT UPPER(EmployeeName)
+FROM Employees;
+
+-- 37. Display employee names in lowercase
+SELECT LOWER(EmployeeName)
+FROM Employees;
+
+-- 38. Display length of employee names
+SELECT
+    EmployeeName,
+    LENGTH(EmployeeName) AS NameLength
+FROM Employees;
+
+-- ==========================================
+-- DATE FUNCTIONS
+-- ==========================================
+
+-- 39. Display current date
+SELECT CURRENT_DATE;
+
+-- ==========================================
+-- COMBINED QUERY
+-- ==========================================
+
+-- 40. Display first 10 employees sorted by joining date
+SELECT *
+FROM Employees
+ORDER BY JoiningDate DESC
+LIMIT 10;
+
+-- ==========================================
+-- UPCOMING TOPICS
+-- ==========================================
+-- JOINS
+-- SUBQUERIES (Advanced)
+-- VIEWS
+-- INDEXES
+-- STORED PROCEDURES
+
+-- ==========================================
+-- End of Practice Queries
+-- ==========================================
+"""
+path="/mnt/data/Practice-Queries.sql"
+Path(path).write_text(content,encoding="utf-8")
+print(path)
