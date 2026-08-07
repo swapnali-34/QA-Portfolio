@@ -280,7 +280,3 @@ LIMIT 10;
 -- ==========================================
 -- End of Practice Queries
 -- ==========================================
-"""
-path="/mnt/data/Practice-Queries.sql"
-Path(path).write_text(content,encoding="utf-8")
-print(path)
