@@ -269,9 +269,68 @@ ORDER BY JoiningDate DESC
 LIMIT 10;
 
 -- ==========================================
+-- SQL JOINS
+-- ==========================================
+
+-- 41. Display customers and their orders
+SELECT
+    c.CustomerName,
+    o.OrderID,
+    o.OrderDate
+FROM Customers c
+INNER JOIN Orders o
+    ON c.CustomerID = o.CustomerID;
+
+-- 42. Display customer name and product name
+
+SELECT
+    c.CustomerName,
+    p.ProductName,
+    o.Quantity
+FROM Orders o
+INNER JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+INNER JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 43. Count orders for each customer
+
+SELECT
+    c.CustomerName,
+    COUNT(o.OrderID) AS TotalOrders
+FROM Customers c
+LEFT JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerName;
+
+-- 44. Find customers who have not placed any order
+
+SELECT
+    c.CustomerID,
+    c.CustomerName
+FROM Customers c
+LEFT JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+WHERE o.OrderID IS NULL;
+
+-- 45. Display complete order details
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    o.OrderDate
+FROM Orders o
+INNER JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+INNER JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- ==========================================
 -- UPCOMING TOPICS
 -- ==========================================
--- JOINS
 -- SUBQUERIES (Advanced)
 -- VIEWS
 -- INDEXES
