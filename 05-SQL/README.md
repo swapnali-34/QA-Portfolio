@@ -146,6 +146,7 @@ The queries include:
 - String Functions
 - Date Functions
 - Subqueries
+- JOINs
 
 ---
 
@@ -199,10 +200,6 @@ The SQL concepts in this folder can be applied to:
 
 The following SQL topics will be added as I continue my learning journey:
 
-- INNER JOIN
-- LEFT JOIN
-- RIGHT JOIN
-- SELF JOIN
 - UNION
 - Views
 - Indexes
@@ -221,7 +218,7 @@ The following SQL topics will be added as I continue my learning journey:
 | SQL Queries | ✅ Completed |
 | Practice Queries | ✅ Completed |
 | Sample Database | ✅ Completed |
-| SQL Joins | ⏳ Planned |
+| SQL Joins | ✅ Completed |
 | Advanced SQL | ⏳ Planned |
 | SQL Interview Questions | ⏳ Planned |
 
