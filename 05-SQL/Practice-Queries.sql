@@ -329,12 +329,83 @@ INNER JOIN Products p
     ON o.ProductID = p.ProductID;
 
 -- ==========================================
--- UPCOMING TOPICS
+-- QA DATA VALIDATION QUERIES
 -- ==========================================
--- SUBQUERIES (Advanced)
--- VIEWS
--- INDEXES
--- STORED PROCEDURES
+
+-- 46. Verify whether an employee exists
+
+SELECT *
+FROM Employees
+WHERE EmployeeID = 101;
+
+-- 47. Find employees with missing city
+
+SELECT *
+FROM Employees
+WHERE City IS NULL;
+
+-- 48. Find duplicate user emails
+
+SELECT
+    Email,
+    COUNT(*) AS EmailCount
+FROM Users
+GROUP BY Email
+HAVING COUNT(*) > 1;
+
+-- 49. Find orders without a valid customer
+
+SELECT
+    o.OrderID,
+    o.CustomerID
+FROM Orders o
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+WHERE c.CustomerID IS NULL;
+
+-- 50. Find orders without a valid product
+
+SELECT
+    o.OrderID,
+    o.ProductID
+FROM Orders o
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE p.ProductID IS NULL;
+
+-- 51. Find orders with invalid quantity
+
+SELECT *
+FROM Orders
+WHERE Quantity <= 0;
+
+-- 52. Find products with invalid price
+
+SELECT *
+FROM Products
+WHERE Price < 0;
+
+-- 53. Find employees with invalid salary
+
+SELECT *
+FROM Employees
+WHERE Salary <= 0;
+
+-- 54. Find employees with future joining dates
+
+SELECT *
+FROM Employees
+WHERE JoiningDate > CURRENT_DATE;
+
+-- 55. Verify customer information
+
+SELECT
+    CustomerID,
+    CustomerName,
+    City,
+    Email
+FROM Customers
+WHERE CustomerID = 1;
 
 -- ==========================================
 -- End of Practice Queries
