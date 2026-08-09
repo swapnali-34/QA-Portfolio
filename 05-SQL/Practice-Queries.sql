@@ -408,5 +408,47 @@ FROM Customers
 WHERE CustomerID = 1;
 
 -- ==========================================
+-- DATA MANIPULATION & TRANSACTIONS
+-- ==========================================
+
+-- 56. Insert a new customer
+
+INSERT INTO Customers
+    (CustomerID, CustomerName, City, Email)
+VALUES
+    (5, 'Neha Kulkarni', 'Pune', 'neha@gmail.com');
+
+-- 57. Update customer city
+
+UPDATE Customers
+SET City = 'Mumbai'
+WHERE CustomerID = 5;
+
+-- 58. Delete a customer
+
+DELETE FROM Customers
+WHERE CustomerID = 5;
+
+-- 59. Practice ROLLBACK
+
+START TRANSACTION;
+
+UPDATE Customers
+SET City = 'Delhi'
+WHERE CustomerID = 1;
+
+ROLLBACK;
+
+-- 60. Practice COMMIT
+
+START TRANSACTION;
+
+UPDATE Customers
+SET City = 'Mumbai'
+WHERE CustomerID = 1;
+
+COMMIT;
+
+-- ==========================================
 -- End of Practice Queries
 -- ==========================================
