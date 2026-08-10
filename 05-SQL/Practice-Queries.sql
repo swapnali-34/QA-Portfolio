@@ -450,5 +450,75 @@ WHERE CustomerID = 1;
 COMMIT;
 
 -- ==========================================
+-- CONDITIONAL VALIDATION
+-- ==========================================
+
+-- 61. Classify employees based on salary
+
+SELECT
+    EmployeeName,
+    Salary,
+    CASE
+        WHEN Salary >= 70000 THEN 'High'
+        WHEN Salary >= 50000 THEN 'Medium'
+        ELSE 'Low'
+    END AS SalaryCategory
+FROM Employees;
+
+-- 62. Validate employee salary
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Salary,
+    CASE
+        WHEN Salary > 0 THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Employees;
+
+-- 63. Validate employee city
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    City,
+    CASE
+        WHEN City IS NULL THEN 'FAIL - Missing City'
+        ELSE 'PASS'
+    END AS ValidationResult
+FROM Employees;
+
+-- 64. Validate order quantity
+
+SELECT
+    OrderID,
+    Quantity,
+    CASE
+        WHEN Quantity > 0 THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Orders;
+
+-- 65. Validate product price
+
+SELECT
+    ProductID,
+    ProductName,
+    Price,
+    CASE
+        WHEN Price >= 0 THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Products;
+
+-- 66. Display city or fallback value
+
+SELECT
+    EmployeeName,
+    COALESCE(City, 'City Not Available') AS City
+FROM Employees;
+
+-- ==========================================
 -- End of Practice Queries
 -- ==========================================
