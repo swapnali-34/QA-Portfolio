@@ -520,5 +520,85 @@ SELECT
 FROM Employees;
 
 -- ==========================================
+-- ADVANCED JOINS & SUBQUERIES
+-- ==========================================
+
+-- 67. Display customers and their orders
+
+SELECT
+    c.CustomerName,
+    o.OrderID,
+    o.OrderDate
+FROM Customers c
+INNER JOIN Orders o
+    ON c.CustomerID = o.CustomerID;
+
+-- 68. Display customer, order and product details
+
+SELECT
+    c.CustomerName,
+    o.OrderID,
+    p.ProductName,
+    o.Quantity
+FROM Orders o
+INNER JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+INNER JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 69. Find customers who have no orders
+
+SELECT
+    c.CustomerID,
+    c.CustomerName
+FROM Customers c
+LEFT JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+WHERE o.OrderID IS NULL;
+
+-- 70. Find orders without a valid customer
+
+SELECT
+    o.OrderID,
+    o.CustomerID
+FROM Orders o
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+WHERE c.CustomerID IS NULL;
+
+-- 71. Find orders without a valid product
+
+SELECT
+    o.OrderID,
+    o.ProductID
+FROM Orders o
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE p.ProductID IS NULL;
+
+-- 72. Find employees earning above average salary
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Salary
+FROM Employees
+WHERE Salary >
+(
+    SELECT AVG(Salary)
+    FROM Employees
+);
+
+-- 73. Find customers who have placed orders
+
+SELECT *
+FROM Customers
+WHERE CustomerID IN
+(
+    SELECT CustomerID
+    FROM Orders
+);
+
+-- ==========================================
 -- End of Practice Queries
 -- ==========================================
