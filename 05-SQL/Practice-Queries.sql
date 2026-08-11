@@ -600,5 +600,85 @@ WHERE CustomerID IN
 );
 
 -- ==========================================
+-- DATE & STRING VALIDATION
+-- ==========================================
+
+-- 74. Find employees who joined after 2024
+
+SELECT *
+FROM Employees
+WHERE JoiningDate > '2024-01-01';
+
+-- 75. Find employees who joined during 2023
+
+SELECT *
+FROM Employees
+WHERE JoiningDate BETWEEN '2023-01-01' AND '2023-12-31';
+
+-- 76. Find future-dated employee records
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    JoiningDate
+FROM Employees
+WHERE JoiningDate > CURRENT_DATE;
+
+-- 77. Display employee names in uppercase
+
+SELECT
+    EmployeeName,
+    UPPER(EmployeeName) AS UpperName
+FROM Employees;
+
+-- 78. Display employee names in lowercase
+
+SELECT
+    EmployeeName,
+    LOWER(EmployeeName) AS LowerName
+FROM Employees;
+
+-- 79. Display employee name lengths
+
+SELECT
+    EmployeeName,
+    LENGTH(EmployeeName) AS NameLength
+FROM Employees;
+
+-- 80. Find users with missing email
+
+SELECT
+    UserID,
+    UserName,
+    Email
+FROM Users
+WHERE Email IS NULL
+   OR Email = '';
+
+-- 81. Validate user email availability
+
+SELECT
+    UserID,
+    UserName,
+    Email,
+    CASE
+        WHEN Email IS NULL OR Email = '' THEN 'FAIL'
+        ELSE 'PASS'
+    END AS ValidationResult
+FROM Users;
+
+-- 82. Validate employee joining date
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    JoiningDate,
+    CASE
+        WHEN JoiningDate <= CURRENT_DATE THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Employees;
+
+-- ==========================================
 -- End of Practice Queries
 -- ==========================================
