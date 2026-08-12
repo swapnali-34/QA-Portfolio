@@ -128,25 +128,23 @@ Each topic includes:
 
 ## Practice-Queries.sql
 
-A collection of practical SQL queries for hands-on practice.
+Contains SQL queries and QA validation exercises covering:
 
-The queries include:
-
-- SELECT
-- WHERE
+- SELECT and WHERE
 - ORDER BY
 - DISTINCT
-- LIKE
-- IN
-- BETWEEN
-- LIMIT
+- LIKE, IN and BETWEEN
 - Aggregate Functions
-- GROUP BY
-- HAVING
-- String Functions
-- Date Functions
-- Subqueries
+- GROUP BY and HAVING
 - JOINs
+- Subqueries
+- NULL and Empty Value Checks
+- Duplicate Record Detection
+- Date Validation
+- String Functions
+- CASE-based Validation
+- Data Quality Checks
+- Business Rule Validation
 
 ---
 
