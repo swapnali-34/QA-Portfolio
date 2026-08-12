@@ -680,5 +680,90 @@ SELECT
 FROM Employees;
 
 -- ==========================================
+-- Data Quality & Validation
+-- ==========================================
+
+-- 83. Find duplicate email addresses
+
+SELECT
+    Email,
+    COUNT(*) AS DuplicateCount
+FROM Users
+GROUP BY Email
+HAVING COUNT(*) > 1;
+
+
+-- 84. Find products with invalid prices
+
+SELECT
+    ProductID,
+    ProductName,
+    Price
+FROM Products
+WHERE Price <= 0;
+
+
+-- 85. Find orders with invalid quantities
+
+SELECT
+    OrderID,
+    ProductID,
+    Quantity
+FROM Orders
+WHERE Quantity <= 0;
+
+
+-- 86. Find customers with missing email addresses
+
+SELECT
+    CustomerID,
+    CustomerName,
+    Email
+FROM Customers
+WHERE Email IS NULL
+   OR Email = '';
+
+
+-- 87. Validate employee age and salary
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Age,
+    Salary,
+    CASE
+        WHEN Age >= 18
+         AND Salary > 0
+        THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Employees;
+
+
+-- 88. Find invalid orders
+
+-- An order is invalid if:
+-- 1. Customer does not exist
+-- 2. Product does not exist
+-- 3. Quantity is less than or equal to zero
+-- 4. Order date is in the future
+
+SELECT
+    o.OrderID,
+    o.CustomerID,
+    o.ProductID,
+    o.Quantity,
+    o.OrderDate
+FROM Orders o
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE c.CustomerID IS NULL
+   OR p.ProductID IS NULL
+   OR o.Quantity <= 0
+   OR o.OrderDate > CURRENT_DATE;
+
+-- ==========================================
 -- End of Practice Queries
 -- ==========================================
