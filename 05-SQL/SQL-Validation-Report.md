@@ -60,19 +60,9 @@ The query checks whether the customer email is:
 - Empty
 - Contains only spaces
 
-### SQL Query
-
-```sql
-SELECT
-    CustomerID,
-    CustomerName,
-    Email
-FROM Customers
-WHERE Email IS NULL
-   OR TRIM(Email) = '';
-
-# Result
+### Result
 
 **Status:** PASS
 
 No customers were found with a missing or empty email address.
+
