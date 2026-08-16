@@ -30,13 +30,22 @@ QA-Portfolio
 │
 ├── 01-Manual-Testing
 ├── 02-Test-Cases
+│   └── Google-Login
 ├── 03-Bug-Reports
+│   └── Shopping-Website
 ├── 04-API-Testing
 ├── 05-SQL
+│   ├── README.md
+│   ├── 01-SQL-Basics.md
+│   ├── 02-SQL-Queries.md
+│   ├── Practice-Queries.sql
+│   ├── Sample-Database.md
+│   ├── SQL-Validation-Queries.sql
+│   └── SQL-Validation-Report.md
 ├── 06-Projects
 │   ├── OrangeHRM-Login-Testing
-│   ├── Test-Design-Techniques
-│   └── SauceDemo-Testing
+│   ├── SauceDemo-Testing
+│   └── Test-Design-Techniques
 ├── 07-Notes
 └── README.md
 ```
@@ -88,8 +97,8 @@ QA-Portfolio
 - Google Chrome
 - Microsoft Excel
 - Markdown
+- SQL
 - Postman *(Learning)*
-- SQL *(Learning)*
 - Jira *(Learning)*
 
 ---
@@ -176,7 +185,7 @@ Topics include:
 
 ### Currently Learning
 
-- SQL for QA
+- Advanced SQL for QA
 - API Testing with Postman
 - Jira
 - Agile & Scrum
@@ -204,12 +213,17 @@ This portfolio demonstrates my ability to:
 - Report software defects professionally
 - Create industry-standard QA documentation
 - Maintain organized project documentation using Git and GitHub
+- Validate application data using SQL
+- Perform database validation against business requirements
+- Identify duplicate, NULL, orphan, and invalid records
+- Validate relationships between database tables
+- Create SQL-based PASS/FAIL validation reports
 
 ---
 
 ## Career Objective
 
-I am seeking an opportunity as a Manual QA Analyst where I can apply my testing knowledge, continue learning from experienced professionals, and contribute to delivering high-quality software.
+I am seeking an opportunity as a QA Analyst / Manual QA Tester where I can apply my knowledge of manual testing, test design, defect reporting, SQL, and database validation while continuing to grow as a software quality professional.
 
 ---
 
