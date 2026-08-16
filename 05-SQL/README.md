@@ -81,7 +81,8 @@ By completing this section, I aim to:
 ├── 02-SQL-Queries.md
 ├── Practice-Queries.sql
 ├── Sample-Database.md
-└── Screenshots/
+├── SQL-Validation-Queries.sql
+└── SQL-Validation-Report.md
 ```
 
 ---
