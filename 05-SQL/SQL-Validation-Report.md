@@ -44,6 +44,26 @@ SQL queries were used to identify invalid data and confirm that the database sat
 
 ---
 
+# Validation Summary
+
+| Requirement | Validation | Status |
+|---|---|---|
+| BR-01 | Customer Email | **PASS** |
+| BR-02 | Unique Customer Email | **PASS** |
+| BR-03 | Product Price | **PASS** |
+| BR-04 | Valid Customer Reference | **PASS** |
+| BR-05 | Valid Product Reference | **PASS** |
+| BR-06 | Order Quantity | **PASS** |
+| BR-07 | Future Order Date | **PASS** |
+
+### Overall Result
+
+**PASS**
+
+All defined business requirements were successfully validated against the CompanyDB database.
+
+---
+
 # Validation Results
 
 ## BR-01 — Customer Email Validation
@@ -185,9 +205,8 @@ An order is considered valid only when:
 | Order Date   | OrderDate <= CURRENT_DATE |
 
 ## Result
-**PASS**
+**Status:** PASS
 
-## Result Explanation
 The final validation confirmed that all orders satisfy the defined business rules.
 - Every order belongs to an existing customer.
 - Every order references an existing product.
