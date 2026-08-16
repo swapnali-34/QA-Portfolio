@@ -66,3 +66,9 @@ The query checks whether the customer email is:
 
 No customers were found with a missing or empty email address.
 
+## BR-02 — Customer Email Uniqueness
+**Requirement:**
+Customer email must be unique.
+
+**Validation Logic:**
+The query groups customer emails and identifies emails appearing more than once.
