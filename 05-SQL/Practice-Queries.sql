@@ -375,15 +375,19 @@ WHERE p.ProductID IS NULL;
 
 -- 51. Find orders with invalid quantity
 
-SELECT *
+SELECT
+    OrderID,
+    ProductID,
+    Quantity
 FROM Orders
-WHERE Quantity <= 0;
+WHERE Quantity IS NULL
+   OR Quantity <= 0;
 
 -- 52. Find products with invalid price
 
 SELECT *
 FROM Products
-WHERE Price < 0;
+WHERE Price <= 0;
 
 -- 53. Find employees with invalid salary
 
@@ -507,7 +511,7 @@ SELECT
     ProductName,
     Price,
     CASE
-        WHEN Price >= 0 THEN 'PASS'
+        WHEN Price > 0 THEN 'PASS'
         ELSE 'FAIL'
     END AS ValidationResult
 FROM Products;
@@ -653,7 +657,7 @@ SELECT
     Email
 FROM Users
 WHERE Email IS NULL
-   OR Email = '';
+   OR TRIM(Email) = '';
 
 -- 81. Validate user email availability
 
@@ -763,6 +767,198 @@ WHERE c.CustomerID IS NULL
    OR p.ProductID IS NULL
    OR o.Quantity <= 0
    OR o.OrderDate > CURRENT_DATE;
+
+-- ==========================================
+-- SQL AGGREGATION & REPORTING
+-- ==========================================
+
+-- 89. Count total orders
+
+SELECT
+    COUNT(*) AS TotalOrders
+FROM Orders;
+
+-- 90. Count orders for each customer
+
+SELECT
+    CustomerID,
+    COUNT(*) AS OrderCount
+FROM Orders
+GROUP BY CustomerID;
+
+-- 91. Display customer names and order count
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    COUNT(o.OrderID) AS OrderCount
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName;
+
+-- 92. Find customers with more than one order
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    COUNT(o.OrderID) AS OrderCount
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName
+HAVING COUNT(o.OrderID) > 1;
+
+-- 93. Find total quantity ordered
+
+SELECT
+    SUM(Quantity) AS TotalQuantity
+FROM Orders;
+
+-- 94. Find average order quantity
+
+SELECT
+    AVG(Quantity) AS AverageQuantity
+FROM Orders;
+
+-- 95. Find total quantity ordered for each product
+
+SELECT
+    p.ProductID,
+    p.ProductName,
+    SUM(o.Quantity) AS TotalQuantity
+FROM Products p
+LEFT JOIN Orders o
+    ON p.ProductID = o.ProductID
+GROUP BY
+    p.ProductID,
+    p.ProductName;
+
+-- 96. Find the highest-priced product
+
+SELECT
+    ProductName,
+    Price
+FROM Products
+WHERE Price = (
+    SELECT MAX(Price)
+    FROM Products
+);
+
+-- 97. Find average salary by department
+
+SELECT
+    Department,
+    AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY Department;
+
+-- 98. Find departments with average salary above 60000
+
+SELECT
+    Department,
+    AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) > 60000;
+
+-- 99. Find customers with at least 2 orders
+-- and calculate their total quantity ordered
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    COUNT(o.OrderID) AS OrderCount,
+    SUM(o.Quantity) AS TotalQuantity
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName
+HAVING COUNT(o.OrderID) >= 2;
+
+-- 100. Find the customer with the highest total quantity ordered
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    SUM(o.Quantity) AS TotalQuantity
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName
+ORDER BY TotalQuantity DESC
+LIMIT 1;
+
+-- ==========================================
+-- ORDER CALCULATION VALIDATION
+-- ==========================================
+
+-- 101. Calculate expected order total
+
+SELECT
+    o.OrderID,
+    o.ProductID,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 102. Display complete order calculation details
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 103. Find high-value orders
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE p.Price * o.Quantity > 10000;
+
+-- 104. Investigate a specific order
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    o.OrderDate,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE o.OrderID = 1001;
 
 -- ==========================================
 -- End of Practice Queries
