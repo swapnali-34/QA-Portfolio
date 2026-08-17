@@ -51,14 +51,6 @@ By completing this section, I aim to:
 - UPDATE
 - DELETE
 
-## Aggregate Functions
-
-- COUNT()
-- SUM()
-- AVG()
-- MIN()
-- MAX()
-
 ## Data Grouping
 
 - GROUP BY
@@ -68,6 +60,51 @@ By completing this section, I aim to:
 
 - String Functions
 - Date Functions
+
+## SQL JOINs
+
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+- FULL OUTER JOIN
+- Multi-table JOINs
+- JOIN Conditions
+- Table Aliases
+- Finding Unmatched Records
+- Finding Orphan Records
+
+## Subqueries
+
+- Subqueries
+- IN with Subqueries
+- NOT EXISTS
+- Subquery-based Validation
+
+## SQL Data Validation
+
+- CASE Statements
+- COALESCE()
+- NULLIF()
+- PASS/FAIL Validation
+- Business Rule Validation
+- Mandatory Field Validation
+- Numeric Field Validation
+- Date Validation
+- Data Quality Checks
+- Duplicate Detection
+- Orphan Record Detection
+
+## SQL Aggregation & Reporting
+
+- COUNT()
+- SUM()
+- AVG()
+- MIN()
+- MAX()
+- GROUP BY
+- HAVING
+- Aggregate-based Validation
+- SQL Reporting
 
 ---
 
@@ -106,7 +143,7 @@ Contains beginner-friendly notes covering:
 
 ## 02-SQL-Queries.md
 
-Contains explanations and examples for commonly used SQL commands including:
+Contains explanations and examples for commonly used SQL commands and concepts including:
 
 - INSERT
 - UPDATE
@@ -117,6 +154,13 @@ Contains explanations and examples for commonly used SQL commands including:
 - BETWEEN
 - LIMIT
 - Aggregate Functions
+- GROUP BY
+- HAVING
+- JOINs
+- Subqueries
+- CASE
+- NULL Handling
+- Date and String Functions
 
 Each topic includes:
 
@@ -138,6 +182,7 @@ Contains SQL queries and QA validation exercises covering:
 - Aggregate Functions
 - GROUP BY and HAVING
 - JOINs
+- Multi-table JOINs
 - Subqueries
 - NULL and Empty Value Checks
 - Duplicate Record Detection
@@ -146,6 +191,10 @@ Contains SQL queries and QA validation exercises covering:
 - CASE-based Validation
 - Data Quality Checks
 - Business Rule Validation
+- PASS/FAIL Validation
+- Customer and Order Analysis
+- Product and Order Analysis
+- SQL Aggregation and Reporting
 
 ---
 
@@ -162,12 +211,6 @@ The document includes:
 - QA use cases
 
 The practice queries in **Practice-Queries.sql** are based on this sample database.
-
----
-
-## Screenshots
-
-This folder will contain screenshots of SQL query execution and outputs as I continue practicing SQL.
 
 ---
 
@@ -197,7 +240,7 @@ The SQL concepts in this folder can be applied to:
 
 # Future Learning
 
-The following SQL topics will be added as I continue my learning journey:
+The following SQL topics will be covered as I continue developing my SQL skills:
 
 - UNION
 - Views
@@ -205,7 +248,8 @@ The following SQL topics will be added as I continue my learning journey:
 - Stored Procedures
 - Constraints
 - Window Functions
-- SQL Interview Questions
+- Advanced SQL Queries
+- Advanced SQL Interview Questions
 
 ---
 
