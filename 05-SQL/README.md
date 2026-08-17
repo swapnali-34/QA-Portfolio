@@ -212,14 +212,18 @@ The following SQL topics will be added as I continue my learning journey:
 # Repository Status
 
 | Topic | Status |
-|--------|:------:|
+|---|---|
 | SQL Basics | ✅ Completed |
 | SQL Queries | ✅ Completed |
 | Practice Queries | ✅ Completed |
 | Sample Database | ✅ Completed |
 | SQL Joins | ✅ Completed |
-| Advanced SQL | ⏳ Planned |
-| SQL Interview Questions | ⏳ Planned |
+| SQL Subqueries | ✅ Completed |
+| SQL Data Validation | ✅ Completed |
+| SQL Data Quality Checks | ✅ Completed |
+| SQL Aggregations & Reporting | ✅ Completed |
+| Advanced SQL | 🔄 In Progress |
+| SQL Interview Questions | 🔄 In Progress |
 
 ---
 
