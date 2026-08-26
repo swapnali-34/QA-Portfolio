@@ -961,5 +961,50 @@ JOIN Products p
 WHERE o.OrderID = 1001;
 
 -- ==========================================
+-- COMPLETE E-COMMERCE VALIDATION
+-- ==========================================
+
+-- 105. E-Commerce Order Quality Report
+
+SELECT
+    o.OrderID,
+    o.CustomerID,
+    o.ProductID,
+    o.Quantity,
+    o.OrderDate,
+    p.Price * o.Quantity AS ExpectedTotal,
+
+    CASE
+        -- Customer validation
+        WHEN c.CustomerID IS NULL THEN 'FAIL'
+
+        -- Product validation
+        WHEN p.ProductID IS NULL THEN 'FAIL'
+
+        -- Product price validation
+        WHEN p.Price <= 0 OR p.Price IS NULL THEN 'FAIL'
+
+        -- Quantity validation
+        WHEN o.Quantity <= 0 OR o.Quantity IS NULL THEN 'FAIL'
+
+        -- Order date validation
+        WHEN o.OrderDate > CURRENT_DATE THEN 'FAIL'
+
+        -- Order total validation
+        WHEN (p.Price * o.Quantity) <= 0
+             OR (p.Price * o.Quantity) IS NULL THEN 'FAIL'
+
+        ELSE 'PASS'
+    END AS ValidationResult
+
+FROM Orders o
+
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- ==========================================
 -- End of Practice Queries
 -- ==========================================
