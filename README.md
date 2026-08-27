@@ -90,6 +90,24 @@ QA-Portfolio
 - Test Metrics
 - Test Summary Report
 
+### SQL & Database Testing
+
+- SQL Queries
+- SELECT / INSERT / UPDATE / DELETE
+- Filtering & Sorting
+- Aggregate Functions
+- GROUP BY / HAVING
+- INNER JOIN / LEFT JOIN
+- Subqueries
+- Correlated Subqueries
+- EXISTS / NOT EXISTS
+- NULL Validation
+- Duplicate Detection
+- Orphan Record Detection
+- Business Rule Validation
+- Database Validation
+- PASS/FAIL Validation Reports
+
 ### Tools
 
 - Git
@@ -155,15 +173,73 @@ Topics include:
 
 ---
 
+### SQL Database Testing & Validation
+
+**Application:** A practical SQL testing project using a sample e-commerce database (`CompanyDB`).
+
+**Description** 
+
+The project focuses on validating backend data against business requirements and identifying data-quality issues.
+
+#### Database Tables
+
+- Employees
+- Departments
+- Users
+- Customers
+- Products
+- Orders
+
+#### SQL Concepts Practiced
+
+- SELECT
+- WHERE
+- ORDER BY
+- DISTINCT
+- LIKE
+- IN
+- BETWEEN
+- Aggregate Functions
+- GROUP BY
+- HAVING
+- INNER JOIN
+- LEFT JOIN
+- Subqueries
+- Correlated Subqueries
+- EXISTS
+- NOT EXISTS
+- CASE
+- NULL Validation
+- Duplicate Detection
+- Orphan Record Detection
+- Business Rule Validation
+
+#### QA Validation Activities
+
+- Customer email validation
+- Duplicate email detection
+- Product price validation
+- Order quantity validation
+- Future order-date validation
+- Customer-order relationship validation
+- Product-order relationship validation
+- Customers without orders
+- Products never ordered
+- PASS/FAIL database validation reports
+- Expected order-total validation
+
+---
+
 ## Portfolio Statistics
 
-| Metric | Count |
-|---------|------:|
+| Area | Highlights |
+|------|------------|
 | End-to-End Projects | 2 |
-| Test Scenarios | 50+ |
-| Detailed Test Cases | 70+ |
-| Bug Reports | 10+ |
-| QA Documents | 20+ |
+| Manual Testing | Smoke, Functional, Exploratory, E2E |
+| Test Design | EP, BVA, Decision Table, State Transition |
+| SQL | Queries, JOINs, Subqueries, Database Validation |
+| QA Documentation | Test Plans, Test Cases, RTM, Metrics, Reports |
+| Defect Management | Bug Reports & Defect Documentation |
 
 ---
 
@@ -180,6 +256,12 @@ Topics include:
 - Requirement Traceability Matrix (RTM)
 - Test Metrics
 - Test Summary Reports
+- SQL Fundamentals
+- SQL Queries
+- SQL JOINs
+- SQL Subqueries
+- SQL Database Validation
+- QA Business Rule Validation
 - OrangeHRM Testing Project
 - SauceDemo End-to-End Testing Project
 
