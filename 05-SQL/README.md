@@ -2,23 +2,30 @@
 
 ## Overview
 
-This folder contains my SQL learning notes, practice queries, and sample database created as part of my QA Analyst learning journey.
+This folder contains my SQL learning notes, practice queries, QA validation queries, and sample database created as part of my Software QA learning journey.
 
-SQL is an essential skill for QA Engineers because it helps validate backend data, verify application functionality, troubleshoot defects, and support API testing. This section documents my progress from SQL fundamentals to advanced query writing using practical examples.
+SQL is an essential skill for QA Engineers because it helps validate backend data, verify application functionality, investigate defects, verify relationships between tables, and compare application data with database records.
+
+The SQL practice in this folder focuses on practical database validation scenarios commonly encountered in Manual QA and Software Testing.
 
 ---
 
 # Learning Objectives
 
-The purpose of this section is to develop SQL skills commonly required for Manual QA and Software Testing roles.
+The purpose of this section is to develop practical SQL skills required for Manual QA and Software Testing roles.
 
-By completing this section, I aim to:
+By completing this section, I have practiced how to:
 
 - Understand relational database concepts
-- Write SQL queries to retrieve and validate data
-- Perform backend data verification
-- Practice SQL commands commonly used in QA projects
-- Prepare for SQL interview questions
+- Write SQL queries to retrieve and filter data
+- Validate backend data
+- Verify relationships between database tables
+- Identify invalid and missing records
+- Detect duplicate and orphan records
+- Validate business rules using SQL
+- Perform data-quality checks
+- Compare application/UI data with database data
+- Use SQL for QA interview preparation
 
 ---
 
@@ -32,10 +39,12 @@ By completing this section, I aim to:
 - Primary Key
 - Foreign Key
 - NULL Values
+- Data Integrity
+- Data Consistency
+- Constraints
 
 ## SQL Basics
 
-- SQL Syntax
 - SELECT
 - WHERE
 - ORDER BY
@@ -50,61 +59,86 @@ By completing this section, I aim to:
 - INSERT
 - UPDATE
 - DELETE
+- TRUNCATE
+- Transactions
+- COMMIT
+- ROLLBACK
+- ACID Properties
 
-## Data Grouping
-
-- GROUP BY
-- HAVING
-
-## SQL Functions
-
-- String Functions
-- Date Functions
-
-## SQL JOINs
-
-- INNER JOIN
-- LEFT JOIN
-- RIGHT JOIN
-- FULL OUTER JOIN
-- Multi-table JOINs
-- JOIN Conditions
-- Table Aliases
-- Finding Unmatched Records
-- Finding Orphan Records
-
-## Subqueries
-
-- Subqueries
-- IN with Subqueries
-- NOT EXISTS
-- Subquery-based Validation
-
-## SQL Data Validation
-
-- CASE Statements
-- COALESCE()
-- NULLIF()
-- PASS/FAIL Validation
-- Business Rule Validation
-- Mandatory Field Validation
-- Numeric Field Validation
-- Date Validation
-- Data Quality Checks
-- Duplicate Detection
-- Orphan Record Detection
-
-## SQL Aggregation & Reporting
+## Aggregate Functions
 
 - COUNT()
 - SUM()
 - AVG()
 - MIN()
 - MAX()
+
+## Grouping and Filtering
+
 - GROUP BY
 - HAVING
-- Aggregate-based Validation
-- SQL Reporting
+- WHERE vs HAVING
+
+## JOINs
+
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+- FULL OUTER JOIN
+- Multi-table JOINs
+- Table Aliases
+- JOIN Conditions
+- Finding Unmatched Records
+- Finding Orphan Records
+
+## Subqueries
+
+- Basic Subqueries
+- Subqueries with IN
+- Subqueries with NOT IN
+- EXISTS
+- NOT EXISTS
+- Correlated Subqueries
+- JOIN vs Subquery
+
+## SQL Functions
+
+- CASE
+- COALESCE()
+- NULLIF()
+- String Functions
+- UPPER()
+- LOWER()
+- LENGTH()
+- TRIM()
+- Date Functions
+- CURRENT_DATE
+
+## Data Validation
+
+- NULL Validation
+- Empty Value Validation
+- Mandatory Field Validation
+- Numeric Validation
+- Date Validation
+- Duplicate Detection
+- Relationship Validation
+- Business Rule Validation
+- PASS/FAIL Validation Reports
+- Data Quality Checks
+
+## Advanced SQL
+
+- UNION
+- UNION ALL
+- Window Functions
+- ROW_NUMBER()
+- RANK()
+- DENSE_RANK()
+- PARTITION BY
+- Department-level calculations
+- Salary ranking
+- Latest-record identification
 
 ---
 
@@ -143,8 +177,10 @@ Contains beginner-friendly notes covering:
 
 ## 02-SQL-Queries.md
 
-Contains explanations and examples for commonly used SQL commands and concepts including:
+Contains explanations and examples for commonly used SQL commands and concepts, including:
 
+- SELECT
+- WHERE
 - INSERT
 - UPDATE
 - DELETE
@@ -159,42 +195,41 @@ Contains explanations and examples for commonly used SQL commands and concepts i
 - JOINs
 - Subqueries
 - CASE
-- NULL Handling
-- Date and String Functions
+- SQL Functions
 
-Each topic includes:
-
-- Definition
-- Syntax
-- Example
-- QA Use Case
+Each topic includes practical examples and QA-oriented use cases.
 
 ---
 
 ## Practice-Queries.sql
 
-Contains SQL queries and QA validation exercises covering:
+Contains SQL queries and practical exercises covering:
 
 - SELECT and WHERE
 - ORDER BY
 - DISTINCT
 - LIKE, IN and BETWEEN
+- INSERT, UPDATE and DELETE
 - Aggregate Functions
 - GROUP BY and HAVING
 - JOINs
 - Multi-table JOINs
 - Subqueries
+- EXISTS and NOT EXISTS
 - NULL and Empty Value Checks
 - Duplicate Record Detection
+- Orphan Record Detection
 - Date Validation
 - String Functions
 - CASE-based Validation
+- COALESCE()
 - Data Quality Checks
 - Business Rule Validation
-- PASS/FAIL Validation
-- Customer and Order Analysis
-- Product and Order Analysis
-- SQL Aggregation and Reporting
+- Window Functions
+- ROW_NUMBER()
+- RANK()
+- DENSE_RANK()
+- PARTITION BY
 
 ---
 
@@ -214,42 +249,78 @@ The practice queries in **Practice-Queries.sql** are based on this sample databa
 
 ---
 
+## SQL-Validation-Queries.sql
+
+Contains practical QA validation queries based on business requirements.
+
+Examples include:
+
+- Customer email validation
+- Duplicate email detection
+- Product price validation
+- Order quantity validation
+- Future order-date validation
+- Customer relationship validation
+- Product relationship validation
+- Order total validation
+- Multi-rule PASS/FAIL validation
+
+---
+
+## SQL-Validation-Report.md
+
+Documents SQL-based QA validation scenarios and demonstrates how SQL can be used to identify valid and invalid records.
+
+---
+
 # QA Use Cases
 
-The SQL concepts in this folder can be applied to:
+SQL skills developed in this section can be applied to:
 
-- Verifying user registration data
-- Validating employee records
-- Checking product information
-- Verifying customer records
-- Validating order details
-- Comparing frontend data with backend database values
-- Supporting API response validation
+- Verify user registration data
+- Validate employee records
+- Check product information
+- Verify customer records
+- Validate order details
+- Find duplicate records
+- Find missing records
+- Find orphan records
+- Validate foreign-key relationships
+- Verify business rules
+- Compare frontend data with backend database values
+- Support API response validation
+- Investigate defects reported during testing
 
 ---
 
 # Tools Used
 
-- MySQL (Learning)
-- SQL Syntax
+- MySQL
+- SQL
 - Git
 - GitHub
 - Markdown
 
 ---
 
-# Future Learning
+# SQL QA Skills Demonstrated
 
-The following SQL topics will be covered as I continue developing my SQL skills:
+This section demonstrates my ability to:
 
-- UNION
-- Views
-- Indexes
-- Stored Procedures
-- Constraints
-- Window Functions
-- Advanced SQL Queries
-- Advanced SQL Interview Questions
+- Retrieve and filter database records
+- Join multiple tables
+- Use aggregate functions
+- Group and filter data
+- Write subqueries
+- Use EXISTS and NOT EXISTS
+- Validate NULL and empty values
+- Detect duplicate and orphan records
+- Apply business rules using CASE
+- Create PASS/FAIL validation results
+- Perform date and numeric validation
+- Calculate expected values
+- Use window functions for advanced data analysis
+- Validate application data against backend records
 
 ---
 
@@ -259,18 +330,38 @@ The following SQL topics will be covered as I continue developing my SQL skills:
 |---|---|
 | SQL Basics | ✅ Completed |
 | SQL Queries | ✅ Completed |
-| Practice Queries | ✅ Completed |
-| Sample Database | ✅ Completed |
-| SQL Joins | ✅ Completed |
-| SQL Subqueries | ✅ Completed |
-| SQL Data Validation | ✅ Completed |
-| SQL Data Quality Checks | ✅ Completed |
+| Data Manipulation | ✅ Completed |
+| Aggregate Functions | ✅ Completed |
+| GROUP BY & HAVING | ✅ Completed |
+| SQL JOINs | ✅ Completed |
+| Subqueries | ✅ Completed |
+| EXISTS / NOT EXISTS | ✅ Completed |
+| SQL Functions | ✅ Completed |
+| CASE Validation | ✅ Completed |
+| Data Validation | ✅ Completed |
+| Data Quality Checks | ✅ Completed |
+| Business Rule Validation | ✅ Completed |
 | SQL Aggregations & Reporting | ✅ Completed |
-| Advanced SQL | 🔄 In Progress |
-| SQL Interview Questions | 🔄 In Progress |
+| Window Functions | ✅ Completed |
+| SQL QA Practice | ✅ Completed |
+| SQL Interview Preparation | ✅ Completed |
 
 ---
 
-# Learning Progress
+# SQL Learning Status
 
-This SQL section is continuously updated as I learn new database concepts and practice real-world SQL queries commonly used in Software Testing and Manual QA projects.
+**SQL learning phase completed for Manual QA preparation.**
+
+The SQL section has focused on practical concepts required for database validation and QA testing rather than attempting to cover every advanced database-development topic.
+
+Future SQL topics may be explored as required during API testing, automation testing, or real-world QA projects.
+
+---
+
+# Career Objective
+
+I am seeking an opportunity as a Manual QA Analyst / QA Analyst where I can apply my knowledge of manual testing, SQL, API testing, and QA documentation while continuing to develop my skills in software quality assurance.
+
+---
+
+*This SQL section is part of my continuous QA learning journey and demonstrates practical SQL knowledge developed through hands-on exercises and QA-focused validation scenarios.*
