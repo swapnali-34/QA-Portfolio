@@ -260,6 +260,7 @@ The project focuses on validating backend data against business requirements and
 - SQL Queries
 - SQL JOINs
 - SQL Subqueries
+- SQL for QA
 - SQL Database Validation
 - QA Business Rule Validation
 - OrangeHRM Testing Project
@@ -267,7 +268,6 @@ The project focuses on validating backend data against business requirements and
 
 ### Currently Learning
 
-- Advanced SQL for QA
 - API Testing with Postman
 - Jira
 - Agile & Scrum
