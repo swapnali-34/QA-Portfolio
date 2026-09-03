@@ -9,11 +9,9 @@ The focus is on understanding REST APIs, HTTP methods, request/response validati
 ## 🛠️ Tools Used
 
 - Postman
-- REST APIs
-- JSON
-- JavaScript for Postman test scripts
-- Git & GitHub
-- JSONPlaceholder API for practice
+- Git
+- GitHub
+- JSONPlaceholder API
 
 ---
 
