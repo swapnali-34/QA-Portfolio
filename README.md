@@ -1,25 +1,27 @@
 # QA Portfolio
 
-Welcome to my **Manual Software Testing Portfolio**.
+Welcome to my **Software QA Testing Portfolio**.
 
-I'm **Swapnali Shitole**, an aspiring **Software QA Analyst** passionate about software quality and continuous learning.
+I'm **Swapnali Shitole**, an aspiring **Software QA Analyst** passionate about software quality, testing, problem-solving, and continuous learning.
 
-This repository showcases my practical work in Manual Testing, including complete testing projects, QA documentation, and learning notes. Every artifact in this repository has been created to simulate real-world software testing practices and demonstrate my ability to plan, design, execute, and document software testing activities.
+This repository showcases my practical work in **Manual Testing, SQL & Database Testing, API Testing, and QA Documentation**. The projects and artifacts are designed to simulate real-world software testing practices and demonstrate my ability to understand requirements, design test cases, execute tests, identify defects, validate application data, and document testing activities professionally.
 
 ---
 
 ## About Me
 
-I am building my career in Software Quality Assurance by gaining hands-on experience through practical projects and structured learning.
+I am building my career in Software Quality Assurance through structured learning and hands-on practical projects.
 
-My goal is to become a professional QA Engineer with strong skills in:
+My goal is to become a professional **QA Analyst / Software Tester** with strong skills in:
 
 - Manual Testing
 - Test Design
 - Defect Reporting
 - API Testing
-- SQL
+- SQL & Database Testing
 - Test Automation
+
+I focus on understanding **why a test is required**, not just executing test cases.
 
 ---
 
@@ -107,6 +109,23 @@ QA-Portfolio
 - Business Rule Validation
 - Database Validation
 - PASS/FAIL Validation Reports
+
+### API Testing
+
+- API Fundamentals
+- REST APIs
+- HTTP Methods
+- HTTP Status Codes
+- Request & Response Validation
+- JSON Validation
+- Postman
+- Postman Variables
+- Environment Variables
+- API Test Scripts
+- Response Validation
+- Data Type Validation
+- Negative API Testing
+- API Chaining
 
 ### Tools
 
@@ -238,6 +257,7 @@ The project focuses on validating backend data against business requirements and
 | Manual Testing | Smoke, Functional, Exploratory, E2E |
 | Test Design | EP, BVA, Decision Table, State Transition |
 | SQL | Queries, JOINs, Subqueries, Database Validation |
+| API Testing | REST APIs, Postman, JSON, Validation, API Chaining |
 | QA Documentation | Test Plans, Test Cases, RTM, Metrics, Reports |
 | Defect Management | Bug Reports & Defect Documentation |
 
@@ -300,12 +320,22 @@ This portfolio demonstrates my ability to:
 - Identify duplicate, NULL, orphan, and invalid records
 - Validate relationships between database tables
 - Create SQL-based PASS/FAIL validation reports
+- Understand REST API fundamentals
+- Test APIs using Postman
+- Validate API status codes and response bodies
+- Validate JSON structure and data types
+- Use Postman variables and environment variables
+- Write API test scripts
+- Perform negative API testing
+- Implement API chaining
 
 ---
 
 ## Career Objective
 
-I am seeking an opportunity as a QA Analyst / Manual QA Tester where I can apply my knowledge of manual testing, test design, defect reporting, SQL, and database validation while continuing to grow as a software quality professional.
+I am seeking an opportunity as a QA Analyst / Manual QA Tester where I can apply my knowledge of manual testing, test design, defect reporting, SQL, database validation and API Testing while continuing to grow as a software quality professional.
+
+I am particularly interested in opportunities where I can contribute to **quality-focused testing, learn from experienced QA professionals, and gradually expand into test automation**.
 
 ---
 
