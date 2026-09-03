@@ -4,7 +4,7 @@ HTTP status codes indicate the result of an API request.
 
 ---
 
-## 200 — Success
+## 2xx — Success
 
 ### 200 OK
 
@@ -54,7 +54,7 @@ DELETE /users/1
 
 ---
 
-## 400 — Client Errors
+## 4xx — Client Errors
 
 ### 400 Bad Request
 
@@ -86,7 +86,7 @@ Expected:
 
 ---
 
-## 500 — Server Errors
+## 5xx — Server Errors
 
 ### 500 Internal Server Error
 
@@ -118,7 +118,7 @@ PASS
 
 Therefore:
 
-> A 400 status code is not automatically a test failure.
+> A 4xx status code is not automatically a test failure.
 
 The test passes when the actual behavior matches the expected behavior.
 
