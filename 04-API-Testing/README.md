@@ -75,10 +75,12 @@ The following public API is used for learning and practice:
 
 Example endpoints:
 
+```text
 GET /users/1
 GET /users/5
 GET /posts?userId=2
 POST /users
+```
 
 ---
 
@@ -205,7 +207,7 @@ A complete API Testing project will be added under:
 
 ```text
 10-API-Project/
-
+```
 ---
 
 ## 🎯 Objective
