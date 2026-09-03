@@ -75,12 +75,10 @@ The following public API is used for learning and practice:
 
 Example endpoints:
 
-```text
 GET /users/1
 GET /users/5
 GET /posts?userId=2
 POST /users
-```
 
 ---
 
