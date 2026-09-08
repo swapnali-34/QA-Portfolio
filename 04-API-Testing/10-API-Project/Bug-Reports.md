@@ -33,7 +33,7 @@
 | Module | User Retrieval |
 | Endpoint | `GET /users/{id}` |
 | Method | GET |
-| Environment | QA |
+| Environment | QA-API-Environment |
 | Severity | High |
 | Priority | High |
 | Status | Open |
@@ -119,7 +119,7 @@ Ensure that the API serializes the `id` field as a numeric value instead of a st
 | Module | User Creation |
 | Endpoint | `POST /users` |
 | Method | POST |
-| Environment | QA |
+| Environment | QA-API-Environment |
 | Severity | Medium |
 | Priority | High |
 | Status | Open |
@@ -218,7 +218,7 @@ Add server-side email validation and reject invalid email formats with an approp
 | Module | User Update |
 | Endpoint | `PATCH /users/{id}` |
 | Method | PATCH |
-| Environment | QA |
+| Environment | QA-API-Environment |
 | Severity | High |
 | Priority | High |
 | Status | Open |
