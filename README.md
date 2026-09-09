@@ -211,10 +211,23 @@ Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL ·
 QA-Portfolio
 │
 ├── 01-Manual-Testing
+│   ├── README.md
+│   ├── 01-Login-Form-Testing.md
+│   ├── 02-Registration-Form-Testing.md
+│   ├── 03-Search-Functionality-Testing.md
+│   └── 04-Testing-Checklists.md
 ├── 02-Test-Cases
 │   └── Google-Login
+│       ├── README.md
+│       ├── Google-Login-Test-Scenarios.md
+│       ├── Google-Login-Test-Cases.md
+│       ├── Google-Login-Test-Scenarios.xlsx
+│       └── Google-Login-Test-Cases.xlsx
 ├── 03-Bug-Reports
 │   └── Shopping-Website
+│       ├── README.md
+│       ├── Shopping-Website-Bug-Reports.md
+│       └── Shopping-Website-Bug-Reports.xlsx
 ├── 04-API-Testing
 │   ├── README.md
 │   ├── 01-API-Fundamentals.md
