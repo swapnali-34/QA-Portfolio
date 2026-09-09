@@ -4,6 +4,10 @@ A practical API testing project created to demonstrate **Software QA / API Testi
 
 The project focuses on functional testing, negative testing, JSON response validation, data type validation, HTTP status-code validation, test case design, defect reporting, and test execution reporting.
 
+> Part of [`04-API-Testing`](../) — see the parent folder for API
+> fundamentals, HTTP methods, status codes, JSON, Postman basics, and API
+> validation theory that this project applies practically.
+
 ---
 
 ## 📌 Project Overview
@@ -253,7 +257,8 @@ The project validates expected HTTP status codes such as:
 - `201 Created`
 - `404 Not Found`
 
-Status codes are not evaluated in isolation. A successful API test requires the actual response to match the expected behavior defined by the API contract.
+Status codes are not evaluated in isolation. A successful API test requires 
+the actual response to match the expected behavior defined by the API contract.
 
 ### JSON Validation
 
@@ -463,7 +468,8 @@ Contains: executive summary, testing objectives, scope, test coverage, execution
 
 ## ⚠️ JSONPlaceholder Limitations
 
-JSONPlaceholder is a mock API intended for testing and learning. Therefore, its behavior should not be interpreted as equivalent to a production backend.
+JSONPlaceholder is a mock API intended for testing and learning. 
+Therefore, its behavior should not be interpreted as equivalent to a production backend.
 
 Important limitations include:
 
@@ -481,7 +487,8 @@ These limitations are explicitly considered while evaluating the test results.
 
 ## 🔐 Authentication
 
-Authentication testing is not included in the actual JSONPlaceholder project execution because the API does not provide real authentication.
+Authentication testing is not included in the actual JSONPlaceholder project execution 
+because the API does not provide real authentication.
 
 Authentication concepts were practiced separately using scenarios such as:
 
