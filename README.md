@@ -36,6 +36,23 @@ QA-Portfolio
 ├── 03-Bug-Reports
 │   └── Shopping-Website
 ├── 04-API-Testing
+│   ├── README.md
+│   ├── 01-API-Fundamentals.md
+│   ├── 02-HTTP-Methods.md
+│   ├── 03-HTTP-Status-Codes.md
+│   ├── 04-Request-Response.md
+│   ├── 05-JSON.md
+│   ├── 06-Postman-Basics.md
+│   ├── 07-API-Test-Cases.md
+│   ├── 08-API-Test-Scripts.md
+│   ├── 09-API-Validation.md
+│   └── 10-API-Project
+│       ├── README.md
+│       ├── Test-Scenarios.md
+│       ├── Test-Cases.md
+│       ├── Bug-Reports.md
+│       ├── Test-Execution-Report.md
+│       └── Test-Summary-Report.md
 ├── 05-SQL
 │   ├── README.md
 │   ├── 01-SQL-Basics.md
@@ -49,6 +66,12 @@ QA-Portfolio
 │   ├── SauceDemo-Testing
 │   └── Test-Design-Techniques
 ├── 07-Notes
+│   ├── 01-Software-Testing-Fundamentals.md
+│   ├── 02-Test-Design-Techniques-Theory.md
+│   ├── 03-Agile-Scrum-for-QA.md
+│   ├── 04-QA-Glossary.md
+│   ├── 05-Tools-Notes-Jira-Postman.md
+│   └── 06-Exploratory-Smoke-Functional-Testing.md
 └── README.md
 ```
 
