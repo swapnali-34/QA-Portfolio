@@ -8,9 +8,13 @@ The exercises included in this project are based on real-world scenarios and sho
 
 This project is part of my **QA Portfolio** and highlights my understanding of fundamental software testing concepts.
 
+> For the underlying theory behind each technique, see
+> [`07-Notes/02-Test-Design-Techniques-Theory.md`](../../07-Notes/02-Test-Design-Techniques-Theory.md).
+> This project applies those concepts to real scenarios below.
+
 ---
 
-# Project Objectives
+## Project Objectives
 
 The objectives of this project are to:
 
@@ -21,7 +25,7 @@ The objectives of this project are to:
 
 ---
 
-# Techniques Covered
+## Techniques Covered
 
 | Technique | Description |
 |-----------|-------------|
@@ -32,7 +36,7 @@ The objectives of this project are to:
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 Test-Design-Techniques/
@@ -46,34 +50,42 @@ Test-Design-Techniques/
 
 ---
 
-# Practical Exercises
+## Practical Exercises
 
-## Exercise 1 – Equivalence Partitioning
+### Exercise 1 – Equivalence Partitioning
+
+📄 [Equivalence-Partitioning.md](./Equivalence-Partitioning.md)
 
 **Scenario:** Age Validation
 
 - Valid Age: **18–60**
 - Created valid and invalid equivalence partitions.
 - Selected representative test data from each partition.
+- **3 test cases** derived (1 valid partition, 2 invalid partitions).
 
 ---
 
-## Exercise 2 – Boundary Value Analysis
+### Exercise 2 – Boundary Value Analysis
+
+📄 [Boundary-Value-Analysis.md](./Boundary-Value-Analysis.md)
 
 **Scenario:** Username Validation
 
 - Username length: **5–20 characters**
 - Created test cases for:
-  - Minimum - 1
+  - Minimum − 1
   - Minimum
   - Minimum + 1
-  - Maximum - 1
+  - Maximum − 1
   - Maximum
   - Maximum + 1
+- **6 test cases** derived.
 
 ---
 
-## Exercise 3 – Decision Table Testing
+### Exercise 3 – Decision Table Testing
+
+📄 [Decision-Table.md](./Decision-Table.md)
 
 **Scenario:** Login Functionality
 
@@ -85,10 +97,13 @@ Conditions tested:
 - Invalid Password
 
 Created a complete Decision Table and derived test cases from each rule.
+**4 test cases** derived (one per rule).
 
 ---
 
-## Exercise 4 – State Transition Testing
+### Exercise 4 – State Transition Testing
+
+📄 [State-Transition.md](./State-Transition.md)
 
 **Scenario:** ATM PIN Validation
 
@@ -100,10 +115,23 @@ States covered:
 - Correct PIN after Account Lock
 
 Created a State Transition Table and State Transition Diagram.
+**4 test cases** derived.
 
 ---
 
-# Learning Outcomes
+## Test Case Summary
+
+| Technique | Test Cases |
+|---|---:|
+| Equivalence Partitioning | 3 |
+| Boundary Value Analysis | 6 |
+| Decision Table Testing | 4 |
+| State Transition Testing | 4 |
+| **Total** | **17** |
+
+---
+
+## Learning Outcomes
 
 After completing this project, I learned how to:
 
@@ -115,7 +143,7 @@ After completing this project, I learned how to:
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
 - Manual Testing
 - Black Box Testing
@@ -128,7 +156,7 @@ After completing this project, I learned how to:
 
 ---
 
-# Author
+## Author
 
 **Swapnali Shitole**
 
@@ -138,6 +166,6 @@ GitHub Portfolio: **QA-Portfolio**
 
 ---
 
-# Conclusion
+## Conclusion
 
 This project demonstrates my practical understanding of the most widely used Black Box Test Design Techniques in Manual Testing. The exercises are designed to reflect real-world testing scenarios and showcase my ability to design structured, efficient, and comprehensive test cases.
