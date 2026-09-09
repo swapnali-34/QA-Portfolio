@@ -24,7 +24,7 @@ The project covers the complete Software Testing Life Cycle (STLC), including te
 
 ---
 
-# Project Objectives
+## Project Objectives
 
 The primary objectives of this project are to:
 
@@ -36,7 +36,7 @@ The primary objectives of this project are to:
 
 ---
 
-# Testing Scope
+## Testing Scope
 
 The following modules were included in testing:
 
@@ -50,7 +50,7 @@ The following modules were included in testing:
 
 ---
 
-# Testing Types Performed
+## Testing Types Performed
 
 - Smoke Testing
 - Functional Testing
@@ -61,7 +61,7 @@ The following modules were included in testing:
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 SauceDemo-Testing/
@@ -79,6 +79,14 @@ SauceDemo-Testing/
 ├── 05-Bug-Reports/
 │   └── Bug-Report.md
 ├── 06-Screenshots/
+│   ├── Login-Page.png
+│   ├── Inventory-Page.png
+│   ├── Shopping-Cart.png
+│   ├── Checkout-Page.png
+│   ├── Checkout-Step-1.png
+│   ├── Checkout-Step-2.png
+│   ├── Required-Field-Validation.png
+│   └── Logout-Page.png
 ├── 07-Test-Data/
 │   └── Test-Data.md
 ├── 08-RTM/
@@ -91,7 +99,41 @@ SauceDemo-Testing/
 
 ---
 
-# Deliverables
+## Documentation
+
+| Folder | Contents |
+|---|---|
+| [01-Test-Plan](./01-Test-Plan) | Test plan: scope, approach, and objectives |
+| [02-Test-Scenarios](./02-Test-Scenarios) | High-level end-to-end test scenarios |
+| [03-Test-Cases](./03-Test-Cases) | Detailed step-by-step test cases |
+| [04-Test-Execution](./04-Test-Execution) | Execution report and results summary |
+| [05-Bug-Reports](./05-Bug-Reports) | Defects logged during testing |
+| [06-Screenshots](./06-Screenshots) | Screenshots captured during test execution |
+| [07-Test-Data](./07-Test-Data) | Test data used across test cases |
+| [08-RTM](./08-RTM) | Requirement Traceability Matrix mapping requirements to test cases |
+| [09-Test-Metrics](./09-Test-Metrics) | Test coverage and execution metrics |
+| [10-Test-Summary](./10-Test-Summary) | Final test summary report |
+
+---
+
+## Screenshots
+
+A few captures from test execution — full set (8 screenshots) available in [06-Screenshots](./06-Screenshots).
+
+<p>
+  <img src="./06-Screenshots/Login-Page.png" alt="Login Page" width="280">
+  <img src="./06-Screenshots/Inventory-Page.png" alt="Inventory Page" width="280">
+  <img src="./06-Screenshots/Shopping-Cart.png" alt="Shopping Cart" width="280">
+</p>
+<p>
+  <img src="./06-Screenshots/Checkout-Step-1.png" alt="Checkout Step 1" width="280">
+  <img src="./06-Screenshots/Checkout-Page.png" alt="Checkout Page" width="280">
+  <img src="./06-Screenshots/Logout-Page.png" alt="Logout Page" width="280">
+</p>
+
+---
+
+## Deliverables
 
 The project includes the following QA documents:
 
@@ -109,7 +151,7 @@ The project includes the following QA documents:
 
 ---
 
-# Test Execution Summary
+## Test Execution Summary
 
 | Metric | Result |
 |--------|-------:|
@@ -124,9 +166,14 @@ The project includes the following QA documents:
 | Pass Rate | 100% |
 | Requirement Coverage | 100% |
 
+> **Note:** [`05-Bug-Reports/Bug-Report.md`](./05-Bug-Reports) contains a
+> practice bug report demonstrating defect-documentation format and is not
+> reflected in the Defects Logged count above, which reflects actual
+> execution results against this application.
+
 ---
 
-# Test Environment
+## Test Environment
 
 | Item | Details |
 |------|---------|
@@ -137,7 +184,7 @@ The project includes the following QA documents:
 
 ---
 
-# Tools Used
+## Tools Used
 
 - Google Chrome
 - GitHub
@@ -146,7 +193,7 @@ The project includes the following QA documents:
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
 This project demonstrates practical experience with:
 
@@ -167,7 +214,7 @@ This project demonstrates practical experience with:
 
 ---
 
-# Key Learning Outcomes
+## Key Learning Outcomes
 
 Through this project, I gained hands-on experience in:
 
@@ -181,7 +228,7 @@ Through this project, I gained hands-on experience in:
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 Potential enhancements for this project include:
 
@@ -195,7 +242,7 @@ Potential enhancements for this project include:
 
 ---
 
-# Conclusion
+## Conclusion
 
 This project represents a complete manual testing workflow following industry best practices. It demonstrates my understanding of the Software Testing Life Cycle (STLC), QA documentation standards, and end-to-end functional testing using a real-world demo application.
 
