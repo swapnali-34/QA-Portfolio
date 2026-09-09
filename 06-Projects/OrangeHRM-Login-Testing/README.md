@@ -182,3 +182,5 @@ Through this project, I learned how to:
 ## Author
 
 **Swapnali Shitole**
+
+Aspiring QA Engineer | Manual Testing | Software Testing | GitHub Portfolio Development
