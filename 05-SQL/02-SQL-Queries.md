@@ -8,13 +8,13 @@ As a QA Engineer, SQL queries help verify whether the application's backend data
 
 ---
 
-# 1. SELECT
+## 1. SELECT
 
-## Definition
+### Definition
 
 The **SELECT** statement is used to retrieve data from one or more database tables.
 
-## Syntax
+### Syntax
 
 ```sql
 SELECT column_name
@@ -28,14 +28,14 @@ SELECT *
 FROM Employees;
 ```
 
-## Example
+### Example
 
 ```sql
 SELECT EmployeeID, EmployeeName
 FROM Employees;
 ```
 
-## QA Use Case
+### QA Use Case
 
 After a user registers on a website, a QA Engineer can verify that the user's details were successfully stored in the database.
 
@@ -47,39 +47,39 @@ WHERE Email = 'john@example.com';
 
 ---
 
-# 2. INSERT
+## 2. INSERT
 
-## Definition
+### Definition
 
 The **INSERT** statement is used to add new records into a table.
 
-## Syntax
+### Syntax
 
 ```sql
 INSERT INTO table_name (column1, column2)
 VALUES (value1, value2);
 ```
 
-## Example
+### Example
 
 ```sql
 INSERT INTO Employees (EmployeeID, EmployeeName, Department)
 VALUES (101, 'John', 'QA');
 ```
 
-## QA Use Case
+### QA Use Case
 
 A tester may insert sample test data into the database before executing test cases.
 
 ---
 
-# 3. UPDATE
+## 3. UPDATE
 
-## Definition
+### Definition
 
 The **UPDATE** statement is used to modify existing records in a table.
 
-## Syntax
+### Syntax
 
 ```sql
 UPDATE table_name
@@ -87,7 +87,7 @@ SET column_name = value
 WHERE condition;
 ```
 
-## Example
+### Example
 
 ```sql
 UPDATE Employees
@@ -95,33 +95,33 @@ SET Department = 'Testing'
 WHERE EmployeeID = 101;
 ```
 
-## QA Use Case
+### QA Use Case
 
 A QA Engineer may update a user's account status to test different application scenarios.
 
 ---
 
-# 4. DELETE
+## 4. DELETE
 
-## Definition
+### Definition
 
 The **DELETE** statement removes existing records from a table.
 
-## Syntax
+### Syntax
 
 ```sql
 DELETE FROM table_name
 WHERE condition;
 ```
 
-## Example
+### Example
 
 ```sql
 DELETE FROM Employees
 WHERE EmployeeID = 101;
 ```
 
-## QA Use Case
+### QA Use Case
 
 Delete test data after completing testing to keep the database clean.
 
@@ -129,46 +129,46 @@ Delete test data after completing testing to keep the database clean.
 
 ---
 
-# 5. DISTINCT
+## 5. DISTINCT
 
-## Definition
+### Definition
 
 The **DISTINCT** keyword returns only unique values from a column.
 
-## Syntax
+### Syntax
 
 ```sql
 SELECT DISTINCT column_name
 FROM table_name;
 ```
 
-## Example
+### Example
 
 ```sql
 SELECT DISTINCT Department
 FROM Employees;
 ```
 
-## QA Use Case
+### QA Use Case
 
 Identify all unique departments, product categories, or user roles stored in the database.
 
 ---
 
-# 6. LIKE
+## 6. LIKE
 
-## Definition
+### Definition
 
 The **LIKE** operator is used to search for data that matches a specific pattern.
 
-### Wildcards
+#### Wildcards
 
 | Wildcard | Meaning |
 |----------|---------|
 | % | Zero or more characters |
 | _ | Exactly one character |
 
-## Syntax
+### Syntax
 
 ```sql
 SELECT *
@@ -176,7 +176,7 @@ FROM table_name
 WHERE column_name LIKE pattern;
 ```
 
-## Example
+### Example
 
 Names starting with 'A'
 
@@ -194,7 +194,7 @@ FROM Employees
 WHERE EmployeeName LIKE '%n';
 ```
 
-## QA Use Case
+### QA Use Case
 
 Search for users whose email addresses belong to a specific domain.
 
@@ -206,13 +206,13 @@ WHERE Email LIKE '%@gmail.com';
 
 ---
 
-# 7. IN
+## 7. IN
 
-## Definition
+### Definition
 
 The **IN** operator checks whether a value matches any value in a given list.
 
-## Syntax
+### Syntax
 
 ```sql
 SELECT *
@@ -220,7 +220,7 @@ FROM table_name
 WHERE column_name IN (value1, value2);
 ```
 
-## Example
+### Example
 
 ```sql
 SELECT *
@@ -228,19 +228,19 @@ FROM Employees
 WHERE Department IN ('QA', 'HR');
 ```
 
-## QA Use Case
+### QA Use Case
 
 Retrieve users who belong to multiple roles without writing multiple OR conditions.
 
 ---
 
-# 8. BETWEEN
+## 8. BETWEEN
 
-## Definition
+### Definition
 
 The **BETWEEN** operator filters records within a specified range.
 
-## Syntax
+### Syntax
 
 ```sql
 SELECT *
@@ -248,7 +248,7 @@ FROM table_name
 WHERE column_name BETWEEN value1 AND value2;
 ```
 
-## Example
+### Example
 
 ```sql
 SELECT *
@@ -256,7 +256,7 @@ FROM Employees
 WHERE Salary BETWEEN 40000 AND 70000;
 ```
 
-## QA Use Case
+### QA Use Case
 
 Verify records created between two dates.
 
@@ -268,15 +268,15 @@ WHERE OrderDate BETWEEN '2026-01-01' AND '2026-01-31';
 
 ---
 
-# 9. LIMIT
+## 9. LIMIT
 
-## Definition
+### Definition
 
 The **LIMIT** clause restricts the number of records returned by a query.
 
 > **Note:** `LIMIT` is commonly used in MySQL and PostgreSQL. SQL Server uses `TOP` instead.
 
-## Syntax
+### Syntax
 
 ```sql
 SELECT *
@@ -284,7 +284,7 @@ FROM table_name
 LIMIT number;
 ```
 
-## Example
+### Example
 
 ```sql
 SELECT *
@@ -292,149 +292,117 @@ FROM Employees
 LIMIT 5;
 ```
 
-## QA Use Case
+### QA Use Case
 
 Retrieve only a few records while verifying data in large tables.
 
 ---
 
-# 10. Aggregate Functions
+## 10. Aggregate Functions
 
 Aggregate functions perform calculations on multiple rows and return a single result.
 
----
+### COUNT()
 
-## COUNT()
-
-### Definition
-
-Returns the total number of records.
-
-### Syntax
+**Definition:** Returns the total number of records.
 
 ```sql
 SELECT COUNT(*)
 FROM table_name;
 ```
 
-### Example
+Example:
 
 ```sql
 SELECT COUNT(*)
 FROM Employees;
 ```
 
-### QA Use Case
-
-Verify the total number of users, orders, or products in the database.
+**QA Use Case:** Verify the total number of users, orders, or products in the database.
 
 ---
 
-## SUM()
+### SUM()
 
-### Definition
-
-Returns the total sum of numeric values.
-
-### Syntax
+**Definition:** Returns the total sum of numeric values.
 
 ```sql
 SELECT SUM(column_name)
 FROM table_name;
 ```
 
-### Example
+Example:
 
 ```sql
 SELECT SUM(Salary)
 FROM Employees;
 ```
 
-### QA Use Case
-
-Verify the total order amount or total invoice value.
+**QA Use Case:** Verify the total order amount or total invoice value.
 
 ---
 
-## AVG()
+### AVG()
 
-### Definition
-
-Returns the average value.
-
-### Syntax
+**Definition:** Returns the average value.
 
 ```sql
 SELECT AVG(column_name)
 FROM table_name;
 ```
 
-### Example
+Example:
 
 ```sql
 SELECT AVG(Salary)
 FROM Employees;
 ```
 
-### QA Use Case
-
-Calculate the average salary or average product price.
+**QA Use Case:** Calculate the average salary or average product price.
 
 ---
 
-## MIN()
+### MIN()
 
-### Definition
-
-Returns the smallest value.
-
-### Syntax
+**Definition:** Returns the smallest value.
 
 ```sql
 SELECT MIN(column_name)
 FROM table_name;
 ```
 
-### Example
+Example:
 
 ```sql
 SELECT MIN(Salary)
 FROM Employees;
 ```
 
-### QA Use Case
-
-Find the lowest price or earliest order date.
+**QA Use Case:** Find the lowest price or earliest order date.
 
 ---
 
-## MAX()
+### MAX()
 
-### Definition
-
-Returns the largest value.
-
-### Syntax
+**Definition:** Returns the largest value.
 
 ```sql
 SELECT MAX(column_name)
 FROM table_name;
 ```
 
-### Example
+Example:
 
 ```sql
 SELECT MAX(Salary)
 FROM Employees;
 ```
 
-### QA Use Case
-
-Find the highest salary, latest order, or maximum product price.
+**QA Use Case:** Find the highest salary, latest order, or maximum product price.
 
 ---
 
-# Summary Table
+## Summary Table
 
 | SQL Command | Purpose | QA Use Case |
 |-------------|---------|-------------|
@@ -455,7 +423,7 @@ Find the highest salary, latest order, or maximum product price.
 
 ---
 
-# Interview Tips
+## Interview Tips
 
 - Use **SELECT** to retrieve data from a database.
 - Use **INSERT** to add new records.
@@ -470,7 +438,7 @@ Find the highest salary, latest order, or maximum product price.
 
 ---
 
-# Key Takeaways
+## Key Takeaways
 
 - SQL queries are essential for validating backend data during software testing.
 - QA Engineers use SQL to verify that application actions are correctly reflected in the database.
