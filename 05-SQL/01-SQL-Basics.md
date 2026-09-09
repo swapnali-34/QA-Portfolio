@@ -2,13 +2,16 @@
 
 ## Introduction
 
-Structured Query Language (SQL) is one of the most important skills for a Software QA Engineer. It helps testers retrieve, verify, and validate data stored in databases. QA engineers use SQL to confirm that application data is stored correctly and matches the expected results.
+Structured Query Language (SQL) is one of the most important skills for a Software QA Engineer. 
+It helps testers retrieve, verify, and validate data stored in databases. 
+QA engineers use SQL to confirm that application data is stored correctly and matches the expected results.
 
 ---
 
-# What is a Database?
+## What is a Database?
 
-A **Database** is an organized collection of data that is stored electronically. It allows users to store, retrieve, update, and manage information efficiently.
+A **Database** is an organized collection of data that is stored electronically. 
+It allows users to store, retrieve, update, and manage information efficiently.
 
 ### Examples
 
@@ -24,7 +27,7 @@ When you create an account on an online shopping website, your details such as n
 
 ---
 
-# What is SQL?
+## What is SQL?
 
 **SQL (Structured Query Language)** is a standard programming language used to communicate with relational databases.
 
@@ -49,7 +52,7 @@ QA Engineers use SQL to:
 
 ---
 
-# DBMS vs RDBMS
+## DBMS vs RDBMS
 
 | DBMS | RDBMS |
 |------|--------|
@@ -75,7 +78,7 @@ QA Engineers use SQL to:
 
 ---
 
-# Primary Key
+## Primary Key
 
 A **Primary Key** is a column that uniquely identifies each record in a table.
 
@@ -97,7 +100,7 @@ Here, **EmployeeID** is the Primary Key.
 
 ---
 
-# Foreign Key
+## Foreign Key
 
 A **Foreign Key** is a column that creates a relationship between two tables.
 
@@ -123,7 +126,7 @@ Here, **CustomerID** in the Orders table is a Foreign Key because it references 
 
 ---
 
-# NULL
+## NULL
 
 **NULL** means a value is missing, unknown, or not available.
 
@@ -144,7 +147,7 @@ The second employee's phone number is not available.
 
 ---
 
-# SQL Syntax
+## SQL Syntax
 
 ### Select All Records
 
@@ -152,16 +155,12 @@ The second employee's phone number is not available.
 SELECT * FROM Employees;
 ```
 
----
-
 ### Select Specific Columns
 
 ```sql
 SELECT EmployeeName, Salary
 FROM Employees;
 ```
-
----
 
 ### Filter Records
 
@@ -171,8 +170,6 @@ FROM Employees
 WHERE Department = 'QA';
 ```
 
----
-
 ### Sort Records
 
 ```sql
@@ -180,8 +177,6 @@ SELECT *
 FROM Employees
 ORDER BY Salary DESC;
 ```
-
----
 
 ### Count Records
 
@@ -192,17 +187,15 @@ FROM Employees;
 
 ---
 
-# Example Queries
+## Example Queries
 
-## Retrieve All Employees
+### Retrieve All Employees
 
 ```sql
 SELECT * FROM Employees;
 ```
 
----
-
-## Retrieve Employees from QA Department
+### Retrieve Employees from QA Department
 
 ```sql
 SELECT *
@@ -210,9 +203,7 @@ FROM Employees
 WHERE Department = 'QA';
 ```
 
----
-
-## Retrieve Employees with Salary Greater Than 50000
+### Retrieve Employees with Salary Greater Than 50000
 
 ```sql
 SELECT *
@@ -220,9 +211,7 @@ FROM Employees
 WHERE Salary > 50000;
 ```
 
----
-
-## Retrieve Employees Sorted by Name
+### Retrieve Employees Sorted by Name
 
 ```sql
 SELECT *
@@ -230,9 +219,7 @@ FROM Employees
 ORDER BY EmployeeName;
 ```
 
----
-
-## Count Total Employees
+### Count Total Employees
 
 ```sql
 SELECT COUNT(*)
@@ -241,7 +228,7 @@ FROM Employees;
 
 ---
 
-# Common SQL Commands
+## Common SQL Commands
 
 | Command | Purpose |
 |----------|---------|
@@ -255,7 +242,7 @@ FROM Employees;
 
 ---
 
-# SQL Interview Tips
+## SQL Interview Tips
 
 - SQL is **not case-sensitive**, but writing keywords in uppercase improves readability.
 - Always use the `WHERE` clause carefully before running `UPDATE` or `DELETE`.
@@ -265,7 +252,7 @@ FROM Employees;
 
 ---
 
-# Summary
+## Summary
 
 - A Database stores organized data.
 - SQL is used to communicate with relational databases.
@@ -274,5 +261,3 @@ FROM Employees;
 - A Foreign Key links related tables.
 - NULL represents missing or unknown values.
 - SQL enables users to retrieve, insert, update, and delete data efficiently.
-
----
