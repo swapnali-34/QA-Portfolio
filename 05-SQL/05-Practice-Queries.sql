@@ -1,0 +1,1095 @@
+-- ==========================================
+-- 05-Practice-Queries.sql
+-- SQL Practice Queries for QA Engineers
+-- ==========================================
+
+-- Sample Tables:
+-- Employees(EmployeeID, EmployeeName, Age, Gender, Department, Salary, City, JoiningDate)
+-- Users(UserID, UserName, Email)
+
+-- ==========================================
+-- BASIC SELECT QUERIES
+-- ==========================================
+
+-- 1. Display all records
+SELECT *
+FROM Employees;
+
+-- 2. Display only Employee Name
+SELECT
+    EmployeeName
+FROM Employees;
+
+-- 3. Display Employee Name and Salary
+SELECT
+    EmployeeName,
+    Salary
+FROM Employees;
+
+-- ==========================================
+-- FILTERING DATA
+-- ==========================================
+
+-- 4. Display employees from QA department
+SELECT *
+FROM Employees
+WHERE Department = 'QA';
+
+-- 5. Display employees whose salary is greater than 50000
+SELECT *
+FROM Employees
+WHERE Salary > 50000;
+
+-- 6. Display employees whose salary is less than 30000
+SELECT *
+FROM Employees
+WHERE Salary < 30000;
+
+-- 7. Display employees whose age is 25
+SELECT *
+FROM Employees
+WHERE Age = 25;
+
+-- 8. Display employees who are not from HR department
+SELECT *
+FROM Employees
+WHERE Department <> 'HR';
+
+-- ==========================================
+-- DISTINCT
+-- ==========================================
+
+-- 9. Display unique departments
+SELECT DISTINCT Department
+FROM Employees;
+
+-- 10. Display unique cities
+SELECT DISTINCT City
+FROM Employees;
+
+-- ==========================================
+-- SORTING
+-- ==========================================
+
+-- 11. Sort employees by salary (Ascending)
+SELECT *
+FROM Employees
+ORDER BY Salary ASC;
+
+-- 12. Sort employees by salary (Descending)
+SELECT *
+FROM Employees
+ORDER BY Salary DESC;
+
+-- 13. Sort employees alphabetically
+SELECT *
+FROM Employees
+ORDER BY EmployeeName ASC;
+
+-- 14. Display top 5 employees
+SELECT *
+FROM Employees
+LIMIT 5;
+
+-- ==========================================
+-- BETWEEN
+-- ==========================================
+
+-- 15. Display employees between age 25 and 35
+SELECT *
+FROM Employees
+WHERE Age BETWEEN 25 AND 35;
+
+-- 16. Display employees with salary between 40000 and 70000
+SELECT *
+FROM Employees
+WHERE Salary BETWEEN 40000 AND 70000;
+
+-- ==========================================
+-- IN
+-- ==========================================
+
+-- 17. Display employees from QA or HR department
+SELECT *
+FROM Employees
+WHERE Department IN ('QA', 'HR');
+
+-- 18. Display employees from Pune or Mumbai
+SELECT *
+FROM Employees
+WHERE City IN ('Pune', 'Mumbai');
+
+-- ==========================================
+-- LIKE
+-- ==========================================
+
+-- 19. Find employees whose name starts with A
+SELECT *
+FROM Employees
+WHERE EmployeeName LIKE 'A%';
+
+-- 20. Find employees whose name ends with n
+SELECT *
+FROM Employees
+WHERE EmployeeName LIKE '%n';
+
+-- 21. Find employees whose name contains 'an'
+SELECT *
+FROM Employees
+WHERE EmployeeName LIKE '%an%';
+
+-- 22. Find Gmail users
+SELECT *
+FROM Users
+WHERE Email LIKE '%@gmail.com';
+
+-- ==========================================
+-- AGGREGATE FUNCTIONS
+-- ==========================================
+
+-- 23. Count total employees
+SELECT COUNT(*)
+FROM Employees;
+
+-- 24. Count QA employees
+SELECT COUNT(*)
+FROM Employees
+WHERE Department = 'QA';
+
+-- 25. Find maximum salary
+SELECT MAX(Salary)
+FROM Employees;
+
+-- 26. Find minimum salary
+SELECT MIN(Salary)
+FROM Employees;
+
+-- 27. Find average salary
+SELECT AVG(Salary)
+FROM Employees;
+
+-- 28. Find total salary paid
+SELECT SUM(Salary)
+FROM Employees;
+
+-- ==========================================
+-- GROUP BY
+-- ==========================================
+
+-- 29. Count employees department-wise
+SELECT
+    Department,
+    COUNT(*) AS TotalEmployees
+FROM Employees
+GROUP BY Department;
+
+-- 30. Average salary department-wise
+SELECT
+    Department,
+    AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY Department;
+
+-- 31. Maximum salary department-wise
+SELECT
+    Department,
+    MAX(Salary) AS MaximumSalary
+FROM Employees
+GROUP BY Department;
+
+-- 32. Minimum salary department-wise
+SELECT
+    Department,
+    MIN(Salary) AS MinimumSalary
+FROM Employees
+GROUP BY Department;
+
+-- ==========================================
+-- HAVING
+-- ==========================================
+
+-- 33. Departments having more than 2 employees
+SELECT
+    Department,
+    COUNT(*) AS TotalEmployees
+FROM Employees
+GROUP BY Department
+HAVING COUNT(*) > 2;
+
+-- ==========================================
+-- DATE & SUBQUERY
+-- ==========================================
+
+-- 34. Employees joined after 2024
+SELECT *
+FROM Employees
+WHERE JoiningDate > '2024-01-01';
+
+-- 35. Employees whose salary is greater than average salary
+SELECT *
+FROM Employees
+WHERE Salary > (
+    SELECT AVG(Salary)
+    FROM Employees
+);
+
+-- ==========================================
+-- STRING FUNCTIONS
+-- ==========================================
+
+-- 36. Display employee names in uppercase
+SELECT UPPER(EmployeeName)
+FROM Employees;
+
+-- 37. Display employee names in lowercase
+SELECT LOWER(EmployeeName)
+FROM Employees;
+
+-- 38. Display length of employee names
+SELECT
+    EmployeeName,
+    LENGTH(EmployeeName) AS NameLength
+FROM Employees;
+
+-- ==========================================
+-- DATE FUNCTIONS
+-- ==========================================
+
+-- 39. Display current date
+SELECT CURRENT_DATE;
+
+-- ==========================================
+-- COMBINED QUERY
+-- ==========================================
+
+-- 40. Display first 10 employees sorted by joining date
+SELECT *
+FROM Employees
+ORDER BY JoiningDate DESC
+LIMIT 10;
+
+-- ==========================================
+-- SQL JOINS
+-- ==========================================
+
+-- 41. Display customers and their orders
+SELECT
+    c.CustomerName,
+    o.OrderID,
+    o.OrderDate
+FROM Customers c
+INNER JOIN Orders o
+    ON c.CustomerID = o.CustomerID;
+
+-- 42. Display customer name and product name
+
+SELECT
+    c.CustomerName,
+    p.ProductName,
+    o.Quantity
+FROM Orders o
+INNER JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+INNER JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 43. Count orders for each customer
+
+SELECT
+    c.CustomerName,
+    COUNT(o.OrderID) AS TotalOrders
+FROM Customers c
+LEFT JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerName;
+
+-- 44. Find customers who have not placed any order
+
+SELECT
+    c.CustomerID,
+    c.CustomerName
+FROM Customers c
+LEFT JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+WHERE o.OrderID IS NULL;
+
+-- 45. Display complete order details
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    o.OrderDate
+FROM Orders o
+INNER JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+INNER JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- ==========================================
+-- QA DATA VALIDATION QUERIES
+-- ==========================================
+
+-- 46. Verify whether an employee exists
+
+SELECT *
+FROM Employees
+WHERE EmployeeID = 101;
+
+-- 47. Find employees with missing city
+
+SELECT *
+FROM Employees
+WHERE City IS NULL;
+
+-- 48. Find duplicate user emails
+
+SELECT
+    Email,
+    COUNT(*) AS EmailCount
+FROM Users
+GROUP BY Email
+HAVING COUNT(*) > 1;
+
+-- 49. Find orders without a valid customer
+
+SELECT
+    o.OrderID,
+    o.CustomerID
+FROM Orders o
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+WHERE c.CustomerID IS NULL;
+
+-- 50. Find orders without a valid product
+
+SELECT
+    o.OrderID,
+    o.ProductID
+FROM Orders o
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE p.ProductID IS NULL;
+
+-- 51. Find orders with invalid quantity
+
+SELECT
+    OrderID,
+    ProductID,
+    Quantity
+FROM Orders
+WHERE Quantity IS NULL
+   OR Quantity <= 0;
+
+-- 52. Find products with invalid price
+
+SELECT *
+FROM Products
+WHERE Price <= 0;
+
+-- 53. Find employees with invalid salary
+
+SELECT *
+FROM Employees
+WHERE Salary <= 0;
+
+-- 54. Find employees with future joining dates
+
+SELECT *
+FROM Employees
+WHERE JoiningDate > CURRENT_DATE;
+
+-- 55. Verify customer information
+
+SELECT
+    CustomerID,
+    CustomerName,
+    City,
+    Email
+FROM Customers
+WHERE CustomerID = 1;
+
+-- ==========================================
+-- DATA MANIPULATION & TRANSACTIONS
+-- ==========================================
+
+-- 56. Insert a new customer
+
+INSERT INTO Customers
+    (CustomerID, CustomerName, City, Email)
+VALUES
+    (5, 'Neha Kulkarni', 'Pune', 'neha@gmail.com');
+
+-- 57. Update customer city
+
+UPDATE Customers
+SET City = 'Mumbai'
+WHERE CustomerID = 5;
+
+-- 58. Delete a customer
+
+DELETE FROM Customers
+WHERE CustomerID = 5;
+
+-- 59. Practice ROLLBACK
+
+START TRANSACTION;
+
+UPDATE Customers
+SET City = 'Delhi'
+WHERE CustomerID = 1;
+
+ROLLBACK;
+
+-- 60. Practice COMMIT
+
+START TRANSACTION;
+
+UPDATE Customers
+SET City = 'Mumbai'
+WHERE CustomerID = 1;
+
+COMMIT;
+
+-- ==========================================
+-- CONDITIONAL VALIDATION
+-- ==========================================
+
+-- 61. Classify employees based on salary
+
+SELECT
+    EmployeeName,
+    Salary,
+    CASE
+        WHEN Salary >= 70000 THEN 'High'
+        WHEN Salary >= 50000 THEN 'Medium'
+        ELSE 'Low'
+    END AS SalaryCategory
+FROM Employees;
+
+-- 62. Validate employee salary
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Salary,
+    CASE
+        WHEN Salary > 0 THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Employees;
+
+-- 63. Validate employee city
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    City,
+    CASE
+        WHEN City IS NULL THEN 'FAIL - Missing City'
+        ELSE 'PASS'
+    END AS ValidationResult
+FROM Employees;
+
+-- 64. Validate order quantity
+
+SELECT
+    OrderID,
+    Quantity,
+    CASE
+        WHEN Quantity > 0 THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Orders;
+
+-- 65. Validate product price
+
+SELECT
+    ProductID,
+    ProductName,
+    Price,
+    CASE
+        WHEN Price > 0 THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Products;
+
+-- 66. Display city or fallback value
+
+SELECT
+    EmployeeName,
+    COALESCE(City, 'City Not Available') AS City
+FROM Employees;
+
+-- ==========================================
+-- ADVANCED JOINS & SUBQUERIES
+-- ==========================================
+
+-- 67. Display customers and their orders
+
+SELECT
+    c.CustomerName,
+    o.OrderID,
+    o.OrderDate
+FROM Customers c
+INNER JOIN Orders o
+    ON c.CustomerID = o.CustomerID;
+
+-- 68. Display customer, order and product details
+
+SELECT
+    c.CustomerName,
+    o.OrderID,
+    p.ProductName,
+    o.Quantity
+FROM Orders o
+INNER JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+INNER JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 69. Find customers who have no orders
+
+SELECT
+    c.CustomerID,
+    c.CustomerName
+FROM Customers c
+LEFT JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+WHERE o.OrderID IS NULL;
+
+-- 70. Find orders without a valid customer
+
+SELECT
+    o.OrderID,
+    o.CustomerID
+FROM Orders o
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+WHERE c.CustomerID IS NULL;
+
+-- 71. Find orders without a valid product
+
+SELECT
+    o.OrderID,
+    o.ProductID
+FROM Orders o
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE p.ProductID IS NULL;
+
+-- 72. Find employees earning above average salary
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Salary
+FROM Employees
+WHERE Salary >
+(
+    SELECT AVG(Salary)
+    FROM Employees
+);
+
+-- 73. Find customers who have placed orders
+
+SELECT *
+FROM Customers
+WHERE CustomerID IN
+(
+    SELECT CustomerID
+    FROM Orders
+);
+
+-- ==========================================
+-- DATE & STRING VALIDATION
+-- ==========================================
+
+-- 74. Find employees who joined after 2024
+
+SELECT *
+FROM Employees
+WHERE JoiningDate > '2024-01-01';
+
+-- 75. Find employees who joined during 2023
+
+SELECT *
+FROM Employees
+WHERE JoiningDate BETWEEN '2023-01-01' AND '2023-12-31';
+
+-- 76. Find future-dated employee records
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    JoiningDate
+FROM Employees
+WHERE JoiningDate > CURRENT_DATE;
+
+-- 77. Display employee names in uppercase
+
+SELECT
+    EmployeeName,
+    UPPER(EmployeeName) AS UpperName
+FROM Employees;
+
+-- 78. Display employee names in lowercase
+
+SELECT
+    EmployeeName,
+    LOWER(EmployeeName) AS LowerName
+FROM Employees;
+
+-- 79. Display employee name lengths
+
+SELECT
+    EmployeeName,
+    LENGTH(EmployeeName) AS NameLength
+FROM Employees;
+
+-- 80. Find users with missing email
+
+SELECT
+    UserID,
+    UserName,
+    Email
+FROM Users
+WHERE Email IS NULL
+   OR TRIM(Email) = '';
+
+-- 81. Validate user email availability
+
+SELECT
+    UserID,
+    UserName,
+    Email,
+    CASE
+        WHEN Email IS NULL OR Email = '' THEN 'FAIL'
+        ELSE 'PASS'
+    END AS ValidationResult
+FROM Users;
+
+-- 82. Validate employee joining date
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    JoiningDate,
+    CASE
+        WHEN JoiningDate <= CURRENT_DATE THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Employees;
+
+-- ==========================================
+-- DATA QUALITY & VALIDATION
+-- ==========================================
+
+-- 83. Find duplicate email addresses
+
+SELECT
+    Email,
+    COUNT(*) AS DuplicateCount
+FROM Users
+GROUP BY Email
+HAVING COUNT(*) > 1;
+
+
+-- 84. Find products with invalid prices
+
+SELECT
+    ProductID,
+    ProductName,
+    Price
+FROM Products
+WHERE Price <= 0;
+
+
+-- 85. Find orders with invalid quantities
+
+SELECT
+    OrderID,
+    ProductID,
+    Quantity
+FROM Orders
+WHERE Quantity <= 0;
+
+
+-- 86. Find customers with missing email addresses
+
+SELECT
+    CustomerID,
+    CustomerName,
+    Email
+FROM Customers
+WHERE Email IS NULL
+   OR Email = '';
+
+
+-- 87. Validate employee age and salary
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Age,
+    Salary,
+    CASE
+        WHEN Age >= 18
+         AND Salary > 0
+        THEN 'PASS'
+        ELSE 'FAIL'
+    END AS ValidationResult
+FROM Employees;
+
+
+-- 88. Find invalid orders
+
+-- An order is invalid if:
+-- 1. Customer does not exist
+-- 2. Product does not exist
+-- 3. Quantity is less than or equal to zero
+-- 4. Order date is in the future
+
+SELECT
+    o.OrderID,
+    o.CustomerID,
+    o.ProductID,
+    o.Quantity,
+    o.OrderDate
+FROM Orders o
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE c.CustomerID IS NULL
+   OR p.ProductID IS NULL
+   OR o.Quantity <= 0
+   OR o.OrderDate > CURRENT_DATE;
+
+-- ==========================================
+-- SQL AGGREGATION & REPORTING
+-- ==========================================
+
+-- 89. Count total orders
+
+SELECT
+    COUNT(*) AS TotalOrders
+FROM Orders;
+
+-- 90. Count orders for each customer
+
+SELECT
+    CustomerID,
+    COUNT(*) AS OrderCount
+FROM Orders
+GROUP BY CustomerID;
+
+-- 91. Display customer names and order count
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    COUNT(o.OrderID) AS OrderCount
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName;
+
+-- 92. Find customers with more than one order
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    COUNT(o.OrderID) AS OrderCount
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName
+HAVING COUNT(o.OrderID) > 1;
+
+-- 93. Find total quantity ordered
+
+SELECT
+    SUM(Quantity) AS TotalQuantity
+FROM Orders;
+
+-- 94. Find average order quantity
+
+SELECT
+    AVG(Quantity) AS AverageQuantity
+FROM Orders;
+
+-- 95. Find total quantity ordered for each product
+
+SELECT
+    p.ProductID,
+    p.ProductName,
+    SUM(o.Quantity) AS TotalQuantity
+FROM Products p
+LEFT JOIN Orders o
+    ON p.ProductID = o.ProductID
+GROUP BY
+    p.ProductID,
+    p.ProductName;
+
+-- 96. Find the highest-priced product
+
+SELECT
+    ProductName,
+    Price
+FROM Products
+WHERE Price = (
+    SELECT MAX(Price)
+    FROM Products
+);
+
+-- 97. Find average salary by department
+
+SELECT
+    Department,
+    AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY Department;
+
+-- 98. Find departments with average salary above 60000
+
+SELECT
+    Department,
+    AVG(Salary) AS AverageSalary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) > 60000;
+
+-- 99. Find customers with at least 2 orders
+-- and calculate their total quantity ordered
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    COUNT(o.OrderID) AS OrderCount,
+    SUM(o.Quantity) AS TotalQuantity
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName
+HAVING COUNT(o.OrderID) >= 2;
+
+-- 100. Find the customer with the highest total quantity ordered
+
+SELECT
+    c.CustomerID,
+    c.CustomerName,
+    SUM(o.Quantity) AS TotalQuantity
+FROM Customers c
+JOIN Orders o
+    ON c.CustomerID = o.CustomerID
+GROUP BY
+    c.CustomerID,
+    c.CustomerName
+ORDER BY TotalQuantity DESC
+LIMIT 1;
+
+-- ==========================================
+-- ORDER CALCULATION VALIDATION
+-- ==========================================
+
+-- 101. Calculate expected order total
+
+SELECT
+    o.OrderID,
+    o.ProductID,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 102. Display complete order calculation details
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- 103. Find high-value orders
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE p.Price * o.Quantity > 10000;
+
+-- 104. Investigate a specific order
+
+SELECT
+    o.OrderID,
+    c.CustomerName,
+    p.ProductName,
+    p.Price,
+    o.Quantity,
+    o.OrderDate,
+    p.Price * o.Quantity AS ExpectedTotal
+FROM Orders o
+JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+JOIN Products p
+    ON o.ProductID = p.ProductID
+WHERE o.OrderID = 1001;
+
+-- ==========================================
+-- COMPLETE E-COMMERCE VALIDATION
+-- ==========================================
+
+-- 105. E-Commerce Order Quality Report
+
+SELECT
+    o.OrderID,
+    o.CustomerID,
+    o.ProductID,
+    o.Quantity,
+    o.OrderDate,
+    p.Price * o.Quantity AS ExpectedTotal,
+
+    CASE
+        -- Customer validation
+        WHEN c.CustomerID IS NULL THEN 'FAIL'
+
+        -- Product validation
+        WHEN p.ProductID IS NULL THEN 'FAIL'
+
+        -- Product price validation
+        WHEN p.Price <= 0 OR p.Price IS NULL THEN 'FAIL'
+
+        -- Quantity validation
+        WHEN o.Quantity <= 0 OR o.Quantity IS NULL THEN 'FAIL'
+
+        -- Order date validation
+        WHEN o.OrderDate > CURRENT_DATE THEN 'FAIL'
+
+        -- Order total validation
+        WHEN (p.Price * o.Quantity) <= 0
+             OR (p.Price * o.Quantity) IS NULL THEN 'FAIL'
+
+        ELSE 'PASS'
+    END AS ValidationResult
+
+FROM Orders o
+
+LEFT JOIN Customers c
+    ON o.CustomerID = c.CustomerID
+
+LEFT JOIN Products p
+    ON o.ProductID = p.ProductID;
+
+-- ==========================================
+-- WINDOW FUNCTIONS
+-- See 04-Window-Functions.md for explanations of each query below.
+-- ==========================================
+
+-- 106. Rank employees by salary (company-wide)
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Department,
+    Salary,
+    RANK() OVER (ORDER BY Salary DESC) AS SalaryRank
+FROM Employees;
+
+-- 107. Rank employees by salary within each department
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Department,
+    Salary,
+    RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) AS DeptSalaryRank
+FROM Employees;
+
+-- 108. Rank employees by salary using DENSE_RANK (no gaps after ties)
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Salary,
+    DENSE_RANK() OVER (ORDER BY Salary DESC) AS SalaryDenseRank
+FROM Employees;
+
+-- 109. Show each employee alongside their department's average salary
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Department,
+    Salary,
+    AVG(Salary) OVER (PARTITION BY Department) AS DepartmentAverageSalary
+FROM Employees;
+
+-- 110. Find employees earning above their department's average salary
+
+SELECT *
+FROM (
+    SELECT
+        EmployeeID,
+        EmployeeName,
+        Department,
+        Salary,
+        AVG(Salary) OVER (PARTITION BY Department) AS DepartmentAverageSalary
+    FROM Employees
+) AS EmployeeWithDeptAvg
+WHERE Salary > DepartmentAverageSalary;
+
+-- 111. Show each employee's salary difference from the overall average
+
+SELECT
+    EmployeeID,
+    EmployeeName,
+    Salary,
+    Salary - AVG(Salary) OVER () AS DifferenceFromOverallAverage
+FROM Employees;
+
+-- 112. Find the latest order for each customer
+
+SELECT *
+FROM (
+    SELECT
+        OrderID,
+        CustomerID,
+        ProductID,
+        Quantity,
+        OrderDate,
+        ROW_NUMBER() OVER (
+            PARTITION BY CustomerID
+            ORDER BY OrderDate DESC
+        ) AS RowNum
+    FROM Orders
+) AS RankedOrders
+WHERE RowNum = 1;
+
+-- ==========================================
+-- End of Practice Queries
+-- ==========================================
