@@ -237,10 +237,11 @@ QA-Portfolio
 │   ├── README.md
 │   ├── 01-SQL-Basics.md
 │   ├── 02-SQL-Queries.md
-│   ├── Practice-Queries.sql
-│   ├── Sample-Database.md
-│   ├── SQL-Validation-Queries.sql
-│   └── SQL-Validation-Report.md
+│   ├── 03-Sample-Database.md
+│   ├── 04-Window-Functions.md
+│   ├── 05-Practice-Queries.sql
+│   ├── 06-SQL-Validation-Queries.sql
+│   └── 07-SQL-Validation-Report.md
 ├── 06-Projects
 │   ├── OrangeHRM-Login-Testing
 │   ├── SauceDemo-Testing
