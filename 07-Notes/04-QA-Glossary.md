@@ -2,6 +2,10 @@
 
 A quick-reference glossary of common software testing terms, with a short definition and example for each.
 
+For a deeper look at Exploratory, Smoke, and Functional Testing —
+including advantages, limitations, and comparison tables — see
+[`06-Exploratory-Smoke-Functional-Testing.md`](./06-Exploratory-Smoke-Functional-Testing.md).
+
 ---
 
 ## Testing Types
