@@ -181,31 +181,38 @@ Postman environment variables are used to pass dynamic data between requests.
 - Environment Variables
 - Dynamic API Testing
 - API Chaining
+- API Project — Test Scenarios, Test Cases, and Bug Reports drafted
 
 ### Currently Learning
 
 - Advanced API Validation
-- API Test Cases
 - Data-driven API Testing
-- API Project
+- Completing full Postman collection execution for the API Project
 
 ### Upcoming
 
-- Complete API Testing Project
-- Postman Collection
-- API Test Execution Report
-- API Bug Reports
-- API Test Summary Report
+- Complete remaining API Project test execution
+- Finalize API Test Execution Report
+- Finalize API Test Summary Report
+- Add request/response evidence and screenshots to the project
 
 ---
 
-## Project
+## Applied Project
 
-A complete API Testing project will be added under:
+The concepts covered in this folder — API fundamentals, HTTP methods, status
+codes, request/response structure, JSON, Postman basics, test case design,
+test scripts, and validation — are applied end-to-end in a real testing
+project:
 
-```text
-10-API-Project/
-```
+➡️ [`10-API-Project`](./10-API-Project) — **User Management API Testing
+Project** (Postman + JSONPlaceholder). Covers test scenarios, detailed test
+cases, bug reports, test execution, and test summary reporting.
+
+**Status:** Partially Complete — core functional, negative, and validation
+testing is done; full Postman collection execution and evidence capture are
+in progress.
+
 ---
 
 ## 🎯 Objective
