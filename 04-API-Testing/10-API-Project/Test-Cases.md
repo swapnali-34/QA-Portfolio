@@ -4,7 +4,7 @@
 
 **Base URL:** `https://jsonplaceholder.typicode.com`
 
-This document contains detailed test cases derived from the API test scenarios and defined project requirements.
+Detailed test cases derived from [Test-Scenarios.md](./Test-Scenarios.md).
 
 ---
 
@@ -12,218 +12,63 @@ This document contains detailed test cases derived from the API test scenarios a
 
 | Test Case ID | Scenario | Method | Endpoint | Test Data | Expected Result |
 |---|---|---|---|---|---|
-| TC-API-001 | Retrieve all users successfully | GET | `/users` | None | Response returns HTTP `200`; response is JSON and contains a user array. |
-| TC-API-002 | Retrieve an existing user by ID | GET | `/users/1` | `id = 1` | Response returns HTTP `200`; a user object is returned and its ID matches the requested ID. |
-| TC-API-003 | Retrieve another existing user | GET | `/users/5` | `id = 5` | Response returns HTTP `200`; returned user ID is `5` and required user information is present. |
-| TC-API-004 | Request a user that does not exist | GET | `/users/9999` | `id = 9999` | Response returns HTTP `404`; no valid user object is returned. |
-| TC-API-005 | Validate required fields in a user response | GET | `/users/1` | None | Response contains `id`, `name`, `username`, and `email`. |
-| TC-API-006 | Validate user ID data type | GET | `/users/1` | None | The returned `id` is a numeric value as required by the project specification. |
-| TC-API-007 | Create a user with valid information | POST | `/users` | Valid name, username, and email | Response returns HTTP `201`; response contains user data, an ID, and the submitted values. |
-| TC-API-008 | Create a user without the name field | POST | `/users` | `username` and `email` provided; `name` omitted | API behavior should be evaluated against the defined validation contract. No status code is assumed where the specification does not define one. |
-| TC-API-009 | Create a user without the email field | POST | `/users` | `name` and `username` provided; `email` omitted | API behavior should follow the defined validation contract for a missing required field. |
-| TC-API-010 | Submit an incorrectly formatted email | POST | `/users` | `email = "invalid-email"` | API should handle the invalid input according to the API's validation contract. |
-| TC-API-011 | Replace user information using PUT | PUT | `/users/1` | Updated name, username, and email | Response returns HTTP `200`; updated values are returned and the response contains the correct user ID. |
-| TC-API-012 | Partially update a user's email | PATCH | `/users/1` | `email = "updated@example.com"` | Response returns HTTP `200`; the supplied email is updated. Other fields should remain unchanged if required by the API contract. |
-| TC-API-013 | Delete an existing user | DELETE | `/users/1` | `id = 1` | API returns the successful deletion response defined by the contract. The project permits HTTP `200` or another contract-defined success status. |
-| TC-API-014 | Submit a non-numeric user ID | GET | `/users/abc` | `id = "abc"` | API behavior should be validated against its ID-format/validation rules. Do not assume a specific status without a defined contract. |
-| TC-API-015 | Validate response time for users endpoint | GET | `/users` | None | Response completes within the acceptable response-time requirement defined for the project/environment. |
+| TC-API-001 | Retrieve all users successfully | GET | `/users` | None | HTTP `200`; JSON array of users. |
+| TC-API-002 | Retrieve an existing user by ID | GET | `/users/1` | `id = 1` | HTTP `200`; returned ID matches requested ID. |
+| TC-API-003 | Retrieve another existing user | GET | `/users/5` | `id = 5` | HTTP `200`; returned ID is `5`, required fields present. |
+| TC-API-004 | Request a user that does not exist | GET | `/users/9999` | `id = 9999` | HTTP `404`; no valid user object returned. |
+| TC-API-005 | Validate required fields in a user response | GET | `/users/1` | None | Response contains `id`, `name`, `username`, `email`. |
+| TC-API-006 | Validate user ID data type | GET | `/users/1` | None | Returned `id` is numeric. |
+| TC-API-007 | Create a user with valid information | POST | `/users` | Valid name/username/email | HTTP `201`; response contains ID + submitted values. |
+| TC-API-008 | Create a user without the name field | POST | `/users` | `username`, `email` only | Evaluated against the validation contract — no status assumed where undefined. |
+| TC-API-009 | Create a user without the email field | POST | `/users` | `name`, `username` only | Same approach as TC-API-008. |
+| TC-API-010 | Submit an incorrectly formatted email | POST | `/users` | `email = "invalid-email"` | Evaluated against the contract's email validation rule. |
+| TC-API-011 | Replace user information using PUT | PUT | `/users/1` | Updated name/username/email | HTTP `200`; updated values returned, correct user ID. |
+| TC-API-012 | Partially update a user's email | PATCH | `/users/1` | `email = "updated@example.com"` | HTTP `200`; email updated, other fields unchanged (per contract). |
+| TC-API-013 | Delete an existing user | DELETE | `/users/1` | `id = 1` | Contract-defined success response (HTTP `200` accepted here). |
+| TC-API-014 | Submit a non-numeric user ID | GET | `/users/abc` | `id = "abc"` | Evaluated against ID-format rules — no status assumed without a contract. |
+| TC-API-015 | Validate response time for users endpoint | GET | `/users` | None | Completes within the defined response-time requirement. |
 
 ---
 
-# Detailed Test Data
+## Sample Request/Response Data
 
-## TC-API-007 — Create User
-
-### Request Body
-
+**TC-API-007 — Create User**
 ```json
-{
-    "name": "Swapnali QA",
-    "username": "swapnali_qa",
-    "email": "swapnali@example.com"
-}
+{ "name": "Swapnali QA", "username": "swapnali_qa", "email": "swapnali@example.com" }
 ```
+Checks: status `201` · ID present and numeric · submitted `name`/`username`/`email` all echoed back.
 
-### Validation Points
-
-- HTTP status should be `201`
-- Response should contain user data
-- Response should contain an ID
-- Returned ID should be numeric
-- Submitted `name` should be returned
-- Submitted `username` should be returned
-- Submitted `email` should be returned
-
----
-
-## TC-API-008 — Missing Name
-
-### Request Body
-
+**TC-API-011 — PUT Update**
 ```json
-{
-    "username": "swapnali_qa",
-    "email": "swapnali@example.com"
-}
+{ "name": "Swapnali QA Updated", "username": "swapnali_updated", "email": "swapnali.updated@example.com" }
 ```
+Checks: status `200` · correct user ID retained · all three updated fields returned.
 
-### Validation Approach
-
-The project does not explicitly define the HTTP status for this negative case.
-
-Therefore:
-
-- Send the request.
-- Record the actual status.
-- Inspect the response body.
-- Compare the behavior with the API contract.
-- Do not automatically mark a particular status as expected unless the contract defines it.
-
----
-
-## TC-API-009 — Missing Email
-
-### Request Body
-
+**TC-API-012 — PATCH Email**
 ```json
-{
-    "name": "Swapnali QA",
-    "username": "swapnali_qa"
-}
+{ "email": "updated@example.com" }
 ```
+Checks: status `200` · email updated · other fields unchanged **if required by the contract**.
 
-### Validation Approach
-
-Verify that the API handles the missing required field according to its defined validation behavior.
-
-Do not assume `400`, `422`, or another status unless the API contract specifies it.
+**TC-API-008/009/010 — Negative Creation Cases**
+Missing `name`, missing `email`, and an invalid email format are all submitted the same way: send the request, record the actual response, and compare it to the contract — **never assume** a status code (`400`, `422`, etc.) the specification doesn't define.
 
 ---
 
-## TC-API-010 — Invalid Email
+## Execution & Validation Approach
 
-### Request Body
+For every test case, check more than the status code: response format, structure, required fields, data types, requested-vs-returned ID, error behavior, response time, and contract compliance.
 
-```json
-{
-    "name": "Swapnali QA",
-    "username": "swapnali_qa",
-    "email": "invalid-email"
-}
-```
-
-### Validation Approach
-
-Verify the API's handling of invalid email input according to the contract.
-
-The expected status must come from the API specification rather than from QA assumptions.
-
----
-
-## TC-API-011 — PUT Update
-
-### Request Body
-
-```json
-{
-    "name": "Swapnali QA Updated",
-    "username": "swapnali_updated",
-    "email": "swapnali.updated@example.com"
-}
-```
-
-### Validation Points
-
-- HTTP status = `200`
-- Response contains the correct user ID
-- Updated name is returned
-- Updated username is returned
-- Updated email is returned
-
----
-
-## TC-API-012 — PATCH Email
-
-### Request Body
-
-```json
-{
-    "email": "updated@example.com"
-}
-```
-
-### Validation Points
-
-- HTTP status = `200`
-- Response contains the requested user
-- Email is updated to the supplied value
-- Other fields remain unchanged **if required by the API contract**
-
----
-
-# Test Case Execution Guidance
-
-When executing these test cases, validate more than the HTTP status.
-
-For each applicable request, check:
-
-1. HTTP status code
-2. Response format
-3. Response structure
-4. Required fields
-5. Field values
-6. Data types
-7. Requested ID vs returned ID
-8. Error response behavior
-9. Response time
-10. Contract compliance
-
----
-
-## Important QA Principle
-
-A response such as:
+**Key principle:**
 
 ```text
-HTTP 200 OK
+HTTP 200 OK  ≠  Test Passed
 ```
 
-does not automatically mean the test has passed.
+Example: if the contract requires `"id": 1` (a number) but the API returns `"id": "1"` (a string), the status is successful but the test still **FAILS** on data type. Conversely, an HTTP `404` on a deliberately non-existent user is a **PASS** when that's the expected behavior.
 
-For example, if the contract requires:
+**Rule for undefined behavior:** where the contract doesn't specify an expected result, don't invent one.
 
-```json
-{
-    "id": 1
-}
+```text
+Requirement → API Contract → Actual Response → Validation → PASS / FAIL / BLOCKED
 ```
-
-but the API returns:
-
-```json
-{
-    "id": "1"
-}
-```
-
-the HTTP status is successful, but the response violates the required data type.
-
-Therefore, the test should be marked **FAIL** if the contract requires `id` to be a number.
-
-Similarly, an HTTP `404` for a deliberately requested non-existent user can be a **PASS** when `404` is the expected behavior.
-
----
-
-## Status Handling Rule
-
-Where the project requirements explicitly define an expected result, validate against it.
-
-Where the requirements do **not** define the exact status or response behavior:
-
-> Do not invent an expected result.
-
-Instead:
-
-**Requirement → API Contract → Actual Response → Validation → PASS/FAIL**
-
-This is the QA approach used throughout this project.
