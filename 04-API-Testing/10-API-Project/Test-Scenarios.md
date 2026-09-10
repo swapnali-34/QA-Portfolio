@@ -4,9 +4,7 @@
 
 **Base URL:** `https://jsonplaceholder.typicode.com`
 
-This document contains **API test scenarios** for the **User Management API**.
-
-The scenarios focus on functional behavior, response validation, positive testing, negative testing, data validation, and contract compliance.
+High-level test scenarios covering functional behavior, response validation, positive/negative testing, and contract compliance.
 
 ---
 
@@ -35,58 +33,12 @@ The scenarios focus on functional behavior, response validation, positive testin
 | TS-API-019 | R-003 | Verify that the API handles incorrectly formatted or non-numeric user IDs according to its validation rules. |
 | TS-API-020 | R-001 | Verify that the users endpoint responds within the acceptable response-time requirement. |
 
----
-
-## Scenario Coverage
-
-### User Retrieval
-- Retrieve all users
-- Retrieve a specific user
-- Retrieve another valid user
-- Retrieve a non-existent user
-- Validate response structure
-- Validate required fields
-- Validate data types
-- Validate requested ID against returned ID
-
-### User Creation
-- Create a user using valid data
-- Validate returned user information
-- Validate generated ID
-- Test missing required information
-
-### User Update
-- Replace user information using PUT
-- Partially modify user information using PATCH
-- Verify that updates affect the intended user
-
-### User Deletion
-- Delete an existing user
-- Validate the deletion response according to the API contract
-
-### Negative Testing
-- Non-existent user ID
-- Non-numeric user ID
-- Invalid request data
-- Missing required fields
-- Incorrect endpoint
-
-### Performance / Response Validation
-- Validate response time
-- Validate HTTP status
-- Validate JSON response
-- Validate response structure and data types
+Covers: user retrieval (all users, by ID, non-existent, query params) · creation (valid + missing fields) · full/partial update · deletion · negative testing (invalid/non-numeric IDs) · response-time validation.
 
 ---
 
 ## QA Note
 
-A test scenario describes **what needs to be tested**, not the complete procedure for testing it.
-
-For expected results that are not explicitly defined by the API specification, the test should be evaluated against the actual API contract rather than assuming a particular HTTP status or response structure.
-
-**Important principle:**
+A scenario describes **what** needs to be tested, not the full procedure. Where the API contract doesn't define an expected result, the test is evaluated against the actual contract rather than an assumed HTTP status — see [Test-Cases.md](./Test-Cases.md) for how each scenario is executed.
 
 > HTTP success does not automatically mean functional success.
-
-A response must also satisfy the defined data, structure, type, and business requirements.
