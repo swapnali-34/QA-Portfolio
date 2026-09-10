@@ -1,14 +1,10 @@
 # JSON
 
-JSON stands for **JavaScript Object Notation**.
-
-It is commonly used to exchange data between clients and APIs.
+JSON stands for **JavaScript Object Notation** — the standard format APIs use to exchange data.
 
 ---
 
 ## JSON Object
-
-Example:
 
 ```json
 {
@@ -18,130 +14,38 @@ Example:
 }
 ```
 
----
-
 ## JSON Data Types
 
-JSON supports:
-
-- String
-- Number
-- Boolean
-- Object
-- Array
-- Null
-
-### String
-
-```json
-"name": "Leanne Graham"
-```
-
-### Number
-
-```json
-"id": 1
-```
-
-### Boolean
-
-```json
-"active": true
-```
-
-### Array
-
-```json
-"roles": ["QA", "Tester"]
-```
-
-### Null
-
-```json
-"middleName": null
-```
-
----
+| Type | Example |
+|---|---|
+| String | `"name": "Leanne Graham"` |
+| Number | `"id": 1` |
+| Boolean | `"active": true` |
+| Array | `"roles": ["QA", "Tester"]` |
+| Null | `"middleName": null` |
 
 ## JSON Array
 
-Example:
-
 ```json
 [
-    {
-        "id": 1,
-        "name": "Leanne Graham"
-    },
-    {
-        "id": 2,
-        "name": "Ervin Howell"
-    }
+    { "id": 1, "name": "Leanne Graham" },
+    { "id": 2, "name": "Ervin Howell" }
 ]
 ```
 
 ---
 
-## QA Validation
+## QA Validation: Value vs. Data Type
 
-QA should validate not only the value but also the data type.
+Matching value isn't enough — the **type** must match too:
 
-For example:
-
-```json
-"id": 1
+```text
+"id": 1     → number  ✅ correct
+"id": "1"   → string  ❌ wrong type, even though it "looks" right
 ```
 
-is a number.
-
-But:
-
-```json
-"id": "1"
-```
-
-is a string.
-
-These are not the same data type.
-
----
-
-## Postman Data Type Validation
-
-```javascript
-pm.test("ID is a number", function () {
-    pm.expect(data.id).to.be.a("number");
-});
-```
-
----
-
-## Array Validation
-
-```javascript
-pm.test("Response is an array", function () {
-    pm.expect(data).to.be.an("array");
-});
-```
-
----
-
-## Array Length Validation
-
-```javascript
-pm.test("Response contains 10 records", function () {
-    pm.expect(data).to.have.lengthOf(10);
-});
-```
-
----
-
-## Loop Validation
-
-```javascript
-data.forEach(function (item) {
-    pm.expect(item.userId).to.eql(2);
-});
-```
-
-This validates every returned record.
+A response can return the correct value in the wrong type and still fail
+validation. The Postman scripts for checking this (type, array, and
+loop-based record validation) are in
+[08-API-Test-Scripts.md](./08-API-Test-Scripts.md), with the full
+validation checklist in [09-API-Validation.md](./09-API-Validation.md).
