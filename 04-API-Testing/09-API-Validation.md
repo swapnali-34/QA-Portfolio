@@ -1,177 +1,39 @@
 # API Validation
 
-API validation is the process of verifying that an API response matches the expected requirements.
+API validation confirms a response matches the expected contract — not just
+that a request "worked." Every check below has a working Postman script in
+[08-API-Test-Scripts.md](./08-API-Test-Scripts.md); this file is the
+checklist view of the same validations.
 
 ---
 
-## 1. Status Code Validation
+## Validation Checklist
 
-Example:
+- [x] **Status code** — matches the expected code for this scenario (not just "any 2xx")
+- [x] **Required fields** — e.g. `id`, `name`, `email` exist in the response
+- [x] **Exact values** — a specific field equals an expected value (e.g. `id` equals the requested ID)
+- [x] **Data types** — `id` is a `number`, not a numeric-looking string
+- [x] **Headers** — e.g. `Content-Type` includes `application/json`
+- [x] **Array structure** — response is an array where expected
+- [x] **Record count** — array has the expected number of items
+- [x] **Every-record validation** — a rule (e.g. `userId = 2`) holds for *every* item, not just the first
+- [x] **Negative scenarios** — invalid input is handled as the contract defines (e.g. `GET /users/9999` → `404`)
+- [x] **Dynamic values / chaining** — a value extracted from one response (e.g. `createdUserId`) is reused correctly in a later request
+
+---
+
+## Key Principle
 
 ```text
-GET valid resource → 200
-```
-```javascript
-pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-});
+Status Code = 200
+        ≠
+Test Passed
 ```
 
----
+A `200 OK` only means the server responded successfully — it says nothing
+about whether the *data* is correct, complete, or the right type. Every
+check above still needs to run independently of the status code.
 
-## 2. Response Field Validation
-
-```javascript
-pm.test("Name exists", function () {
-    pm.expect(data).to.have.property("name");
-});
-```
-
----
-
-## 3. Value Validation
-
-```javascript
-pm.test("ID is 1", function () {
-    pm.expect(data.id).to.eql(1);
-});
-```
-
----
-
-## 4. Data Type Validation
-
-```javascript
-pm.test("ID is a number", function () {
-    pm.expect(data.id).to.be.a("number");
-});
-```
-
-Example:
-
-```json
-"id": 1
-```
-
-Correct type:
-
-```text
-number
-```
-
-Whereas:
-
-```json
-"id": "1"
-```
-
-is:
-
-```text
-string
-```
-
-A status code of 200 does not make an incorrect data type acceptable.
-
----
-
-## 5. Header Validation
-
-```javascript
-pm.test("Content-Type is JSON", function () {
-    const contentType = pm.response.headers.get("Content-Type");
-
-    pm.expect(contentType).to.include("application/json");
-});
-```
-
----
-
-## 6. Array Validation
-
-```javascript
-pm.test("Response is an array", function () {
-    pm.expect(data).to.be.an("array");
-});
-```
-
----
-
-## 7. Record Count Validation
-
-```javascript
-pm.test("Response contains 10 records", function () {
-    pm.expect(data).to.have.lengthOf(10);
-});
-```
-
----
-
-## 8. Validate Every Record
-
-```javascript
-pm.test("All records have userId = 2", function () {
-    data.forEach(function (item) {
-        pm.expect(item.userId).to.eql(2);
-    });
-});
-```
-
----
-
-## 9. Negative Testing
-
-Negative testing verifies that the API handles invalid input correctly.
-
-Example:
-
-```text
-GET /users/9999
-```
-
-Expected:
-
-```text
-404 Not Found
-```
-
-Test:
-
-```javascript
-pm.test("Invalid user returns 404", function () {
-    pm.response.to.have.status(404);
-});
-```
-
----
-
-## 10. API Chaining Validation
-
-A dynamic value can be extracted from one response and used in another request.
-
-```javascript
-pm.environment.set("createdUserId", data.id);
-```
-
-Then:
-
-```text
-GET {{baseUrl}}/users/{{createdUserId}}
-```
-
----
-
-## API Validation Checklist
-
-- [x] Status code
-- [x] Response body
-- [x] Required fields
-- [x] Exact values
-- [x] Data types
-- [x] Headers
-- [x] Array structure
-- [x] Record count
-- [x] Every-record validation
-- [x] Negative scenarios
-- [x] Dynamic values
-- [x] API chaining
+Similarly, a `404` on a deliberately-invalid request is a **PASS**, not a
+failure — the result is judged against what the contract *expects*, not
+against "did it succeed."
