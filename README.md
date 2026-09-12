@@ -19,6 +19,7 @@ This repository showcases my practical work in **Manual Testing, SQL & Database 
 | API Testing | 15 test cases, REST APIs, Postman, JSON, API Chaining | [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | QA Documentation | Test Plans, Test Cases, RTM, Metrics, Reports | [06-Projects](./06-Projects), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | Defect Management | 10+ bug reports across manual and API projects | [03-Bug-Reports](./03-Bug-Reports), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
+| Agile & Jira | Scrum ceremonies, user stories, Jira workflows, JQL | [07-Notes/03-Agile-Scrum-for-QA.md](./07-Notes/03-Agile-Scrum-for-QA.md), [07-Notes/07-Jira-Fundamentals-for-QA.md](./07-Notes/07-Jira-Fundamentals-for-QA.md) |
 
 ---
 
@@ -30,7 +31,7 @@ This repository showcases my practical work in **Manual Testing, SQL & Database 
 
 **Description**
 
-A complete manual testing project focused on the Login module, covering test planning, scenario creation, 
+A complete manual testing project focused on the Login module, covering test planning, scenario creation,
 test case design, execution, defect reporting, traceability, metrics, and summary reporting.
 
 **Modules Tested:** Login · Logout · Input Validation · Password Masking
@@ -117,6 +118,8 @@ This portfolio demonstrates my ability to:
 - Write API test scripts
 - Perform negative API testing
 - Implement API chaining
+- Work within Agile/Scrum ceremonies and understand QA's role in each
+- Track and query testing work in Jira, including JQL
 
 ---
 
@@ -157,8 +160,11 @@ SQL Queries · SELECT / INSERT / UPDATE / DELETE · Filtering & Sorting · Aggre
 ### API Testing
 API Fundamentals · REST APIs · HTTP Methods · HTTP Status Codes · Request & Response Validation · JSON Validation · Postman · Postman Variables · Environment Variables · API Test Scripts · Response Validation · Data Type Validation · Negative API Testing · API Chaining
 
+### Agile, Scrum & Jira
+Scrum Ceremonies (Planning, Standup, Review, Retrospective) · User Stories & Acceptance Criteria · INVEST Criteria · Story Points & Estimation · Sprint Velocity & Burndown · Scrum vs Kanban · Jira Issue Types & Workflows · Priority vs Severity · Issue Linking · JQL (Jira Query Language)
+
 ### Tools (Working Knowledge)
-Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL · Postman
+Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL · Postman · Jira
 
 ---
 
@@ -186,11 +192,11 @@ Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL ·
 - SauceDemo End-to-End Testing Project
 - API Testing with Postman
 - User Management API Testing Project
+- Agile & Scrum Fundamentals
+- Jira Fundamentals for QA
 
 ### Currently Learning
 
-- Jira
-- Agile & Scrum
 - Advanced API Validation & completing full Postman collection execution
 
 ### Next Goals
@@ -265,7 +271,8 @@ QA-Portfolio
 │   ├── 03-Agile-Scrum-for-QA.md
 │   ├── 04-QA-Glossary.md
 │   ├── 05-Tools-Notes-Jira-Postman.md
-│   └── 06-Exploratory-Smoke-Functional-Testing.md
+│   ├── 06-Exploratory-Smoke-Functional-Testing.md
+│   └── 07-Jira-Fundamentals-for-QA.md
 └── README.md
 ```
 
