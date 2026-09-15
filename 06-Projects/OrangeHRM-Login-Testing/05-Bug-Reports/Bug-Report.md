@@ -4,12 +4,10 @@
 
 ---
 
-# Bug Report 1
+## BUG-001 — Login button remains enabled after multiple rapid clicks
 
 | Field | Details |
 |--------|---------|
-| Bug ID | BUG-001 |
-| Bug Title | Login button remains enabled after multiple rapid clicks |
 | Module | Login |
 | Severity | Minor |
 | Priority | Medium |
@@ -18,16 +16,14 @@
 | Steps to Reproduce | 1. Open the Login page.<br>2. Enter valid credentials.<br>3. Rapidly click the **Login** button multiple times. |
 | Expected Result | The Login button should be disabled after the first click until the login process completes. |
 | Actual Result | The Login button remains clickable during the login request. *(Practice example)* |
-| Status | New |
+| Status | New (Practice Example) |
 
 ---
 
-# Bug Report 2
+## BUG-002 — Username field accepts leading and trailing spaces
 
 | Field | Details |
 |--------|---------|
-| Bug ID | BUG-002 |
-| Bug Title | Username field accepts leading and trailing spaces |
 | Module | Login |
 | Severity | Minor |
 | Priority | Low |
@@ -36,16 +32,14 @@
 | Steps to Reproduce | 1. Open the Login page.<br>2. Enter spaces before and after the username.<br>3. Enter a valid password.<br>4. Click **Login**. |
 | Expected Result | The application should trim unnecessary spaces before validating the username. |
 | Actual Result | The username is processed without trimming spaces. *(Practice example)* |
-| Status | New |
+| Status | New (Practice Example) |
 
 ---
 
-# Bug Report 3
+## BUG-003 — Error message remains visible after correcting invalid credentials
 
 | Field | Details |
 |--------|---------|
-| Bug ID | BUG-003 |
-| Bug Title | Error message remains visible after correcting invalid credentials |
 | Module | Login |
 | Severity | Minor |
 | Priority | Medium |
@@ -54,11 +48,11 @@
 | Steps to Reproduce | 1. Enter an invalid username and password.<br>2. Click **Login**.<br>3. Correct the credentials.<br>4. Observe the error message before logging in again. |
 | Expected Result | The previous error message should disappear once the user updates the input or submits valid credentials. |
 | Actual Result | The error message remains visible until another login attempt is made. *(Practice example)* |
-| Status | New |
+| Status | New (Practice Example) |
 
 ---
 
-# Bug Report Summary
+## Bug Report Summary
 
 | Metric | Count |
 |--------|------:|
@@ -70,7 +64,7 @@
 
 ---
 
-# Notes
+## Notes
 
 - These bug reports are **sample defects created for portfolio and learning purposes**.
 - Their purpose is to demonstrate the ability to write clear, structured, and professional bug reports.
