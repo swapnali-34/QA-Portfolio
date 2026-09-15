@@ -12,13 +12,13 @@
 
 ---
 
-# Objective
+## Objective
 
 The objective of this testing activity was to verify the functionality, usability, and reliability of the OrangeHRM Login module by executing planned manual test cases.
 
 ---
 
-# Scope
+## Scope
 
 The following functionalities were included in the testing scope:
 
@@ -34,15 +34,15 @@ The following functionalities were included in the testing scope:
 
 ---
 
-# Testing Types Performed
+## Testing Types Performed
 
 - Smoke Testing
 - Functional Testing
-- Exploratory Testing
+- Exploratory Testing (supplementary, unscripted)
 
 ---
 
-# Test Environment
+## Test Environment
 
 | Item | Details |
 |------|---------|
@@ -53,7 +53,7 @@ The following functionalities were included in the testing scope:
 
 ---
 
-# Test Execution Summary
+## Test Execution Summary
 
 | Item | Count |
 |------|------:|
@@ -66,9 +66,14 @@ The following functionalities were included in the testing scope:
 | Defects Logged | 0 |
 | Pass Percentage | 100% |
 
+Supplementary exploratory testing (4 unscripted activities) was also
+performed and found no additional issues — see
+[Test-Execution-Report.md](../04-Test-Execution/Test-Execution-Report.md)
+for detail.
+
 ---
 
-# Defect Summary
+## Defect Summary
 
 | Severity | Count |
 |----------|------:|
@@ -80,7 +85,7 @@ The following functionalities were included in the testing scope:
 
 ---
 
-# Risks
+## Risks
 
 No major functional risks were identified during testing.
 
@@ -94,13 +99,13 @@ Potential future testing areas include:
 
 ---
 
-# Conclusion
+## Conclusion
 
-The OrangeHRM Login module was successfully tested using Smoke, Functional, and Exploratory Testing techniques. All planned test cases were executed, and each test passed successfully without identifying any functional defects. The application behaved as expected for all tested scenarios, including login validation, session handling, logout functionality, and input validation. The executed test cases provide complete coverage of the planned requirements for the Login module. Based on the completed testing activities, the Login module is considered stable and ready for release for the tested scope.
+The OrangeHRM Login module was successfully tested using Smoke, Functional, and supplementary Exploratory Testing techniques. All 20 planned test cases were executed, and each test passed successfully without identifying any functional defects. The application behaved as expected for all tested scenarios, including login validation, session handling, logout functionality, and input validation. The executed test cases provide complete coverage of the planned requirements for the Login module. Based on the completed testing activities, the Login module is considered stable and ready for release for the tested scope.
 
 ---
 
-# Sign-off
+## Sign-off
 
 | Role | Name |
 |------|------|
