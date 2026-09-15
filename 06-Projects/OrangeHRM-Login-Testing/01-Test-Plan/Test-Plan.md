@@ -13,7 +13,7 @@
 
 ---
 
-# 1. Objective
+## 1. Objective
 
 The objective of this test plan is to verify that the Login module functions correctly under different input conditions and user actions.
 
@@ -27,9 +27,9 @@ The testing aims to ensure that:
 
 ---
 
-# 2. Scope
+## 2. Scope
 
-## In Scope
+### In Scope
 
 - Login Page
 - Username field
@@ -39,7 +39,7 @@ The testing aims to ensure that:
 - Session handling
 - Browser behavior
 
-## Out of Scope
+### Out of Scope
 
 - User Registration
 - Forgot Password
@@ -51,7 +51,7 @@ The testing aims to ensure that:
 
 ---
 
-# 3. Test Objectives
+## 3. Test Objectives
 
 The following areas will be tested:
 
@@ -63,7 +63,7 @@ The following areas will be tested:
 
 ---
 
-# 4. Test Environment
+## 4. Test Environment
 
 | Item | Details |
 |------|---------|
@@ -74,7 +74,7 @@ The following areas will be tested:
 
 ---
 
-# 5. Test Data
+## 5. Test Data
 
 | Username | Password |
 |-----------|----------|
@@ -87,7 +87,7 @@ The following areas will be tested:
 
 ---
 
-# 6. Entry Criteria
+## 6. Entry Criteria
 
 Testing will begin when:
 
@@ -97,7 +97,7 @@ Testing will begin when:
 
 ---
 
-# 7. Exit Criteria
+## 7. Exit Criteria
 
 Testing will be considered complete when:
 
@@ -107,7 +107,7 @@ Testing will be considered complete when:
 
 ---
 
-# 8. Deliverables
+## 8. Deliverables
 
 The following documents will be produced:
 
@@ -121,7 +121,7 @@ The following documents will be produced:
 
 ---
 
-# 9. Risks
+## 9. Risks
 
 Possible risks include:
 
@@ -132,6 +132,6 @@ Possible risks include:
 
 ---
 
-# 10. Conclusion
+## 10. Conclusion
 
 This Test Plan provides a structured approach for validating the Login functionality of the OrangeHRM Demo application through manual testing.
