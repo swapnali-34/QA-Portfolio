@@ -11,7 +11,7 @@
 
 ---
 
-# Test Metrics
+## Test Metrics
 
 | Metric | Value |
 |--------|------:|
@@ -32,17 +32,23 @@
 
 ---
 
-# Test Execution Breakdown
+## Test Execution Breakdown
 
-| Testing Type | Planned | Executed | Passed | Failed |
-|--------------|--------:|---------:|-------:|-------:|
-| Smoke Testing | 6 | 6 | 6 | 0 |
-| Functional Testing | 10 | 10 | 10 | 0 |
-| Exploratory Testing | 4 | 4 | 4 | 0 |
+| Testing Type | Checks Run | Passed | Failed |
+|--------------|-----------:|-------:|-------:|
+| Smoke Testing | 6 | 6 | 0 |
+| Functional Testing | 16 | 16 | 0 |
+| Exploratory Testing (supplementary, unscripted) | 4 activities | — | 0 defects found |
+
+*Smoke and Functional together cover all 20 distinct test cases (TC-005 is
+checked in both). Exploratory testing is supplementary and not counted
+toward the 20 formal test cases — see
+[Test-Execution-Report.md](../04-Test-Execution/Test-Execution-Report.md)
+for the full breakdown.*
 
 ---
 
-# Defect Metrics
+## Defect Metrics
 
 | Severity | Count |
 |----------|------:|
@@ -54,7 +60,7 @@
 
 ---
 
-# Key Performance Indicators (KPIs)
+## Key Performance Indicators (KPIs)
 
 - Requirement Coverage: **100%**
 - Test Execution Completion: **100%**
@@ -64,6 +70,6 @@
 
 ---
 
-# Conclusion
+## Conclusion
 
-All planned test cases were executed successfully, and every requirement was validated. No functional defects were identified during testing. The Login module demonstrated stable behavior for the scenarios covered in this project.
+All 20 planned test cases were executed successfully, and every requirement was validated. Supplementary exploratory testing surfaced no additional issues. No functional defects were identified during testing. The Login module demonstrated stable behavior for the scenarios covered in this project.
