@@ -11,17 +11,27 @@
 
 ---
 
-# Execution Statistics
+## Execution Statistics
 
 | Category | Total | Passed | Failed | Blocked | Not Executed |
 |----------|------:|-------:|-------:|--------:|-------------:|
 | Smoke Testing | 6 | 6 | 0 | 0 | 0 |
-| Functional Testing | 10 | 10 | 0 | 0 | 0 |
-| Exploratory Testing Activities | 10 | 10 | 0 | 0 | 0 |
+| Functional Testing | 16 | 16 | 0 | 0 | 0 |
+
+*Smoke and Functional overlap on one case (TC-005, checked as both a quick
+smoke gate and in full functional depth) — so the 20 distinct test cases
+map to 22 recorded checks above. See
+[Test-Execution-Report.md](../04-Test-Execution/Test-Execution-Report.md)
+Section 3 for the full coverage mapping.*
+
+**Supplementary exploratory testing** (4 unscripted activities — window
+resize, multiple tabs, mid-login refresh, rapid clicks) was also performed
+and is not included in the totals above, since exploratory testing has no
+predefined test cases by definition.
 
 ---
 
-# Overall Test Metrics
+## Overall Test Metrics
 
 | Metric | Value |
 |--------|------:|
@@ -35,7 +45,7 @@
 
 ---
 
-# Defect Distribution
+## Defect Distribution
 
 | Severity | Count |
 |----------|------:|
@@ -47,7 +57,7 @@
 
 ---
 
-# Test Coverage
+## Test Coverage
 
 The following Login module functionalities were verified:
 
@@ -70,7 +80,7 @@ The following Login module functionalities were verified:
 
 ---
 
-# Risks Identified
+## Risks Identified
 
 No major risks were identified during testing.
 
@@ -84,7 +94,7 @@ Potential risks for future testing include:
 
 ---
 
-# Recommendations
+## Recommendations
 
 - Continue regression testing after future releases.
 - Expand testing to additional OrangeHRM modules.
@@ -94,20 +104,20 @@ Potential risks for future testing include:
 
 ---
 
-# Final Assessment
+## Final Assessment
 
 The Login module met the expected functional requirements during this test cycle.
 
 - Smoke Testing: ✅ Passed
 - Functional Testing: ✅ Passed
-- Exploratory Testing: ✅ Completed
+- Exploratory Testing: ✅ Completed (supplementary, no defects found)
 - Overall Status: **PASS**
 
 No functional defects were identified during execution.
 
 ---
 
-# Sign-off
+## Sign-off
 
 | Role | Name |
 |------|------|
