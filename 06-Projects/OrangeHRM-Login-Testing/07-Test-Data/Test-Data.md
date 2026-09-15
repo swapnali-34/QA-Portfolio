@@ -11,7 +11,7 @@
 
 ---
 
-# Purpose
+## Purpose
 
 This document contains the test data used during the execution of manual test cases for the OrangeHRM Login module.
 
@@ -25,7 +25,7 @@ The data covers:
 
 ---
 
-# Valid Test Data
+## Valid Test Data
 
 | Test Data ID | Username | Password | Purpose |
 |--------------|----------|----------|---------|
@@ -33,7 +33,7 @@ The data covers:
 
 ---
 
-# Invalid Test Data
+## Invalid Test Data
 
 | Test Data ID | Username | Password | Purpose |
 |--------------|----------|----------|---------|
@@ -43,7 +43,7 @@ The data covers:
 
 ---
 
-# Empty Field Test Data
+## Empty Field Test Data
 
 | Test Data ID | Username | Password | Purpose |
 |--------------|----------|----------|---------|
@@ -53,7 +53,7 @@ The data covers:
 
 ---
 
-# Boundary Test Data
+## Boundary Test Data
 
 | Test Data ID | Username | Password | Purpose |
 |--------------|----------|----------|---------|
@@ -62,7 +62,7 @@ The data covers:
 
 ---
 
-# Special Character Test Data
+## Special Character Test Data
 
 | Test Data ID | Username | Password | Purpose |
 |--------------|----------|----------|---------|
@@ -71,7 +71,7 @@ The data covers:
 
 ---
 
-# Exploratory Test Data
+## Exploratory Test Data
 
 | Test Data ID | Scenario | Description |
 |--------------|----------|-------------|
@@ -83,7 +83,7 @@ The data covers:
 
 ---
 
-# Browser Information
+## Browser Information
 
 | Browser | Version |
 |----------|---------|
@@ -91,7 +91,7 @@ The data covers:
 
 ---
 
-# Operating System
+## Operating System
 
 | Operating System | Version |
 |------------------|---------|
@@ -99,7 +99,7 @@ The data covers:
 
 ---
 
-# Test Environment
+## Test Environment
 
 | Item | Details |
 |------|---------|
@@ -109,7 +109,7 @@ The data covers:
 
 ---
 
-# Notes
+## Notes
 
 - The valid credentials were obtained from the official OrangeHRM Demo website.
 - Invalid, boundary, and special-character data were created specifically for testing purposes.
