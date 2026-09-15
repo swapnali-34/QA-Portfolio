@@ -40,11 +40,22 @@ Login
 | Total Test Scenarios | 20 |
 |----------------------|----:|
 | Smoke Testing | 6 |
-| Functional Testing | 10 |
-| Exploratory Testing | 4 |
+| Functional Testing | 16 |
+
+*Smoke (TS-001–005, checking the page is up and basic login works) and
+Functional (TS-005–020, full behavior including validation, security-style
+input, and session handling) overlap on TS-005 by design — it's checked
+both as a quick smoke gate and in full functional depth.*
+
+In addition to these 20 scripted scenarios, **unscripted exploratory
+testing** was performed to probe behavior these scenarios don't explicitly
+cover — see the Exploratory Testing section in
+[`04-Test-Execution/Test-Execution-Report.md`](../04-Test-Execution/Test-Execution-Report.md).
+Exploratory testing is unscripted by nature, so it isn't counted as a
+fixed number of "test cases" the way Smoke and Functional are.
 
 ---
 
 ## Conclusion
 
-These test scenarios cover the core functionality of the OrangeHRM Login module, including positive, negative, validation, usability, and exploratory testing scenarios.
+These test scenarios cover the core functionality of the OrangeHRM Login module, including positive, negative, validation, usability, and security-style input scenarios, supplemented by unscripted exploratory testing.
