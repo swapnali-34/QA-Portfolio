@@ -14,13 +14,13 @@
 
 ---
 
-# Objective
+## Objective
 
 The objective of this test execution is to verify the core functionality of the SauceDemo application by executing all planned manual test cases covering Login, Products, Shopping Cart, Checkout, Navigation, and Logout.
 
 ---
 
-# Test Environment
+## Test Environment
 
 | Item | Details |
 |------|---------|
@@ -32,7 +32,7 @@ The objective of this test execution is to verify the core functionality of the 
 
 ---
 
-# Test Execution Results
+## Test Execution Results
 
 | Test Case ID | Module | Status | Remarks |
 |--------------|--------|--------|---------|
@@ -74,7 +74,7 @@ The objective of this test execution is to verify the core functionality of the 
 
 ---
 
-# Execution Summary
+## Execution Summary
 
 | Item | Count |
 |------|------:|
@@ -87,7 +87,7 @@ The objective of this test execution is to verify the core functionality of the 
 
 ---
 
-# Defect Summary
+## Defect Summary
 
 | Severity | Count |
 |----------|------:|
@@ -99,7 +99,7 @@ The objective of this test execution is to verify the core functionality of the 
 
 ---
 
-# Overall Result
+## Overall Result
 
 **PASS**
 
@@ -107,7 +107,7 @@ All planned test cases were executed successfully. No functional defects were id
 
 ---
 
-# Tester Sign-off
+## Tester Sign-off
 
 | Role | Name |
 |------|------|
