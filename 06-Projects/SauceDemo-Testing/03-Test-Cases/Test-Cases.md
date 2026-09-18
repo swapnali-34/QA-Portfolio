@@ -51,3 +51,23 @@
 | **TC-035** | Verify the user is redirected to the Login page after logout. | Verify that the Login page is displayed after a successful logout. | User has logged out successfully. | 1. Perform logout.<br>2. Observe the displayed page. | Standard User | The Login page should be displayed, allowing the user to log in again. | Login page displayed after logout. | PASS |
 
 ---
+
+## Test Case Summary
+
+| Module | Test Cases | Category |
+|---|---:|---|
+| Login | 8 | Positive, negative, validation |
+| Products | 6 | Functional/display verification |
+| Product Sorting | 4 | Functional |
+| Shopping Cart | 6 | Functional |
+| Checkout | 6 | Positive, validation |
+| Navigation & Session | 3 | Functional/session handling |
+| Logout | 2 | Functional |
+| **Total** | **35** | — |
+
+---
+
+## Notes
+
+- These test cases cover the complete SauceDemo user journey: Login → Products → Sorting → Cart → Checkout → Navigation → Logout.
+- Any failed test case would be documented in the **Bug Report** with complete reproduction steps and supporting evidence.
