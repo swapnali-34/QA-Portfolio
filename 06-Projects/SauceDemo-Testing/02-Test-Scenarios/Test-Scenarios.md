@@ -13,13 +13,13 @@
 
 ---
 
-# Objective
+## Objective
 
 The objective of this document is to identify all high-level test scenarios required to verify the core functionality of the SauceDemo application.
 
 ---
 
-# Login Module
+## Login Module
 
 | Scenario ID | Test Scenario |
 |-------------|---------------|
@@ -34,7 +34,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Products Module
+## Products Module
 
 | Scenario ID | Test Scenario |
 |-------------|---------------|
@@ -47,7 +47,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Product Sorting
+## Product Sorting
 
 | Scenario ID | Test Scenario |
 |-------------|---------------|
@@ -58,7 +58,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Shopping Cart
+## Shopping Cart
 
 | Scenario ID | Test Scenario |
 |-------------|---------------|
@@ -71,7 +71,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Checkout Module
+## Checkout Module
 
 | Scenario ID | Test Scenario |
 |-------------|---------------|
@@ -84,7 +84,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Navigation & Session
+## Navigation & Session
 
 | Scenario ID | Test Scenario |
 |-------------|---------------|
@@ -94,7 +94,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Logout
+## Logout
 
 | Scenario ID | Test Scenario |
 |-------------|---------------|
@@ -103,7 +103,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Test Scenario Summary
+## Test Scenario Summary
 
 | Module | Number of Scenarios |
 |--------|--------------------:|
@@ -118,7 +118,7 @@ The objective of this document is to identify all high-level test scenarios requ
 
 ---
 
-# Notes
+## Notes
 
 - These scenarios provide end-to-end coverage of the SauceDemo application.
 - Detailed test cases will be created for each scenario in the **03-Test-Cases** folder.
