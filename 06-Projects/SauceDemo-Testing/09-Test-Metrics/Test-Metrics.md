@@ -10,7 +10,7 @@
 
 ---
 
-# Test Metrics
+## Test Metrics
 
 | Metric | Value |
 |--------|------:|
@@ -33,7 +33,7 @@
 
 ---
 
-# Module-wise Metrics
+## Module-wise Metrics
 
 | Module | Test Cases | Passed | Failed |
 |--------|-----------:|-------:|-------:|
@@ -48,7 +48,7 @@
 
 ---
 
-# Defect Distribution
+## Defect Distribution
 
 | Severity | Count |
 |----------|------:|
@@ -60,7 +60,7 @@
 
 ---
 
-# Key Performance Indicators (KPIs)
+## Key Performance Indicators (KPIs)
 
 | KPI | Result |
 |-----|--------|
@@ -71,6 +71,6 @@
 
 ---
 
-# Conclusion
+## Conclusion
 
 The project achieved complete execution of all planned test cases with a 100% pass rate. No functional defects were identified during testing, indicating that the tested functionality met the expected business requirements.
