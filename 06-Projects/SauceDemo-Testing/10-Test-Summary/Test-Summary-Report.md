@@ -12,7 +12,7 @@
 
 ---
 
-# Scope
+## Scope
 
 The following modules were included in testing:
 
@@ -26,7 +26,7 @@ The following modules were included in testing:
 
 ---
 
-# Testing Types Performed
+## Testing Types Performed
 
 - Smoke Testing
 - Functional Testing
@@ -37,7 +37,7 @@ The following modules were included in testing:
 
 ---
 
-# Test Environment
+## Test Environment
 
 | Item | Details |
 |------|---------|
@@ -48,7 +48,7 @@ The following modules were included in testing:
 
 ---
 
-# Test Execution Summary
+## Test Execution Summary
 
 | Item | Count |
 |------|------:|
@@ -63,7 +63,7 @@ The following modules were included in testing:
 
 ---
 
-# Module-wise Result
+## Module-wise Result
 
 | Module | Result |
 |--------|--------|
@@ -77,7 +77,7 @@ The following modules were included in testing:
 
 ---
 
-# Defect Summary
+## Defect Summary
 
 | Severity | Count |
 |----------|------:|
@@ -89,7 +89,7 @@ The following modules were included in testing:
 
 ---
 
-# Risks and Limitations
+## Risks and Limitations
 
 - Testing was limited to the publicly available SauceDemo application.
 - Performance, security, API, database, and automation testing were outside the project scope.
@@ -97,7 +97,7 @@ The following modules were included in testing:
 
 ---
 
-# Conclusion
+## Conclusion
 
 - A total of **35** manual test cases were executed covering all planned functional areas of the SauceDemo application.
 - All test cases passed successfully, resulting in a **100% pass rate** with no functional defects identified during testing.
@@ -106,7 +106,7 @@ The following modules were included in testing:
 
 ---
 
-# Tester Sign-off
+## Tester Sign-off
 
 | Role | Name |
 |------|------|
