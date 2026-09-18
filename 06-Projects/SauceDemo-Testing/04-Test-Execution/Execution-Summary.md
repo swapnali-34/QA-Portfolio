@@ -10,7 +10,7 @@
 
 ---
 
-# Overview
+## Overview
 
 This document provides a high-level summary of the manual testing activities performed on the SauceDemo application.
 
@@ -18,11 +18,11 @@ The testing covered all major business workflows, including Login, Product Brows
 
 ---
 
-# Test Execution Statistics
+## Test Execution Statistics
 
 | Metric | Count |
 |--------|------:|
-| Total Requirements | 35 |
+| Total Requirements | 10 |
 | Total Test Scenarios | 35 |
 | Total Test Cases | 35 |
 | Executed Test Cases | 35 |
@@ -33,7 +33,7 @@ The testing covered all major business workflows, including Login, Product Brows
 
 ---
 
-# Module-wise Execution
+## Module-wise Execution
 
 | Module | Test Cases | Passed | Failed |
 |--------|-----------:|-------:|-------:|
@@ -47,7 +47,7 @@ The testing covered all major business workflows, including Login, Product Brows
 
 ---
 
-# Defect Summary
+## Defect Summary
 
 | Severity | Count |
 |----------|------:|
@@ -59,7 +59,7 @@ The testing covered all major business workflows, including Login, Product Brows
 
 ---
 
-# Coverage Summary
+## Coverage Summary
 
 | Coverage Area | Status |
 |---------------|--------|
@@ -73,7 +73,7 @@ The testing covered all major business workflows, including Login, Product Brows
 
 ---
 
-# Key Observations
+## Key Observations
 
 - Login functionality worked as expected.
 - Product listing and sorting behaved correctly.
@@ -84,6 +84,6 @@ The testing covered all major business workflows, including Login, Product Brows
 
 ---
 
-# Conclusion
+## Conclusion
 
 All **35** planned test cases were executed successfully with a **100% pass rate**. The tested functionality of the SauceDemo application behaved as expected throughout the end-to-end user journey. Based on the executed tests, no functional defects were identified within the defined testing scope. The application is considered stable and suitable for release for the scenarios covered in this project.
