@@ -11,17 +11,15 @@
 
 ---
 
-# Login Test Data
+## Login Test Data
 
-## Valid User
+### Valid User
 
 | Username | Password | Expected Result |
 |-----------|----------|-----------------|
 | standard_user | secret_sauce | Login Successful |
 
----
-
-## Invalid Login Data
+### Invalid Login Data
 
 | Username | Password | Expected Result |
 |-----------|----------|-----------------|
@@ -32,17 +30,13 @@
 | standard_user | *(Blank)* | Password Required |
 | *(Blank)* | *(Blank)* | Username Required |
 
----
-
-## Locked User
+### Locked User
 
 | Username | Password | Expected Result |
 |-----------|----------|-----------------|
 | locked_out_user | secret_sauce | Login Denied |
 
----
-
-## Additional Demo Users
+### Additional Demo Users
 
 | Username | Password | Purpose |
 |-----------|----------|---------|
@@ -53,7 +47,7 @@
 
 ---
 
-# Product Test Data
+## Product Test Data
 
 | Product Name |
 |--------------|
@@ -66,9 +60,9 @@
 
 ---
 
-# Checkout Test Data
+## Checkout Test Data
 
-## Valid Customer Information
+### Valid Customer Information
 
 | Field | Value |
 |-------|-------|
@@ -76,9 +70,7 @@
 | Last Name | Smith |
 | Postal Code | 411001 |
 
----
-
-## Validation Test Data
+### Validation Test Data
 
 | Scenario | First Name | Last Name | Postal Code | Expected Result |
 |----------|------------|-----------|-------------|-----------------|
@@ -88,7 +80,7 @@
 
 ---
 
-# Browser Information
+## Browser Information
 
 | Browser | Version |
 |----------|---------|
@@ -96,7 +88,7 @@
 
 ---
 
-# Operating System
+## Operating System
 
 | Operating System |
 |------------------|
@@ -104,7 +96,7 @@
 
 ---
 
-# Environment Details
+## Environment Details
 
 | Item | Value |
 |------|-------|
@@ -115,7 +107,7 @@
 
 ---
 
-# Notes
+## Notes
 
 - All credentials used in this project are publicly available demo credentials provided by SauceDemo.
 - The test data was used to validate positive, negative, validation, and end-to-end test scenarios.
@@ -123,6 +115,6 @@
 
 ---
 
-# Conclusion
+## Conclusion
 
 The above test data provides sufficient coverage for executing the planned manual test cases across the Login, Products, Shopping Cart, Checkout, Navigation, and Logout modules of the SauceDemo application.
