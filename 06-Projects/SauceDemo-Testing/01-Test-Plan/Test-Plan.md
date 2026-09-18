@@ -14,7 +14,7 @@
 
 ---
 
-# 1. Objective
+## 1. Objective
 
 The objective of this test plan is to verify the core functionality of the SauceDemo web application through end-to-end manual testing.
 
@@ -32,11 +32,9 @@ The goal is to identify defects and verify that the application behaves accordin
 
 ---
 
-# 2. Scope
+## 2. Scope
 
-The following features are included in this testing cycle:
-
-## Login Module
+### Login Module
 
 - Valid login
 - Invalid login
@@ -45,7 +43,7 @@ The following features are included in this testing cycle:
 - Locked-out user
 - Logout
 
-## Products Module
+### Products Module
 
 - Product list display
 - Product details
@@ -53,21 +51,21 @@ The following features are included in this testing cycle:
 - Add to Cart
 - Remove from Cart
 
-## Shopping Cart
+### Shopping Cart
 
 - View cart
 - Verify added products
 - Remove products
 - Continue shopping
 
-## Checkout
+### Checkout
 
 - Checkout information
 - Order overview
 - Finish order
 - Order confirmation
 
-## Navigation
+### Navigation
 
 - Menu options
 - Browser refresh
@@ -76,7 +74,7 @@ The following features are included in this testing cycle:
 
 ---
 
-# 3. Out of Scope
+## 3. Out of Scope
 
 The following items are not included in this project:
 
@@ -92,7 +90,7 @@ The following items are not included in this project:
 
 ---
 
-# 4. Test Environment
+## 4. Test Environment
 
 | Item | Details |
 |------|---------|
@@ -105,7 +103,7 @@ The following items are not included in this project:
 
 ---
 
-# 5. Test Approach
+## 5. Test Approach
 
 The application will be tested using the following manual testing techniques:
 
@@ -121,15 +119,15 @@ Testing will be performed module by module and followed by complete end-to-end e
 
 ---
 
-# 6. Test Data
+## 6. Test Data
 
-## Valid User
+### Valid User
 
 | Username | Password |
 |-----------|----------|
 | standard_user | secret_sauce |
 
-## Additional Test Users
+### Additional Test Users
 
 | Username | Purpose |
 |-----------|---------|
@@ -147,7 +145,7 @@ secret_sauce
 
 ---
 
-# 7. Entry Criteria
+## 7. Entry Criteria
 
 Testing will begin only after the following conditions are met:
 
@@ -160,7 +158,7 @@ Testing will begin only after the following conditions are met:
 
 ---
 
-# 8. Exit Criteria
+## 8. Exit Criteria
 
 Testing will be considered complete when:
 
@@ -173,7 +171,7 @@ Testing will be considered complete when:
 
 ---
 
-# 9. Test Deliverables
+## 9. Test Deliverables
 
 The following documents will be produced during this project:
 
@@ -192,7 +190,7 @@ The following documents will be produced during this project:
 
 ---
 
-# 10. Risks
+## 10. Risks
 
 Potential risks include:
 
@@ -203,7 +201,7 @@ Potential risks include:
 
 ---
 
-# 11. Assumptions
+## 11. Assumptions
 
 - The SauceDemo application remains available throughout testing.
 - Test accounts remain active.
@@ -212,7 +210,7 @@ Potential risks include:
 
 ---
 
-# 12. Test Schedule
+## 12. Test Schedule
 
 | Activity | Status |
 |----------|--------|
@@ -227,7 +225,7 @@ Potential risks include:
 
 ---
 
-# Approval
+## Approval
 
 | Role | Name |
 |------|------|
@@ -235,6 +233,6 @@ Potential risks include:
 
 ---
 
-# Conclusion
+## Conclusion
 
 This Test Plan defines the scope, objectives, testing strategy, environment, and deliverables for the SauceDemo End-to-End Manual Testing project. Following this plan will help ensure systematic test execution and comprehensive coverage of the application's core user workflows.
