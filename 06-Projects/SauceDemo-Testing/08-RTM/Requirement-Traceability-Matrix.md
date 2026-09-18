@@ -11,12 +11,12 @@
 
 ---
 
-# Requirement Traceability Matrix
+## Requirement Traceability Matrix
 
 | Requirement ID | Requirement | Test Case ID | Execution Status |
 |---------------|-------------|--------------|------------------|
 | SD-001 | User should be able to log in with valid credentials. | TC-001 | Pass |
-| SD-002 | System should reject invalid username. | TC-002 | Pass |
+| SD-002 | System should reject invalid login credentials (invalid username, invalid password, or both). | TC-002, TC-003, TC-004 | Pass |
 | SD-003 | System should reject invalid password. | TC-003 | Pass |
 | SD-004 | System should validate mandatory login fields. | TC-005, TC-006, TC-007 | Pass |
 | SD-005 | Locked-out users should not be allowed to log in. | TC-008 | Pass |
@@ -26,18 +26,25 @@
 | SD-009 | Users should be able to complete checkout successfully. | TC-025, TC-026, TC-027, TC-028, TC-029, TC-030 | Pass |
 | SD-010 | Users should be able to navigate securely and log out successfully. | TC-031, TC-032, TC-033, TC-034, TC-035 | Pass |
 
+*Note: TC-004 (invalid username **and** invalid password together) was
+executed and passed, but wasn't mapped to any requirement in the original
+RTM. It's now included under SD-002, alongside the other invalid-login
+scenarios.*
+
 ---
 
-# Coverage Summary
+## Coverage Summary
 
 | Metric | Value |
 |--------|------:|
 | Total Requirements | 10 |
+| Total Test Cases Mapped | 35 |
 | Requirements Covered | 10 |
+| Requirements Not Covered | 0 |
 | Coverage Percentage | 100% |
 
 ---
 
-# Conclusion
+## Conclusion
 
 All identified functional requirements have corresponding test cases and were successfully executed. The RTM confirms complete requirement coverage with no uncovered functionality within the defined project scope.
