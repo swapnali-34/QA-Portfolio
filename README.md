@@ -4,7 +4,7 @@ Welcome to my **Software QA Testing Portfolio**.
 
 I'm **Swapnali Shitole**, an aspiring **Software QA Analyst** passionate about software quality, testing, problem-solving, and continuous learning.
 
-This repository showcases my practical work in **Manual Testing, SQL & Database Testing, API Testing, and QA Documentation**. The projects and artifacts are designed to simulate real-world software testing practices and demonstrate my ability to understand requirements, design test cases, execute tests, identify defects, validate application data, and document testing activities professionally.
+This repository showcases my practical work in **Manual Testing, SQL & Database Testing, API Testing, Automation Testing, and QA Documentation**. The projects and artifacts are designed to simulate real-world software testing practices and demonstrate my ability to understand requirements, design test cases, execute tests, identify defects, validate application data, and document testing activities professionally.
 
 ---
 
@@ -12,11 +12,12 @@ This repository showcases my practical work in **Manual Testing, SQL & Database 
 
 | Area | Highlights | Where to Verify |
 |---|---|---|
-| End-to-End Projects | 4 (OrangeHRM, SauceDemo, SQL Database Testing, API Testing) | [06-Projects](./06-Projects), [05-SQL](./05-SQL), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
+| End-to-End Projects | 5 (OrangeHRM, SauceDemo, SQL Database Testing, API Testing, Automation) | [06-Projects](./06-Projects), [05-SQL](./05-SQL), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project), [08-Automation-Testing/05-OrangeHRM-Automation-Project](./08-Automation-Testing/05-OrangeHRM-Automation-Project) |
 | Manual Testing | Smoke, Functional, Exploratory, E2E | [01-Manual-Testing](./01-Manual-Testing), [02-Test-Cases](./02-Test-Cases) |
 | Test Design | EP, BVA, Decision Table, State Transition | [06-Projects/Test-Design-Techniques](./06-Projects/Test-Design-Techniques) |
 | SQL | Queries, JOINs, Subqueries, Database Validation | [05-SQL](./05-SQL) |
 | API Testing | 15 test cases, REST APIs, Postman, JSON, API Chaining | [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
+| Automation Testing | 4 passing Selenium tests with execution screenshots | [08-Automation-Testing/05-OrangeHRM-Automation-Project](./08-Automation-Testing/05-OrangeHRM-Automation-Project) |
 | QA Documentation | Test Plans, Test Cases, RTM, Metrics, Reports | [06-Projects](./06-Projects), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | Defect Management | 10+ bug reports across manual and API projects | [03-Bug-Reports](./03-Bug-Reports), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | Agile & Jira | Scrum ceremonies, user stories, Jira workflows, JQL | [07-Notes/03-Agile-Scrum-for-QA.md](./07-Notes/03-Agile-Scrum-for-QA.md), [07-Notes/07-Jira-Fundamentals-for-QA.md](./07-Notes/07-Jira-Fundamentals-for-QA.md) |
@@ -84,6 +85,20 @@ An end-to-end API testing project using Postman, covering 15 test cases across f
 
 ---
 
+### OrangeHRM Login Automation
+
+**Application:** OrangeHRM Demo
+
+**Description**
+
+An automation testing project using Java, Selenium WebDriver, and TestNG with the Page Object Model, automating login test cases already designed and executed manually elsewhere in this portfolio.
+
+**Result:** 4 test cases (valid login, invalid password, empty username, empty password) run and pass via `mvn test`, each with a captured execution screenshot as evidence.
+
+📁 [View project folder](./08-Automation-Testing/05-OrangeHRM-Automation-Project)
+
+---
+
 ### Test Design Techniques
 
 Practical implementation of common software testing techniques using real-world examples.
@@ -120,6 +135,9 @@ This portfolio demonstrates my ability to:
 - Implement API chaining
 - Work within Agile/Scrum ceremonies and understand QA's role in each
 - Track and query testing work in Jira, including JQL
+- Automate manual test cases using Java, Selenium WebDriver, and TestNG
+- Structure automation code using the Page Object Model
+- Capture execution evidence (screenshots) programmatically
 
 ---
 
@@ -160,11 +178,14 @@ SQL Queries · SELECT / INSERT / UPDATE / DELETE · Filtering & Sorting · Aggre
 ### API Testing
 API Fundamentals · REST APIs · HTTP Methods · HTTP Status Codes · Request & Response Validation · JSON Validation · Postman · Postman Variables · Environment Variables · API Test Scripts · Response Validation · Data Type Validation · Negative API Testing · API Chaining
 
+### Automation Testing
+Java (fundamentals for automation) · Selenium WebDriver · Locators & Explicit Waits · Page Object Model · TestNG (annotations, assertions, prioritization) · Maven · Programmatic Screenshot Capture
+
 ### Agile, Scrum & Jira
 Scrum Ceremonies (Planning, Standup, Review, Retrospective) · User Stories & Acceptance Criteria · INVEST Criteria · Story Points & Estimation · Sprint Velocity & Burndown · Scrum vs Kanban · Jira Issue Types & Workflows · Priority vs Severity · Issue Linking · JQL (Jira Query Language)
 
 ### Tools (Working Knowledge)
-Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL · Postman · Jira
+Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL · Postman · Jira · Selenium WebDriver · TestNG · Maven · Eclipse
 
 ---
 
@@ -194,20 +215,23 @@ Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL ·
 - User Management API Testing Project
 - Agile & Scrum Fundamentals
 - Jira Fundamentals for QA
+- Java Fundamentals for Automation
+- Selenium WebDriver (locators, waits, actions)
+- TestNG (annotations, assertions, prioritization)
+- Page Object Model
+- OrangeHRM Login Automation Project (4 passing tests with screenshots)
 
 ### Currently Learning
 
 - Advanced API Validation & completing full Postman collection execution
+- Expanding automation coverage (remaining OrangeHRM login test cases)
 
 ### Next Goals
 
-- Selenium WebDriver
-- Java
-- TestNG
-- Maven
+- TestNG HTML Reporting
+- Cross-Browser Automated Execution
 - Jenkins
-- CI/CD
-- Automation Testing
+- CI/CD (GitHub Actions)
 
 ---
 
@@ -273,6 +297,23 @@ QA-Portfolio
 │   ├── 05-Tools-Notes-Jira-Postman.md
 │   ├── 06-Exploratory-Smoke-Functional-Testing.md
 │   └── 07-Jira-Fundamentals-for-QA.md
+├── 08-Automation-Testing
+│   ├── README.md
+│   ├── 01-Java-Basics-for-Automation.md
+│   ├── 02-Selenium-Fundamentals.md
+│   ├── 03-TestNG-Basics.md
+│   ├── 04-Page-Object-Model.md
+│   └── 05-OrangeHRM-Automation-Project
+│       ├── README.md
+│       ├── pom.xml
+│       ├── src
+│       │   ├── main/java/pages/LoginPage.java
+│       │   └── test/java/tests/LoginTest.java
+│       └── screenshots
+│           ├── TC001_Dashboard_Success.png
+│           ├── TC002_InvalidPassword_Alert.png
+│           ├── TC003_EmptyUsername_Validation.png
+│           └── TC004_EmptyPassword_Validation.png
 └── README.md
 ```
 
@@ -280,7 +321,7 @@ QA-Portfolio
 
 ## Career Objective
 
-I am seeking an opportunity as a QA Analyst / Manual QA Tester where I can apply my knowledge of manual testing, test design, defect reporting, SQL, database validation and API Testing while continuing to grow as a software quality professional.
+I am seeking an opportunity as a QA Analyst / Manual QA Tester where I can apply my knowledge of manual testing, test design, defect reporting, SQL, database validation, API Testing, and automation while continuing to grow as a software quality professional.
 
 I am particularly interested in opportunities where I can contribute to **quality-focused testing, learn from experienced QA professionals, and gradually expand into test automation**.
 
@@ -289,7 +330,7 @@ I am particularly interested in opportunities where I can contribute to **qualit
 ## Repository Highlights
 
 - Industry-style QA project structure
-- End-to-end manual, SQL, and API testing projects
+- End-to-end manual, SQL, API, and automation testing projects
 - Professional QA documentation
 - Practical testing experience
 - Organized GitHub repository
