@@ -1,5 +1,7 @@
 # Boundary Value Analysis (BVA)
 
+*Part of [Test-Design-Techniques](./README.md) — theory: [07-Notes/02-Test-Design-Techniques-Theory.md](../../07-Notes/02-Test-Design-Techniques-Theory.md)*
+
 ## Username Field
 
 ### Requirement
@@ -56,3 +58,9 @@ Total Test Cases: **6**
 ## Conclusion
 
 Boundary Value Analysis helps identify defects that commonly occur at the minimum and maximum limits of an input field.
+
+---
+
+## Where This Applies Elsewhere in This Portfolio
+
+Also used in [01-Manual-Testing/02-Registration-Form-Testing.md](../../01-Manual-Testing/02-Registration-Form-Testing.md), where the max-length check on the Full Name field follows the same minimum/maximum boundary logic shown here.
