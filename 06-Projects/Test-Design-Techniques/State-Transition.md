@@ -1,5 +1,7 @@
 # State Transition Testing
 
+*Part of [Test-Design-Techniques](./README.md) — theory: [07-Notes/02-Test-Design-Techniques-Theory.md](../../07-Notes/02-Test-Design-Techniques-Theory.md)*
+
 ## ATM State Transition
 
 ### Requirement
@@ -34,26 +36,21 @@ Even if the correct PIN is entered after the account is locked, access should re
 
 ## State Transition Diagram
 
-```text
-             Insert Card
-                  |
-                  v
-             PIN Entry
-                  |
-      -------------------------
-      |           |           |
-  Wrong PIN   Wrong PIN   Wrong PIN
-   (1st)        (2nd)       (3rd)
-      |           |           |
-      v           v           v
- PIN Entry   PIN Entry   Account Locked
-                                 |
-                                 |
-                         Correct PIN Entered
-                                 |
-                                 v
-                        Access Denied
+```mermaid
+stateDiagram-v2
+    [*] --> CardInserted : Insert Card
+    CardInserted --> PINEntry
+
+    PINEntry --> PINEntry : Wrong PIN (1st)\nRetry allowed
+    PINEntry --> PINEntry : Wrong PIN (2nd)\n1 attempt remaining
+    PINEntry --> AccountLocked : Wrong PIN (3rd)
+
+    PINEntry --> TransactionMenu : Correct PIN
+
+    AccountLocked --> AccountLocked : Correct PIN Entered\nAccess still denied
 ```
+
+*Note: once `AccountLocked` is reached, no transition leads back to `PINEntry` or `TransactionMenu` — the diagram deliberately shows the account staying locked even on a correct PIN, since only the bank can unlock it.*
 
 ---
 
