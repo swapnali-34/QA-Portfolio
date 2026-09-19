@@ -1,5 +1,7 @@
 # Equivalence Partitioning (EP)
 
+*Part of [Test-Design-Techniques](./README.md) — theory: [07-Notes/02-Test-Design-Techniques-Theory.md](../../07-Notes/02-Test-Design-Techniques-Theory.md)*
+
 ## Age Field
 
 ### Requirement
@@ -46,3 +48,9 @@ Use Equivalence Partitioning to identify valid and invalid input groups and crea
 ## Conclusion
 
 Equivalence Partitioning reduces the number of test cases by selecting one representative value from each valid and invalid partition while maintaining good test coverage.
+
+---
+
+## Where This Applies Elsewhere in This Portfolio
+
+Also used in [01-Manual-Testing/02-Registration-Form-Testing.md](../../01-Manual-Testing/02-Registration-Form-Testing.md), where field-level validation (email format, password length) draws on the same valid/invalid partition logic shown here.
