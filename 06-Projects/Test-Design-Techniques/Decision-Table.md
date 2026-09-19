@@ -1,5 +1,7 @@
 # Decision Table Testing
 
+*Part of [Test-Design-Techniques](./README.md) — theory: [07-Notes/02-Test-Design-Techniques-Theory.md](../../07-Notes/02-Test-Design-Techniques-Theory.md)*
+
 ## Login Decision Table
 
 ### Requirement
@@ -45,3 +47,9 @@ A user can log in only if both the username and password are valid.
 ## Conclusion
 
 Decision Table Testing ensures that every possible combination of input conditions is tested, reducing the risk of missing important business-rule scenarios.
+
+---
+
+## Where This Applies Elsewhere in This Portfolio
+
+The same login logic (valid/invalid username × valid/invalid password) is tested hands-on against a real application in [06-Projects/OrangeHRM-Login-Testing](../OrangeHRM-Login-Testing) and [06-Projects/SauceDemo-Testing](../SauceDemo-Testing) — this file shows the underlying decision-table design behind those test cases.
