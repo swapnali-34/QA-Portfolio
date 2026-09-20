@@ -1,6 +1,6 @@
 # Automation Testing (Java + Selenium)
 
-*Status: First automation project complete — 4 test cases automated and passing with execution screenshots.*
+*Status: 8 test cases automated and passing with execution screenshots.*
 
 Building on the manual testing foundation elsewhere in this portfolio, this
 section covers automating web applications using Java, Selenium WebDriver,
@@ -32,9 +32,10 @@ automating login test cases already documented manually in
 [`06-Projects/OrangeHRM-Login-Testing`](../06-Projects/OrangeHRM-Login-Testing),
 using the Page Object Model.
 
-**Result:** 4 test cases (valid login, invalid password, empty username,
-empty password) run and pass end to end via `mvn test`, each with a
-captured execution screenshot as evidence.
+**Result:** 8 test cases (valid login, invalid password, empty username,
+empty password, both fields empty, password masking, logout, and special
+characters in username) run and pass end to end via `mvn test`, each with
+a captured execution screenshot as evidence.
 
 **Why this application:** rather than starting a new project from scratch,
 this automates test cases I already designed and executed manually —
@@ -44,9 +45,9 @@ showing the same testing logic carried through to code.
 
 ## 📈 Learning Progress
 
-**Completed:** Java fundamentals for automation, Selenium locators/actions/waits, TestNG annotations and assertions, Page Object Model structure, a working automation project with 4 passing tests and execution screenshots, programmatic screenshot capture, and diagnosing/fixing a real timing issue (waiting for the dashboard to render rather than checking the URL immediately).
+**Completed:** Java fundamentals for automation, Selenium locators/actions/waits, TestNG annotations and assertions, Page Object Model structure, a working automation project with 8 passing tests and execution screenshots, multi-element validation, attribute-level assertions (password masking), a full login-to-logout flow, and programmatic screenshot capture.
 
-**In Progress:** Automating the remaining OrangeHRM login test cases (password masking, lockout, security input).
+**In Progress:** Automating the remaining OrangeHRM login test cases (browser/session behavior, remaining negative input cases).
 
 **Next Goals:** TestNG HTML reporting, cross-browser execution, CI/CD basics (GitHub Actions/Jenkins).
 
