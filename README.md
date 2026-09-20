@@ -93,7 +93,7 @@ An end-to-end API testing project using Postman, covering 15 test cases across f
 
 An automation testing project using Java, Selenium WebDriver, and TestNG with the Page Object Model, automating login test cases already designed and executed manually elsewhere in this portfolio.
 
-**Result:** 4 test cases (valid login, invalid password, empty username, empty password) run and pass via `mvn test`, each with a captured execution screenshot as evidence.
+**Result:** 8 test cases (valid login, invalid password, empty username, empty password) run and pass via `mvn test`, each with a captured execution screenshot as evidence.
 
 📁 [View project folder](./08-Automation-Testing/05-OrangeHRM-Automation-Project)
 
@@ -310,10 +310,14 @@ QA-Portfolio
 │       │   ├── main/java/pages/LoginPage.java
 │       │   └── test/java/tests/LoginTest.java
 │       └── screenshots
-│           ├── TC001_Dashboard_Success.png
-│           ├── TC002_InvalidPassword_Alert.png
-│           ├── TC003_EmptyUsername_Validation.png
-│           └── TC004_EmptyPassword_Validation.png
+│               ├── TC005_Dashboard_Success.png
+│               ├── TC006_InvalidPassword_Alert.png
+│               ├── TC008_EmptyUsername_Validation.png
+│               ├── TC009_EmptyPassword_Validation.png
+│               ├── TC010_BothFieldsEmpty_Validation.png
+│               ├── TC011_Password_Masking.png
+│               ├── TC012_Logout_Success.png
+│               └── TC018_SpecialChars_Username_Alert.png
 └── README.md
 ```
 
