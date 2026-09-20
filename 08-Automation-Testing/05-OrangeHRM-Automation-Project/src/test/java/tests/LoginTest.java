@@ -21,9 +21,12 @@ import java.nio.file.StandardCopyOption;
  * Automates test cases already documented manually in:
  * 06-Projects/OrangeHRM-Login-Testing/03-Test-Cases/Login-Test-Cases.md
  *
- * This covers the first 4 cases as a starting point — valid login, invalid
- * password, empty username, empty password. More can be added following
- * the same pattern (e.g. password masking, logout).
+ * TC IDs below match Login-Test-Cases.md exactly (corrected — an earlier
+ * version of this file mislabeled these as TC-001 to TC-004, which were
+ * the wrong IDs).
+ *
+ * Covers TC-005, TC-006, TC-008, TC-009 as a starting point. More can be
+ * added following the same pattern (e.g. TC-010, TC-011, TC-012, TC-018).
  */
 
 public class LoginTest {
@@ -44,7 +47,7 @@ public class LoginTest {
         loginPage = new LoginPage(driver);
     }
 
-    @Test(priority = 1, description = "TC-001: Valid login redirects to the dashboard")
+    @Test(priority = 1, description = "TC-005: Valid login redirects to the dashboard")
     public void validLoginTest() {
         loginPage.login(VALID_USERNAME, VALID_PASSWORD);
         
@@ -57,10 +60,10 @@ public class LoginTest {
         loginPage.waitForDashboardToLoad();
 
         // Capture screenshot of fully rendered page
-        captureScreenshot("TC001_Dashboard_Success");
+        captureScreenshot("TC005_Dashboard_Success");
     }
 
-    @Test(priority = 2, description = "TC-002: Invalid password shows an error, no login")
+    @Test(priority = 2, description = "TC-006: Invalid password shows an error, no login")
     public void invalidPasswordTest() {
         loginPage.login(VALID_USERNAME, "WrongPassword123");
         
@@ -71,10 +74,10 @@ public class LoginTest {
         );
         Assert.assertFalse(loginPage.getCurrentUrl().contains("dashboard"));
         
-        captureScreenshot("TC002_InvalidPassword_Alert");
+        captureScreenshot("TC006_InvalidPassword_Alert");
     }
 
-    @Test(priority = 3, description = "TC-003: Empty username shows a required-field validation")
+    @Test(priority = 3, description = "TC-008: Empty username shows a required-field validation")
     public void emptyUsernameTest() {
         loginPage.login("", VALID_PASSWORD);
         
@@ -83,10 +86,10 @@ public class LoginTest {
             "Expected a required-field validation message for the empty username."
         );
         
-        captureScreenshot("TC003_EmptyUsername_Validation");
+        captureScreenshot("TC008_EmptyUsername_Validation");
     }
 
-    @Test(priority = 4, description = "TC-004: Empty password shows a required-field validation")
+    @Test(priority = 4, description = "TC-009: Empty password shows a required-field validation")
     public void emptyPasswordTest() {
         loginPage.login(VALID_USERNAME, "");
         
@@ -95,7 +98,7 @@ public class LoginTest {
             "Expected a required-field validation message for the empty password."
         );
         
-        captureScreenshot("TC004_EmptyPassword_Validation");
+        captureScreenshot("TC009_EmptyPassword_Validation");
     }
 
     
