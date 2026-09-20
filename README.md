@@ -17,7 +17,7 @@ This repository showcases my practical work in **Manual Testing, SQL & Database 
 | Test Design | EP, BVA, Decision Table, State Transition | [06-Projects/Test-Design-Techniques](./06-Projects/Test-Design-Techniques) |
 | SQL | Queries, JOINs, Subqueries, Database Validation | [05-SQL](./05-SQL) |
 | API Testing | 15 test cases, REST APIs, Postman, JSON, API Chaining | [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
-| Automation Testing | 4 passing Selenium tests with execution screenshots | [08-Automation-Testing/05-OrangeHRM-Automation-Project](./08-Automation-Testing/05-OrangeHRM-Automation-Project) |
+| Automation Testing | 8 passing Selenium tests with execution screenshots | [08-Automation-Testing/05-OrangeHRM-Automation-Project](./08-Automation-Testing/05-OrangeHRM-Automation-Project) |
 | QA Documentation | Test Plans, Test Cases, RTM, Metrics, Reports | [06-Projects](./06-Projects), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | Defect Management | 10+ bug reports across manual and API projects | [03-Bug-Reports](./03-Bug-Reports), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | Agile & Jira | Scrum ceremonies, user stories, Jira workflows, JQL | [07-Notes/03-Agile-Scrum-for-QA.md](./07-Notes/03-Agile-Scrum-for-QA.md), [07-Notes/07-Jira-Fundamentals-for-QA.md](./07-Notes/07-Jira-Fundamentals-for-QA.md) |
@@ -93,7 +93,7 @@ An end-to-end API testing project using Postman, covering 15 test cases across f
 
 An automation testing project using Java, Selenium WebDriver, and TestNG with the Page Object Model, automating login test cases already designed and executed manually elsewhere in this portfolio.
 
-**Result:** 8 test cases (valid login, invalid password, empty username, empty password) run and pass via `mvn test`, each with a captured execution screenshot as evidence.
+**Result:** 8 test cases (valid login, invalid password, empty username, empty password, both fields empty, password masking, logout, and special characters in username) run and pass via `mvn test`, each with a captured execution screenshot as evidence.
 
 📁 [View project folder](./08-Automation-Testing/05-OrangeHRM-Automation-Project)
 
@@ -219,7 +219,7 @@ Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL ·
 - Selenium WebDriver (locators, waits, actions)
 - TestNG (annotations, assertions, prioritization)
 - Page Object Model
-- OrangeHRM Login Automation Project (4 passing tests with screenshots)
+- OrangeHRM Login Automation Project (8 passing tests with screenshots)
 
 ### Currently Learning
 
