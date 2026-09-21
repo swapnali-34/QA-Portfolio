@@ -1,6 +1,6 @@
 # Automation Testing (Java + Selenium)
 
-[![OrangeHRM Automation Tests](https://github.com/swapnali-34/QA-Portfolio/actions/workflows/test.yml/badge.svg)](https://github.com/swapnali-34/QA-Portfolio/actions/workflows/test.yml)
+![Tests](https://github.com/swapnali-34/QA-Portfolio/actions/workflows/test.yml/badge.svg)
 
 *Status: 8 test cases automated and passing with execution screenshots.*
 
