@@ -94,7 +94,7 @@ Full reports: [Bug-Reports.md](./Bug-Reports.md). These are QA practice examples
 A mock API — POST/PUT/PATCH/DELETE responses don't reflect a real persistent database, there's no real authentication, and no formal performance SLA is defined. These limits are factored into every result above (e.g. why some negative cases are BLOCKED rather than PASS/FAIL).
 
 ---
-```markdown
+
 ## 📸 Execution Screenshots
 
 A few captures from Postman execution — full set in [screenshots](./screenshots).
@@ -107,7 +107,7 @@ A few captures from Postman execution — full set in [screenshots](./screenshot
   <img src="./screenshots/POST-User-201.png" alt="POST /users creating a user, 201 response" width="280">
   <img src="./screenshots/Postman-Tests-Passing.png" alt="Postman test assertions passing" width="280">
 </p>
-```
+
 ---
 
 ## 📁 Project Files
