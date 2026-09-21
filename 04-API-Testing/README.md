@@ -48,16 +48,22 @@ A `200 OK` isn't a pass on its own — status, structure, required fields, data 
     ├── Test-Cases.md
     ├── Bug-Reports.md
     ├── Test-Execution-Report.md
-    └── Test-Summary-Report.md
+    ├── Test-Summary-Report.md
+    └── screenshots/
+        ├── GET-users-200.png
+        ├── GET-user-404.png
+        ├── POST-user-201.png
+        ├── Postman-tests-passing.png
+        └── Collection-run-summary.png
 ```
 
 ---
 
 ## 📈 Progress
 
-**Completed:** API fundamentals, HTTP methods/status codes, request/response, JSON, Postman basics, all 5 HTTP methods, environment variables, test scripts, negative testing, API chaining, and the full API project (test scenarios, cases, bugs, execution, and summary reports drafted).
+**Completed:** API fundamentals, HTTP methods/status codes, request/response, JSON, Postman basics, all 5 HTTP methods, environment variables, test scripts, negative testing, API chaining, Full Postman collection execution, and the full API project (test scenarios, cases, bugs, execution, and summary reports drafted).
 
-**In progress:** Advanced/data-driven validation, and full Postman collection execution for the project below.
+**In progress:** Advanced/data-driven validation.
 
 ---
 
