@@ -50,11 +50,11 @@ A `200 OK` isn't a pass on its own — status, structure, required fields, data 
     ├── Test-Execution-Report.md
     ├── Test-Summary-Report.md
     └── screenshots/
-        ├── GET-users-200.png
-        ├── GET-user-404.png
-        ├── POST-user-201.png
-        ├── Postman-tests-passing.png
-        └── Collection-run-summary.png
+        ├── GET-Users-200.png
+        ├── GET-User-404.png
+        ├── POST-User-201.png
+        ├── Postman-Tests-Passing.png
+        └── Collection-Run-Summary.png
 ```
 
 ---
