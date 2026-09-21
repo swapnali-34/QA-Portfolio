@@ -18,7 +18,12 @@ The focus is not only on learning SQL syntax, but on using SQL to **validate app
 ├── 04-Window-Functions.md
 ├── 05-Practice-Queries.sql
 ├── 06-SQL-Validation-Queries.sql
-└── 07-SQL-Validation-Report.md
+├── 07-SQL-Validation-Report.md
+└── screenshots/
+    ├── Schema-CompanyDB.png
+    ├── BR-01-Email-Validation.png
+    ├── Window-Function-Ranking.png
+    └── Final-Validation-Report.png
 ```
 
 ---
@@ -83,6 +88,19 @@ CompanyDB
 The database is used to practice SQL queries and QA database-validation scenarios.
 
 📄 Full schema and sample data: [03-Sample-Database.md](./03-Sample-Database.md)
+
+---
+
+## 📸 Execution Screenshots
+
+<p>
+  <img src="./screenshots/Schema-CompanyDB.png" alt="CompanyDB schema" width="280">
+  <img src="./screenshots/BR-01-Email-Validation.png" alt="BR-01 email validation, 0 invalid rows" width="280">
+</p>
+<p>
+  <img src="./screenshots/Window-Function-Ranking.png" alt="Salary ranking with RANK() OVER" width="280">
+  <img src="./screenshots/Final-Validation-Report.png" alt="Final combined PASS/FAIL validation query" width="280">
+</p>
 
 ---
 
