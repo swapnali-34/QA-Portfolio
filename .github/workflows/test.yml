@@ -22,11 +22,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 11
-        uses: actions/setup-java@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v5
         with:
-          java-version: '11'
           distribution: 'temurin'
+          java-version: '17'
 
       - name: Cache Maven dependencies
         uses: actions/cache@v4
@@ -38,8 +38,9 @@ jobs:
       - name: Install Xvfb (virtual display for Chrome)
         run: sudo apt-get update && sudo apt-get install -y xvfb
 
-      - name: Run tests
-        run: xvfb-run -a mvn test
+      - name: Run Tests
+        working-directory: 08-Automation-Testing/05-OrangeHRM-Automation-Project
+        run: mvn test
 
       - name: Upload execution screenshots
         if: always()
@@ -54,3 +55,13 @@ jobs:
         with:
           name: testng-report
           path: 08-Automation-Testing/05-OrangeHRM-Automation-Project/test-output/
+
+      - name: Upload Test Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            08-Automation-Testing/05-OrangeHRM-Automation-Project/target/surefire-reports/
+            08-Automation-Testing/05-OrangeHRM-Automation-Project/screenshots/
+          if-no-files-found: warn
