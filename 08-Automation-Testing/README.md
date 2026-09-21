@@ -1,5 +1,7 @@
 # Automation Testing (Java + Selenium)
 
+![Tests](https://github.com/swapnali-34/QA-Portfolio/actions/workflows/test.yml/badge.svg)
+
 *Status: 8 test cases automated and passing with execution screenshots.*
 
 Building on the manual testing foundation elsewhere in this portfolio, this
