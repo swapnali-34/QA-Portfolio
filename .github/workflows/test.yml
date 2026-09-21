@@ -5,10 +5,12 @@ on:
     branches: [ main ]
     paths:
       - '08-Automation-Testing/05-OrangeHRM-Automation-Project/**'
+      - '.github/workflows/**'
   pull_request:
     branches: [ main ]
     paths:
       - '08-Automation-Testing/05-OrangeHRM-Automation-Project/**'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 jobs:
@@ -35,33 +37,15 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2-
 
-      - name: Install Xvfb (virtual display for Chrome)
-        run: sudo apt-get update && sudo apt-get install -y xvfb
-
       - name: Run Tests
-        working-directory: 08-Automation-Testing/05-OrangeHRM-Automation-Project
         run: mvn test
 
-      - name: Upload execution screenshots
+      - name: Upload Test Reports & Screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: execution-screenshots
-          path: 08-Automation-Testing/05-OrangeHRM-Automation-Project/screenshots/
-
-      - name: Upload TestNG report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: testng-report
-          path: 08-Automation-Testing/05-OrangeHRM-Automation-Project/test-output/
-
-      - name: Upload Test Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
+          name: test-results-and-screenshots
           path: |
             08-Automation-Testing/05-OrangeHRM-Automation-Project/target/surefire-reports/
             08-Automation-Testing/05-OrangeHRM-Automation-Project/screenshots/
-          if-no-files-found: warn
+          if-no-files-found: ignore
