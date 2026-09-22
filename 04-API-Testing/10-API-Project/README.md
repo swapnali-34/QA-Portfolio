@@ -46,12 +46,14 @@ An end-to-end API testing project demonstrating QA skills with Postman — funct
 
 | Status | Count |
 |---|---:|
-| PASS | 10 |
+| PASS | 11 |
 | FAIL | 0 |
 | BLOCKED / Contract Not Defined | 3 |
-| NOT EXECUTED | 2 |
+| NOT EXECUTED | 1 |
 
-**Pass Rate: 83.3%** (10 of 12 executed & verifiable cases — blocked cases are excluded since the expected behavior wasn't contractually defined, not because anything failed)
+**Pass Rate: 91.7%** (11 of 12 executed & verifiable cases — blocked cases are excluded since the expected behavior wasn't contractually defined, not because anything failed)
+
+*Updated: TC-API-015 (response-time validation) executed via Postman's Collection Runner — `pm.test("Response time is less than 1500ms")` passed with an actual response time of 43ms. This moves it from NOT EXECUTED to PASS. TC-API-010 (invalid email format) remains NOT EXECUTED pending a defined validation contract.*
 
 Full detail: [Test-Execution-Report.md](./Test-Execution-Report.md) · [Test-Summary-Report.md](./Test-Summary-Report.md)
 
@@ -97,7 +99,7 @@ A mock API — POST/PUT/PATCH/DELETE responses don't reflect a real persistent d
 
 ## 📸 Execution Screenshots
 
-A few captures from Postman execution — full set in [screenshots](./screenshots).
+Captures from actual Postman execution — full set in [screenshots](./screenshots).
 
 <p>
   <img src="./screenshots/GET-Users-200.png" alt="GET /users returning 200" width="280">
@@ -105,8 +107,13 @@ A few captures from Postman execution — full set in [screenshots](./screenshot
 </p>
 <p>
   <img src="./screenshots/POST-User-201.png" alt="POST /users creating a user, 201 response" width="280">
-  <img src="./screenshots/Postman-Tests-Passing.png" alt="Postman test assertions passing" width="280">
+  <img src="./screenshots/Postman-Tests-Passing.png" alt="Postman test assertions passing, including response-time check" width="280">
 </p>
+<p>
+  <img src="./screenshots/Collection-Run-Summary.png" alt="Postman Collection Runner summary — 6/6 assertions passed" width="420">
+</p>
+
+The Collection Runner summary shows a full automated pass through the core endpoints (GET all users, GET non-existent user, POST create user, DELETE user) — 6 assertions, 6 passed, 0 failed, avg. response time 344ms.
 
 ---
 
@@ -120,16 +127,33 @@ A few captures from Postman execution — full set in [screenshots](./screenshot
 | [Test-Execution-Report.md](./Test-Execution-Report.md) | Per-test execution results and evidence |
 | [Test-Summary-Report.md](./Test-Summary-Report.md) | Executive summary, metrics, and recommendations |
 
+```text
+10-API-Project/
+│
+├── README.md
+├── Test-Scenarios.md
+├── Test-Cases.md
+├── Bug-Reports.md
+├── Test-Execution-Report.md
+├── Test-Summary-Report.md
+└── screenshots/
+    ├── GET-users-200.png
+    ├── GET-user-404.png
+    ├── POST-user-201.png
+    ├── Postman-tests-passing.png
+    └── Collection-run-summary.png
+```
+
 ---
 
 ## 📈 QA Skills Demonstrated
 
-REST API testing (GET/POST/PUT/PATCH/DELETE) · HTTP status & JSON validation · Data type validation · Postman variables & test scripts · API chaining · Negative testing · Defect reporting · Test execution & summary reporting
+REST API testing (GET/POST/PUT/PATCH/DELETE) · HTTP status & JSON validation · Data type validation · Postman variables & test scripts · API chaining · Negative testing · Response-time validation · Defect reporting · Test execution & summary reporting
 
 ---
 
 ## Status
 
-**Completed:** Test design (scenarios, cases, bugs), core functional/negative/validation testing, execution and summary documentation.
+**Completed:** Test design (scenarios, cases, bugs), core functional/negative/validation testing, response-time validation, execution and summary documentation, execution evidence (screenshots).
 
-**Pending:** Full Postman collection execution, response-time measurement, before/after persistence checks, request/response screenshots.
+**Pending:** Remaining negative-case execution pending a defined contract (TC-API-010, invalid email), before/after persistence checks.
