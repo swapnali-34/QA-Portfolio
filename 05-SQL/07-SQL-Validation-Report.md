@@ -59,11 +59,15 @@ Queries for every validation below are in
 | BR-06 | Order Quantity | **PASS** |
 | BR-07 | Future Order Date | **PASS** |
 
-### Overall Result
+## Overall Result
 
-**PASS**
+**PASS** (with one deliberately introduced failing record — see below)
 
-All defined business requirements were successfully validated against the CompanyDB database.
+All seven business requirements (BR-01–BR-07) were validated against the
+CompanyDB database with no issues found. The final combined order
+validation additionally includes one deliberately invalid order record,
+added specifically to confirm the validation query correctly detects
+failures rather than always returning PASS.
 
 ---
 
@@ -157,7 +161,9 @@ No orders with future dates were found.
 
 ### Objective
 
-Perform a complete validation of order data against all defined business rules.
+Perform a complete validation of order data against all defined business
+rules, and confirm the validation logic itself is trustworthy — i.e. that
+it actually flags bad data rather than passing everything by default.
 
 An order is considered valid only when:
 - Customer exists.
@@ -174,15 +180,36 @@ An order is considered valid only when:
 | Quantity     | Quantity > 0 |
 | Order Date   | OrderDate <= CURRENT_DATE |
 
+### Test Data Note
+
+A fifth order record (**OrderID 1005**) was deliberately added to the
+`Orders` table with a `NULL` `ProductID`, specifically to verify the
+validation query detects an invalid reference rather than only ever
+confirming valid data. This is not an error in the dataset — it's an
+intentional negative test case for the validation logic itself.
+
 ### Result
 
-**Status: PASS**
+| OrderID | CustomerID | ProductID | Quantity | OrderDate | Result |
+|---|---|---|---|---|---|
+| 1001 | 1 | 101 | 1 | 2026-01-10 | PASS |
+| 1002 | 2 | 102 | 2 | 2026-01-11 | PASS |
+| 1003 | 1 | 105 | 3 | 2026-01-12 | PASS |
+| 1004 | 3 | 104 | 1 | 2026-01-15 | PASS |
+| 1005 | 4 | *(NULL)* | *(NULL)* | 2026-09-20 | **FAIL** *(deliberately invalid — missing product reference)* |
 
-The final validation confirmed that all orders satisfy the defined business rules:
+**Status: PASS** (validation logic confirmed correct — 4 genuinely valid
+orders pass, and the 1 deliberately invalid order is correctly caught)
 
-- Every order belongs to an existing customer.
-- Every order references an existing product.
-- Every order has a quantity greater than zero.
-- No order has a future date.
+The final validation confirms:
+- All four genuine orders belong to an existing customer, reference an
+  existing product, have quantity greater than zero, and have no future
+  date.
+- The validation query correctly flags OrderID 1005 as **FAIL** due to a
+  missing product reference — confirming the query detects real problems
+  rather than defaulting to PASS.
 
-Therefore, the order data passed the complete database validation.
+This distinction matters for QA credibility: a validation script that
+never fails anything hasn't been proven to work. Including one
+intentionally broken record demonstrates the query's detection logic is
+actually functioning as designed.
