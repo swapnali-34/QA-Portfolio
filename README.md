@@ -16,7 +16,7 @@ This repository showcases my practical work in **Manual Testing, SQL & Database 
 | Manual Testing | Smoke, Functional, Exploratory, E2E | [01-Manual-Testing](./01-Manual-Testing), [02-Test-Cases](./02-Test-Cases) |
 | Test Design | EP, BVA, Decision Table, State Transition | [06-Projects/Test-Design-Techniques](./06-Projects/Test-Design-Techniques) |
 | SQL | Queries, JOINs, Subqueries, Database Validation | [05-SQL](./05-SQL) |
-| API Testing | 15 test cases, REST APIs, Postman, JSON, API Chaining | [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
+| API Testing | 15 test cases (11 PASS), REST APIs, Postman, JSON, API Chaining | [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | Automation Testing | 8 passing Selenium tests with execution screenshots | [08-Automation-Testing/05-OrangeHRM-Automation-Project](./08-Automation-Testing/05-OrangeHRM-Automation-Project) |
 | QA Documentation | Test Plans, Test Cases, RTM, Metrics, Reports | [06-Projects](./06-Projects), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
 | Defect Management | 10+ bug reports across manual and API projects | [03-Bug-Reports](./03-Bug-Reports), [04-API-Testing/10-API-Project](./04-API-Testing/10-API-Project) |
@@ -240,6 +240,9 @@ Git · GitHub · Google Chrome DevTools · Microsoft Excel · Markdown · SQL ·
 ```text
 QA-Portfolio
 │
+├──.github
+│   └── workflows
+│       └── test.yml
 ├── 01-Manual-Testing
 │   ├── README.md
 │   ├── 01-Login-Form-Testing.md
@@ -270,12 +273,18 @@ QA-Portfolio
 │   ├── 08-API-Test-Scripts.md
 │   ├── 09-API-Validation.md
 │   └── 10-API-Project
-│       ├── README.md
-│       ├── Test-Scenarios.md
-│       ├── Test-Cases.md
-│       ├── Bug-Reports.md
-│       ├── Test-Execution-Report.md
-│       └── Test-Summary-Report.md
+│        ├── README.md
+│        ├── Test-Scenarios.md
+│        ├── Test-Cases.md
+│        ├── Bug-Reports.md
+│        ├── Test-Execution-Report.md
+│        ├── Test-Summary-Report.md
+│        └── screenshots
+│            ├── GET-Users-200.png
+│            ├── GET-User-404.png
+│            ├── POST-User-201.png
+│            ├── Postman-Tests-Passing.png
+│            └── Collection-Run-Summary.png
 ├── 05-SQL
 │   ├── README.md
 │   ├── 01-SQL-Basics.md
@@ -284,7 +293,12 @@ QA-Portfolio
 │   ├── 04-Window-Functions.md
 │   ├── 05-Practice-Queries.sql
 │   ├── 06-SQL-Validation-Queries.sql
-│   └── 07-SQL-Validation-Report.md
+│   ├── 07-SQL-Validation-Report.md
+│   └── screenshots
+│       ├── Schema-CompanyDB.png
+│       ├── BR-01-Email-Validation.png
+│       ├── Window-Function-Ranking.png
+│       └── Final-Validation-Report.png
 ├── 06-Projects
 │   ├── OrangeHRM-Login-Testing
 │   ├── SauceDemo-Testing
